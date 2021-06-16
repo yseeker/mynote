@@ -3,6 +3,6 @@ code {
     font-size: small;
   }
 
-pre[class*="language-"] {
+pre[class*="highlight"] {
     font-size: 0.75em;
 }
