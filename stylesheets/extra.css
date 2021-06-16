@@ -2,3 +2,7 @@ code {
     white-space : pre-wrap !important;
     font-size: small;
   }
+
+pre[class*="language-"] {
+    font-size: 0.75em;
+}
