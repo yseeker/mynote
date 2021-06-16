@@ -1,49 +1,101 @@
-# Project information
-site_name: 'siteName'
-site_description: 'サイトの紹介'
-site_author: 'yourName'
-site_url: 'http://yourSite'
+site_name: YS's note
+site_url: https://www.yusaito.com/mynote/
+site_author: Yu Saito
 
-
-# Copyright
-copyright: 'Copyright (c) 2016'
-
-# Documentation and theme
-docs_dir: 'docs'
 theme:
-  feature:
-    tabs: true
-  language: ja
+  favicon: "favicon.ico"
+  custom_dir: "theme"
+  language: en
   name: material
   palette:
     accent: Indigo
     primary: Indigo
+  features:
+    - navigation.tabs
+    - navigation.expand
+  icon:
+    repo: fontawesome/brands/github
 
-# Options
 extra:
+  social:
+    - icon: fontawesome/brands/github-alt
+      link: https://github.com/yseeker
 
-  palette:
-    primary: 'Light Blue'
-    accent: 'Orange'
-  font:
-    text: 'Roboto'
-    code: 'Roboto Mono'
-  i18n:
-    prev: 'Previous'
-    next: 'Next'
-  author:
-    github: 'yourName'
-    twitter: 'yourName'
+extra_css:
+  - https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css
+  - stylesheets/extra.css
+  - https://unpkg.com/mermaid@8.0.0/dist/mermaid.css
 
-# Extensions
+extra_javascript:
+  - javascripts/extra.js
+  - https://unpkg.com/mermaid@8.0.0/dist/mermaid.min.js
+
+
+plugins:
+  - search:
+      lang:
+        - en
+  - awesome-pages
+  - macros
+  - mdoctag:
+      tagpage_dir: "tags"
+      data_filename: "tags.json"
+
 markdown_extensions:
-  - meta
+  - hbfm.quote_uri_hash
+  - hbfm.inline_coloring
+  - pymdownx.tilde
   - pymdownx.mark
   - pymdownx.magiclink
   - pymdownx.emoji
   - pymdownx.keys
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+  - markdown.extensions.nl2br
+  - fontawesome_markdown
   - def_list
   - admonition
-  - codehilite:
+  - meta
+  - footnotes
+  - pymdownx.critic
+  - markdown_blockdiag:
+      format: svg
+  - toc:
+      permalink: "¶"
+  - pymdownx.tasklist:
+      clickable_checkbox: true
+  - pymdownx.highlight:
       linenums: true
-      use_pygments: true
+
+
+# Page tree
+nav:
+  - Home: index.md
+  - Neural Network:
+    - Pytorch Basis:
+      - Custom Dataset : custom_dataset.md
+      - Custom Model : custom_model.md
+      - Custom Loss Function : custom_loss.md
+      - Optimizers : optimizer.md
+      - Schedulars : schedular.md
+    - Image classification: 
+      - Tez templates : tez_templates.md
+    - GAN:
+      - DCCGAN: dccgan.md
+      - WGAN : wgan.md
+      - CycleGAN : cyclegan.md
+  - LabRAD:
+    - Getting started: index.md
+    - Templates: index.md
+  - AL/DS:
+    - DFS : index.md
+  - Utils:
+    - Linux : linux.md
+    - Git and github : git.md
+    - Docker : docker.md
+    - Plotting:
+      - matplotlib/seaborn: index.md
+      - plotly: index.md
