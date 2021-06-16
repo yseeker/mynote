@@ -40,7 +40,11 @@
     
     
     
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
       <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/mermaid@8.0.0/dist/mermaid.css">
     
     
       
@@ -860,7 +864,34 @@
                 <h1 id="tez-template">Tez template<a class="headerlink" href="#tez-template" title="Permanent link">&para;</a></h1>
 <p><a href="https://github.com/abhi1thakur/tez">Tez</a>を使った画像分類用Template</p>
 <h2 id="_1">ライブラリのインポート<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 <span class="kn">import</span> <span class="nn">random</span>
 <span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
@@ -889,8 +920,18 @@
 <span class="kn">from</span> <span class="nn">tez.callbacks</span> <span class="kn">import</span> <span class="n">EarlyStopping</span>
 <span class="kn">import</span> <span class="nn">timm</span>
 </code></pre></div>
+</td></tr></table>
 <h2 id="_2">シードの設定<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">set_seed</span><span class="p">(</span><span class="n">seed</span> <span class="o">=</span> <span class="mi">0</span><span class="p">):</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">set_seed</span><span class="p">(</span><span class="n">seed</span> <span class="o">=</span> <span class="mi">0</span><span class="p">):</span>
     <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
     <span class="n">random_state</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">RandomState</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
     <span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
@@ -901,12 +942,32 @@
     <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;PYTHONHASHSEED&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">random_state</span>
 </code></pre></div>
-<p>class ClassificationDataset():
-    def <strong>init</strong>(self, image_paths, targets, transform = None): 
-        self.image_paths = image_paths
-        self.targets = targets
+</td></tr></table>
+<p>class ClassificationDataset():<br />
+    def <strong>init</strong>(self, image_paths, targets, transform = None): <br />
+        self.image_paths = image_paths<br />
+        self.targets = targets<br />
         self.transform = None</p>
-<div class="highlight"><pre><span></span><code>def __len__(self):
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>def __len__(self):
     return len(self.image_paths)
 
 def __getitem__(self, item): 
@@ -927,19 +988,47 @@ def __getitem__(self, item):
         &quot;targets&quot;: torch.tensor(targets, dtype=torch.float),
     }
 </code></pre></div>
-<p>class CustomNN(tez.Model):
-    def <strong>init</strong>(self, model_name, input_channels, out_dim, pretrained = True, pretrained_path = None):
-        super().<strong>init</strong>()
-        self.conv1 = nn.Conv2d(1, 3, kernel_size=3, stride=1, padding=3, bias=False)
-        self.mynet = timm.create_model(model_name, pretrained = pretrained, in_chans=input_channels)
-        if not pretrained: self.mynet.load_state_dict(torch.load(pretrained_path))
-        if model_name in timm_efficientnet_family: 
-            self.mynet.classifier = nn.Linear(self.mynet.classifier.in_features, out_dim)
-        elif model_name in timm_resnet_family:
-            self.mynet.fc = nn.Linear(self.mynet.num_features, out_dim)
-        elif model_name in timm_vit_famity | timm_swint_family:
+</td></tr></table>
+<p>class CustomNN(tez.Model):<br />
+    def <strong>init</strong>(self, model_name, input_channels, out_dim, pretrained = True, pretrained_path = None):<br />
+        super().<strong>init</strong>()<br />
+        self.conv1 = nn.Conv2d(1, 3, kernel_size=3, stride=1, padding=3, bias=False)<br />
+        self.mynet = timm.create_model(model_name, pretrained = pretrained, in_chans=input_channels)<br />
+        if not pretrained: self.mynet.load_state_dict(torch.load(pretrained_path))<br />
+        if model_name in timm_efficientnet_family: <br />
+            self.mynet.classifier = nn.Linear(self.mynet.classifier.in_features, out_dim)<br />
+        elif model_name in timm_resnet_family:<br />
+            self.mynet.fc = nn.Linear(self.mynet.num_features, out_dim)<br />
+        elif model_name in timm_vit_famity | timm_swint_family:<br />
             self.mynet.head = nn.Linear(self.mynet.head.in_features, out_dim)</p>
-<div class="highlight"><pre><span></span><code>def forward(self, image, targets=None):
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>def forward(self, image, targets=None):
     image = self.conv1(image)
     outputs = self.mynet(image)
 
@@ -968,36 +1057,71 @@ def fetch_scheduler(self):
     #step_size_up=1400,step_size_down=1400, mode=&quot;triangular2&quot;)
     return sch
 </code></pre></div>
+</td></tr></table>
 <h1 id="training">Training<a class="headerlink" href="#training" title="Permanent link">&para;</a></h1>
 <p>random_state = set_seed(2021)</p>
-<p>train_aug = A.Compose(
-    [
-        #A.RandomResizedCrop(256, 256),
-        #A.Transpose(p=0.5),
-        #A.HorizontalFlip(p=0.5),
-        A.VerticalFlip(p=0.5),
-        A.ShiftScaleRotate(p=0.5),
-        A.MotionBlur(p=0.5),
-    ]
+<p>train_aug = A.Compose(<br />
+    [<br />
+        #A.RandomResizedCrop(256, 256),<br />
+        #A.Transpose(p=0.5),<br />
+        #A.HorizontalFlip(p=0.5),<br />
+        A.VerticalFlip(p=0.5),<br />
+        A.ShiftScaleRotate(p=0.5),<br />
+        A.MotionBlur(p=0.5),<br />
+    ]<br />
 )</p>
-<p>df = pd.read_csv('../input/<strong><em>/train_labels.csv')
-df['img_path'] = df['id'].apply(lambda x: f'../input/</em></strong>/train/{x[0]}/{x}.npy')
-X = df.img_path.values
+<p>df = pd.read_csv('../input/<strong><em>/train_labels.csv')<br />
+df['img_path'] = df['id'].apply(lambda x: f'../input/</em></strong>/train/{x[0]}/{x}.npy')<br />
+X = df.img_path.values<br />
 Y = df.target.values</p>
-<p>model_name = 'efficientnetv2_rw_s'
-models = []
+<p>model_name = 'efficientnetv2_rw_s'<br />
+models = []<br />
 device = "cuda"</p>
-<p>Batch_Size = 16
-epochs = 5
+<p>Batch_Size = 16<br />
+epochs = 5<br />
 input_channels = 3</p>
-<p>out_dim = 1
-fold_cnt = 1
-num_of_Fold = 2
+<p>out_dim = 1<br />
+fold_cnt = 1<br />
+num_of_Fold = 2<br />
 skf = StratifiedKFold(n_splits = num_of_Fold)</p>
-<p>for train_index, test_index in skf.split(X, Y):
-    train_images, valid_images = X[train_index], X[test_index]
+<p>for train_index, test_index in skf.split(X, Y):<br />
+    train_images, valid_images = X[train_index], X[test_index]<br />
     train_targets, valid_targets = Y[train_index], Y[test_index]</p>
-<div class="highlight"><pre><span></span><code>train_dataset = ClassificationDataset(
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>train_dataset = ClassificationDataset(
     image_paths=train_images, 
     targets=train_targets, 
     transform = train_aug
@@ -1033,6 +1157,7 @@ model.save(f&#39;{model_name}_{fold_cnt}fold_{Batch_Size}batch.bin&#39;)
 models.append(model)
 fold_cnt += 1
 </code></pre></div>
+</td></tr></table>
 <p>```</p>
                 
               
@@ -1112,6 +1237,10 @@ fold_cnt += 1
     
     
       <script src="../assets/javascripts/bundle.76f349be.min.js"></script>
+      
+        <script src="../javascripts/extra.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@8.0.0/dist/mermaid.min.js"></script>
       
     
   </body>
