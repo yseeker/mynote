@@ -7,7 +7,7 @@
     "description": []
   },
   {
-    "title": "Data Augumentations",
+    "title": "image augmentations",
     "file_name": "albumentations",
     "url": "https://www.yusaito.com/mynote/albumentations/",
     "tags": [],
