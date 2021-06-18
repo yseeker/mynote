@@ -928,8 +928,12 @@
 </code></pre></div>
 </td></tr></table>
 <h3 id="pillow-opencv">Pillow とOpenCVそれぞれで画像を表示<a class="headerlink" href="#pillow-opencv" title="Permanent link">¶</a></h3>
-<p>画像データはKaggleの<a href="https://www.kaggle.com/alxmamaev/flowers-recognition"><strong>Flowers Recognition</strong></a>から取得。<br />
+<p>画像データはKaggleの<a href="https://www.kaggle.com/alxmamaev/flowers-recognition"><strong>Flowers Recognition</strong></a>から取得。Pillowを使う場合は<br />
 <code>image_path = '../input/flowers-recognition/flowers/daisy/10140303196_b88d3d6cec.jpg'</code></p>
+<blockquote>
+<p>Pillowは単なる画像処理ライブラリであり、OpenCVは「コンピュータビジョン」用のライブラリです。確かに機能が重複する部分は多い（つまりOpenCVにはかなりの画像処理機能が含まれている）が、 その扱う内容は大きく異なります。極端な話、画像をカットやリサイズしたい時や、少しフィルタリングしたい場合は Pillow を使い、物事を「見よう」と思っているロボットを組みたい時には OpenCV を使用します。<br />
+引用元：<a href="https://teratail.com/questions/71851">https://teratail.com/questions/71851</a></p>
+</blockquote>
 <div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Pillow</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
