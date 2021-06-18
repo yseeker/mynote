@@ -5,5 +5,12 @@
     "url": "https://www.yusaito.com/mynote/",
     "tags": [],
     "description": []
+  },
+  {
+    "title": "Data Augumentations",
+    "file_name": "albumentations",
+    "url": "https://www.yusaito.com/mynote/albumentations/",
+    "tags": [],
+    "description": []
   }
 ]
