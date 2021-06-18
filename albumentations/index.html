@@ -409,13 +409,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#blur" class="md-nav__link">
-    Blur
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -887,13 +880,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#blur" class="md-nav__link">
-    Blur
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -928,7 +914,7 @@
 </code></pre></div>
 </td></tr></table>
 <h3 id="pillow-opencv">Pillow とOpenCVそれぞれで画像を表示<a class="headerlink" href="#pillow-opencv" title="Permanent link">¶</a></h3>
-<p>画像データはKaggleの<a href="https://www.kaggle.com/alxmamaev/flowers-recognition"><strong>Flowers Recognition</strong></a>から取得。Pillowを使う場合は<br />
+<p>画像データはKaggleの<a href="https://www.kaggle.com/alxmamaev/flowers-recognition"><strong>Flowers Recognition</strong></a>から取得。Pillowを使う場合は、読み込んだときにJpegImageFileなのでopenCVに変換する必要があり。<br />
 <code>image_path = '../input/flowers-recognition/flowers/daisy/10140303196_b88d3d6cec.jpg'</code></p>
 <blockquote>
 <p>Pillowは単なる画像処理ライブラリであり、OpenCVは「コンピュータビジョン」用のライブラリです。確かに機能が重複する部分は多い（つまりOpenCVにはかなりの画像処理機能が含まれている）が、 その扱う内容は大きく異なります。極端な話、画像をカットやリサイズしたい時や、少しフィルタリングしたい場合は Pillow を使い、物事を「見よう」と思っているロボットを組みたい時には OpenCV を使用します。<br />
@@ -969,7 +955,52 @@
 <p>参考<br />
 - <a href="https://nixeneko.hatenablog.com/entry/2017/09/01/000000">https://nixeneko.hatenablog.com/entry/2017/09/01/000000</a><br />
 - <a href="https://tomomai.com/python-opencv-pillow/">https://tomomai.com/python-opencv-pillow/</a></p>
-<h3 id="blur">Blur<a class="headerlink" href="#blur" title="Permanent link">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">aug</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">param1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">param2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
+<span class="n">aug</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span><span class="n">A</span><span class="o">.</span><span class="n">Blur</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="mi">1</span><span class="p">)]))</span>
+<span class="n">aug</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span><span class="n">A</span><span class="o">.</span><span class="n">MedianBlur</span><span class="p">(</span><span class="n">p</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)])</span>
+<span class="n">aug</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span><span class="n">A</span><span class="o">.</span><span class="n">GaussianBlur</span><span class="p">(</span><span class="n">p</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)])</span>
+<span class="n">aug_img</span> <span class="o">=</span> <span class="p">[</span><span class="n">aug</span><span class="p">[</span><span class="n">i</span><span class="p">](</span><span class="n">image</span><span class="o">=</span><span class="n">img</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="o">+</span><span class="n">n</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="o">+</span><span class="mi">5</span><span class="o">*</span><span class="n">n</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">wspace</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;font.size&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">18</span>
+<span class="p">[</span><span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">bottom</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">labelbottom</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">labelleft</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">labelright</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">labeltop</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">n</span><span class="p">)]</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Original&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Default Augmentation&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;blur_limit=</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">param1</span><span class="p">))</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;blur_limit=</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">param2</span><span class="p">))</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+<span class="p">[</span><span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">aug_img</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;image&#39;</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+</code></pre></div>
+</td></tr></table>
+</div>
                 
               
     
