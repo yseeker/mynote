@@ -902,7 +902,7 @@
                 <h1 id="image-augumentations">Image Augumentations<a class="headerlink" href="#image-augumentations" title="Permanent link">¶</a></h1>
 <h2 id="_1">サンプル写真の表示<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
 <h3 id="import">ライブラリのimport<a class="headerlink" href="#import" title="Permanent link">¶</a></h3>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
@@ -912,13 +912,13 @@
 <span class="kn">import</span> <span class="nn">cv2</span>
 <span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
 </code></pre></div>
-</td></tr></table>
+</td></tr></table><br />
+画像データはKaggleの<a href="https://www.kaggle.com/alxmamaev/flowers-recognition"><strong>Flowers Recognition</strong></a>から取得。<br />
+<code>image_path = '../input/flowers-recognition/flowers/daisy/10140303196_b88d3d6cec.jpg'</code></p>
 <h3 id="pillow-opencv">Pillow とOpenCVそれぞれで画像を表示<a class="headerlink" href="#pillow-opencv" title="Permanent link">¶</a></h3>
 <div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Pillow</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">image_path</span><span class="p">)</span>
-<span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2RGB</span><span class="p">)</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">image_path</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
@@ -933,6 +933,7 @@
 </td></tr></table>
 </div>
 </div>
+<p><img alt="" src="../2021-06-17-19-00-32.png" /></p>
                 
               
     
