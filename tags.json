@@ -12,5 +12,33 @@
     "url": "https://www.yusaito.com/mynote/albumentations/",
     "tags": [],
     "description": []
+  },
+  {
+    "title": "Dcgan",
+    "file_name": "dcgan",
+    "url": "https://www.yusaito.com/mynote/dcgan/",
+    "tags": [],
+    "description": []
+  },
+  {
+    "title": "Gan",
+    "file_name": "gan",
+    "url": "https://www.yusaito.com/mynote/gan/",
+    "tags": [],
+    "description": []
+  },
+  {
+    "title": "Linux コマンド",
+    "file_name": "linux_command",
+    "url": "https://www.yusaito.com/mynote/linux_command/",
+    "tags": [],
+    "description": []
+  },
+  {
+    "title": "Pytorch basis",
+    "file_name": "pytorch_basis",
+    "url": "https://www.yusaito.com/mynote/pytorch_basis/",
+    "tags": [],
+    "description": []
   }
 ]
