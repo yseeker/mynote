@@ -26,6 +26,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://www.yusaito.com/mynote/python_basis/</loc>
+         <lastmod>2021-06-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://www.yusaito.com/mynote/pytorch_basis/</loc>
          <lastmod>2021-06-27</lastmod>
          <changefreq>daily</changefreq>
