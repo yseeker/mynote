@@ -28,6 +28,13 @@
     "description": []
   },
   {
+    "title": "Labrad",
+    "file_name": "labrad",
+    "url": "https://www.yusaito.com/mynote/labrad/",
+    "tags": [],
+    "description": []
+  },
+  {
     "title": "Linux コマンド",
     "file_name": "linux_command",
     "url": "https://www.yusaito.com/mynote/linux_command/",
@@ -45,6 +52,13 @@
     "title": "Pytorch basis",
     "file_name": "pytorch_basis",
     "url": "https://www.yusaito.com/mynote/pytorch_basis/",
+    "tags": [],
+    "description": []
+  },
+  {
+    "title": "Templates",
+    "file_name": "templates",
+    "url": "https://www.yusaito.com/mynote/templates/",
     "tags": [],
     "description": []
   }
