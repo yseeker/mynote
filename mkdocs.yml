@@ -29,6 +29,8 @@ extra_css:
 extra_javascript:
   - javascripts/extra.js
   - https://unpkg.com/mermaid@8.0.0/dist/mermaid.min.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 
 plugins:
@@ -50,6 +52,9 @@ markdown_extensions:
   - pymdownx.emoji
   - pymdownx.keys
   - pymdownx.details
+  - pymdownx.tabbed
+  - pymdownx.arithmatex:
+      generic: true
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
@@ -73,20 +78,33 @@ markdown_extensions:
 
 # Page tree
 nav:
-  - Home: index.md
+  - Home: albumentations.md
+  - Python tips:
+    - python basis: python.md
   - Neural Network:
     - Pytorch Basis:
-      - Custom Dataset : custom_dataset.md
-      - Custom Model : custom_model.md
-      - Custom Loss Function : custom_loss.md
+      - Dataset : custom_dataset.md
+      - Image Augmentations : albumentations.md
+      - Model : custom_model.md
+      - Loss Function : custom_loss.md
       - Optimizers : optimizer.md
       - Schedulars : schedular.md
-    - Image classification: 
-      - Tez templates : tez_templates.md
+      - Influence : schedular.md
+      - AMP : schedular.md
+      - Tensorboard and Weight & Bias : schedular.md
+      - Management log/parameters : hydra.md
     - GAN:
       - DCCGAN: dccgan.md
       - WGAN : wgan.md
       - CycleGAN : cyclegan.md
+    - Image Processing :
+      - OpenCV : cyclegan.md
+      - Pillow : cyclegan.md
+    - Templates:
+      - General templates : tez_templates.md
+      - Tez templates : tez_templates.md
+      - Lightening templates : tez_templates.md
+      - Dali + Kornia : tez_templates.md
   - LabRAD:
     - Getting started: index.md
     - Templates: index.md
