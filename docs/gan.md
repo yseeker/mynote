@@ -295,3 +295,62 @@ def train_one_step(real_imgs, labels_valid, labels_fake):
 
     return g_loss, d_loss
 ```
+
+# Wassersteing GAN (Gradient penalty)
+-バッチ正規化をFalseにする。
+-RMSpropにweight_decay = 1e-4を入れる.
+```python
+def gradient_penalty(real_imgs, fake_img, gp_weight, netD, device):
+    batch_size = real_imgs.size()[0]
+    alpha = torch.randn(batch_size, 1, 1, 1)
+    alpha = alpha.expand_as(real_imgs).to(device)
+    interpolated_imgs = (alpha * real_imgs.data + (1-alpha) * fake_img.data).requires_grad_()
+    grad_outputs = torch.autograd.grad(inyerpolated_out, 
+                                        interpolated_imgs,
+                                        grad_outputs = grad_outputs, retain_graph = True)[0]
+    gradients = gradients.view(batch_size, -1)
+    gradients_nrom = torch.sqrt(torch.sum(gradients **2, dim = 1) + eps)
+    gp = gp_weight * ((gradients_norm -1) ** 2).mean()
+```
+
+```python
+optimizerG = optim.RMSprop(netG.parameters(), lr = opt.lr, weight_decay = 1e-4)
+optimizerD = optim.RMSprop(netD.parameters(), lr = opt.lr, weight_decay = 1e-4)
+
+def train_one_step(real_imgs, labels_valid, labels_fake):
+    # Sample noise as generator input
+    noise = torch.randn(batch_size, opt.z_dim, 1, 1).to(device)
+    # for p in netD.parameters():
+    #     p.data.clamp_(opt.c_lower, opt.c_upper)
+    """Train Discriminator"""
+    optimizer_D.zero_grad()
+    # Generate a batch of images
+    gen_imgs = generator(noise)
+    # Measure discriminator's ability to classify real from generated samples
+    out_real = discriminator(real_imgs)
+    out_fake = discriminator(gen_imgs.detach())
+    real_loss = -torch.mean(output)
+    fake_loss = torch.mean(output)
+    gp_loss = gradient_penalty(real_imgs, fake_imgs, opt.gp_weight, netD, device)
+    d_loss = real_loss + fake_loss + gp_loss
+    d_loss.backward()
+    optimizer_D.step()
+
+    """Train Generator"""
+    if i % opt.n_critic == 0:
+        optimizer_G.zero_grad()
+        # Loss measures generator's ability to fool the discriminator
+        g_loss = BCELoss()(discriminator(gen_imgs), labels_valid)
+        g_loss.backward()
+        optimizer_G.step()
+
+    return g_loss, d_loss
+```
+
+## Cycke GAN
+- 基本的にEncoder-Decoder構造
+- Instance Normalization : バッチ正規化では画像全体のみで正規化を行う。ミニバッチサイズ = 1のBNと同じ
+- リフレクションパッド：ゼロパディングとは異なりエッジ部分を競泳面として反射させたパディング方法。折り返してつなげることで画像の中のパターンをエッジ周辺で保つ。
+- サイクル一貫性損失
+- 同一性損失
+- Replay Buffer

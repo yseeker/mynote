@@ -12,7 +12,7 @@
         <meta name="author" content="Yu Saito">
       
       
-        <link rel="canonical" href="https://www.yusaito.com/mynote/albumentations/">
+        <link rel="canonical" href="https://www.yusaito.com/mynote/templates/">
       
       <link rel="icon" href="../favicon.ico">
       <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.7">
@@ -21,7 +21,7 @@
 
     
       
-        <title>Image Augmentations - YS's note</title>
+        <title>Templates - YS's note</title>
       
     
     
@@ -75,11 +75,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#image-augumentations" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -106,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Image Augmentations
+              Templates
             
           </span>
         </div>
@@ -164,7 +159,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="./" class="md-tabs__link">
+    <a href="../albumentations/" class="md-tabs__link">
       Home
     </a>
   </li>
@@ -189,8 +184,6 @@
         
   
   
-    
-  
 
 
   
@@ -202,7 +195,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../custom_dataset.md" class="md-tabs__link md-tabs__link--active">
+      <a href="../custom_dataset.md" class="md-tabs__link">
         Neural Network
       </a>
     </li>
@@ -298,7 +291,7 @@
   
   
     <li class="md-nav__item">
-      <a href="./" class="md-nav__link">
+      <a href="../albumentations/" class="md-nav__link">
         Home
       </a>
     </li>
@@ -353,14 +346,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
       
       <label class="md-nav__link" for="__nav_3">
         Neural Network
@@ -376,14 +367,12 @@
             
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" data-md-state="indeterminate" type="checkbox" id="__nav_3_1" checked>
       
       <label class="md-nav__link" for="__nav_3_1">
         Pytorch Basis
@@ -411,138 +400,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Image Augmentations
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../albumentations/" class="md-nav__link">
         Image Augmentations
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    サンプル写真の表示
-  </a>
-  
-    <nav class="md-nav" aria-label="サンプル写真の表示">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#import" class="md-nav__link">
-    ライブラリのimport
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pillow-opencv" class="md-nav__link">
-    Pillow とOpenCVそれぞれで画像を表示
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#albumentations" class="md-nav__link">
-    Albumentations
-  </a>
-  
-    <nav class="md-nav" aria-label="Albumentations">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#flip-crop-rotate-etc" class="md-nav__link">
-    Flip, Crop, Rotate etc.（フリップ、切り取り、回転など）
-  </a>
-  
-    <nav class="md-nav" aria-label="Flip, Crop, Rotate etc.（フリップ、切り取り、回転など）">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    フリップ
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    切り取り
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#blur-noise" class="md-nav__link">
-    Blur, Noise（ぼかし）
-  </a>
-  
-    <nav class="md-nav" aria-label="Blur, Noise（ぼかし）">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#blur" class="md-nav__link">
-    Blur
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#affine-distortion" class="md-nav__link">
-    高度幾何変換系 (Affine, Distortion)
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1064,125 +926,6 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    サンプル写真の表示
-  </a>
-  
-    <nav class="md-nav" aria-label="サンプル写真の表示">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#import" class="md-nav__link">
-    ライブラリのimport
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pillow-opencv" class="md-nav__link">
-    Pillow とOpenCVそれぞれで画像を表示
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#albumentations" class="md-nav__link">
-    Albumentations
-  </a>
-  
-    <nav class="md-nav" aria-label="Albumentations">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#flip-crop-rotate-etc" class="md-nav__link">
-    Flip, Crop, Rotate etc.（フリップ、切り取り、回転など）
-  </a>
-  
-    <nav class="md-nav" aria-label="Flip, Crop, Rotate etc.（フリップ、切り取り、回転など）">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    フリップ
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    切り取り
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#blur-noise" class="md-nav__link">
-    Blur, Noise（ぼかし）
-  </a>
-  
-    <nav class="md-nav" aria-label="Blur, Noise（ぼかし）">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#blur" class="md-nav__link">
-    Blur
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#affine-distortion" class="md-nav__link">
-    高度幾何変換系 (Affine, Distortion)
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
@@ -1190,122 +933,55 @@
     
                 
                 
-                <h1 id="image-augumentations">Image Augumentations<a class="headerlink" href="#image-augumentations" title="Permanent link">¶</a></h1>
-<h2 id="_1">サンプル写真の表示<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
-<h3 id="import">ライブラリのimport<a class="headerlink" href="#import" title="Permanent link">¶</a></h3>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">albumentations</span> <span class="k">as</span> <span class="nn">A</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">cv2</span>
-<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
-</code></pre></div>
-</td></tr></table>
-<h3 id="pillow-opencv">Pillow とOpenCVそれぞれで画像を表示<a class="headerlink" href="#pillow-opencv" title="Permanent link">¶</a></h3>
-<p>画像データはKaggleの<a href="https://www.kaggle.com/alxmamaev/flowers-recognition"><strong>Flowers Recognition</strong></a>から取得。Pillowを使う場合は、読み込んだときにJpegImageFileなのでopenCVに変換する必要がある。<br />
-<code>image_path = '../input/flowers-recognition/flowers/daisy/10140303196_b88d3d6cec.jpg'</code></p>
-<blockquote>
-<p>Pillowは単なる画像処理ライブラリであり、OpenCVは「コンピュータビジョン」用のライブラリです。確かに機能が重複する部分は多い（つまりOpenCVにはかなりの画像処理機能が含まれている）が、 その扱う内容は大きく異なります。極端な話、画像をカットやリサイズしたい時や、少しフィルタリングしたい場合は Pillow を使い、物事を「見よう」と思っているロボットを組みたい時には OpenCV を使用します。<br />
-引用元：<a href="https://teratail.com/questions/71851">https://teratail.com/questions/71851</a></p>
-</blockquote>
-<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Pillow</label><div class="tabbed-content">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">image_path</span><span class="p">)</span>
-<span class="c1"># img: JpegImageFile</span>
-<span class="n">img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
-<span class="c1"># もとの画像に戻す場合</span>
-<span class="c1"># im = Image.fromarray(np.uint8(myarray*255))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
-</code></pre></div>
-</td></tr></table>
-</div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">OpenCV</label><div class="tabbed-content">
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">image_path</span><span class="p">)</span>
-<span class="c1"># img : ndarray (N-dimensional array, np.arrayによって生成)</span>
-<span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2RGB</span><span class="p">)</span>
-<span class="c1"># 下記もRGB画像→BGR画像への変換</span>
-<span class="c1">#img = img[:,:,::-1]</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
-</code></pre></div>
-</td></tr></table>
-</div>
-</div>
-<p><img alt="" src="/docs/img/2021-06-17-19-00-32.png" /></p>
-<p>参考<br />
-- <a href="https://note.nkmk.me/python-image-processing-pillow-numpy-opencv/">https://note.nkmk.me/python-image-processing-pillow-numpy-opencv/</a><br />
-- <a href="https://nixeneko.hatenablog.com/entry/2017/09/01/000000">https://nixeneko.hatenablog.com/entry/2017/09/01/000000</a><br />
-- <a href="https://tomomai.com/python-opencv-pillow/">https://tomomai.com/python-opencv-pillow/</a><br />
-- <a href="https://www.codexa.net/opencv_python_introduction/">https://www.codexa.net/opencv_python_introduction/</a> (open CVに関して)</p>
+                  <h1>Templates</h1>
+                
+                <p><a href="https://colab.research.google.com/drive/1WtzFTkfqR4SCT8FS9R5vPO1B-YRpEv-D"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>下記の画像表示コードは、<a href="https://github.com/tkuri/albumentations_test/blob/master/albumentations_test.ipynb">https://github.com/tkuri/albumentations_test/blob/master/albumentations_test.ipynb</a>　を参考にした。<br />
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">aug</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">n</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="n">param1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
-<span class="n">param2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
-<span class="n">aug</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span><span class="n">A</span><span class="o">.</span><span class="n">Blur</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="mi">1</span><span class="p">)]))</span>
-<span class="n">aug</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span><span class="n">A</span><span class="o">.</span><span class="n">MedianBlur</span><span class="p">(</span><span class="n">p</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)])</span>
-<span class="n">aug</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span><span class="n">A</span><span class="o">.</span><span class="n">GaussianBlur</span><span class="p">(</span><span class="n">p</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)])</span>
-<span class="n">aug_img</span> <span class="o">=</span> <span class="p">[</span><span class="n">aug</span><span class="p">[</span><span class="n">i</span><span class="p">](</span><span class="n">image</span><span class="o">=</span><span class="n">img</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
-
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="o">+</span><span class="n">n</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="o">+</span><span class="mi">5</span><span class="o">*</span><span class="n">n</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">wspace</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;font.size&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">18</span>
-<span class="p">[</span><span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">bottom</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">labelbottom</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">labelleft</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">labelright</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">labeltop</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">n</span><span class="p">)]</span>
-
-<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Original&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Default Augmentation&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;blur_limit=</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">param1</span><span class="p">))</span>
-<span class="n">ax</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;blur_limit=</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">param2</span><span class="p">))</span>
-
-<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
-<span class="p">[</span><span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">aug_img</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;image&#39;</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
-</code></pre></div>
-</td></tr></table></p>
+<p>これはノートです。</p>
 </div>
-<h2 id="albumentations">Albumentations<a class="headerlink" href="#albumentations" title="Permanent link">¶</a></h2>
-<p>参考：<a href="https://qiita.com/kurilab/items/b69e1be8d0224ae139ad">https://qiita.com/kurilab/items/b69e1be8d0224ae139ad</a></p>
-<h3 id="flip-crop-rotate-etc">Flip, Crop, Rotate etc.（フリップ、切り取り、回転など）<a class="headerlink" href="#flip-crop-rotate-etc" title="Permanent link">¶</a></h3>
-<h4 id="_2">フリップ<a class="headerlink" href="#_2" title="Permanent link">¶</a></h4>
-<p><img alt="" src="2021-06-17-21-43-07.png" /></p>
-<h4 id="_3">切り取り<a class="headerlink" href="#_3" title="Permanent link">¶</a></h4>
-<p><img alt="" src="2021-06-17-22-05-59.png" /></p>
-<h3 id="blur-noise">Blur, Noise（ぼかし）<a class="headerlink" href="#blur-noise" title="Permanent link">¶</a></h3>
-<h4 id="blur">Blur<a class="headerlink" href="#blur" title="Permanent link">¶</a></h4>
-<p><img alt="" src="2021-06-17-21-07-50.png" /></p>
-<h3 id="affine-distortion">高度幾何変換系 (Affine, Distortion)<a class="headerlink" href="#affine-distortion" title="Permanent link">¶</a></h3>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>ヒントです。</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>これは警告です。</p>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>これは危険です。</p>
+</div>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<p>これは成功です。</p>
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Failure</p>
+<p>これは失敗です。</p>
+</div>
+<div class="admonition bug">
+<p class="admonition-title">Bug</p>
+<p>これはバグです。</p>
+</div>
+<div class="admonition summary">
+<p class="admonition-title">Summary</p>
+<p>これは概要です。</p>
+</div>
+<p>Mkdocs とは静的サイトジェネレータです。<br />
+コンテンツは基本的に markdown<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> 形式で記述したソースファイルになります。</p>
+<dl>
+<dt>定義語</dt>
+<dd>ここに説明を書きます</dd>
+</dl>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>文書を記述するための軽量マークアップ言語のひとつ&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
                 
               
     
@@ -1330,7 +1006,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="./" class="md-footer__link md-footer__link--prev" aria-label="Previous: Home" rel="prev">
+        <a href="../pytorch_basis/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Pytorch basis" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1339,26 +1015,11 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Home
+              Pytorch basis
             </div>
           </div>
         </a>
       
-      
-        
-        <a href=".." class="md-footer__link md-footer__link--next" aria-label="Next: Getting started" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Getting started
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
       
     </nav>
   

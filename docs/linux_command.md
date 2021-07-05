@@ -19,6 +19,7 @@ ctrl + y (yank)
 
 
 ls
+ls -a
 
 cat/less
 
@@ -33,7 +34,8 @@ wget コマンド
 unzip
 
 
-
+touch コマンド
+rm とrm -r
 
 
 cp /etc/crontab file2
