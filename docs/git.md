@@ -17,7 +17,8 @@ Gitはバージョン管理システムの1つ（分散管理方式）。特定�
   `git config --global user.name "<username, githubのusername>"`
   `git config --global user.email "<email>"`
   `git config --global --list`
-  `git config --global --replace-all core.pager "less -F -X"` 
+  `git config --global --replace-all core.pager "less -F -X"`
+  `git config --global pull.rebase true`
 - リポジトリをclone
   `git clone <remote_repo_url>`
   `git remote -v` : 登録してあるリモートリボを確認 `git clone`デフォルトでは`origin`がリモートリポに紐付いている
@@ -41,12 +42,17 @@ Gitはバージョン管理システムの1つ（分散管理方式）。特定�
   `git status` 状況を確認
 - コミットする
   `git commit -m "commit message"`
+- `git tag <tagname>`
+- `git tag --list`
   `git log --oneline --all --graph` コミットした履歴を確認
 - リモートリポの情報をpullしてから、リモートリポジトリにpush。pullはfetch + merge
   `git pull <remote ref> <branch name>`
+  `git pull --rebase <remote ref> <branch name>` : pullするときにrebaseする
   `git pull origin main`
   `git push <remote ref> <branch name>`
   `git push origin new-branch`
+- `git tag -a <tagname> <commitID>` commitにtagをつける。
+- `git push <remote_ref> <tagname>` tagをリモートリポにpushする
 - OSSなどの場合では、まずフォークもとのリポをpullする。
   `git remote add upstream <repourl>`
   `git pull upstream main`
@@ -94,7 +100,7 @@ Gitはバージョン管理システムの1つ（分散管理方式）。特定�
 - `git merge <branchname>`：branchnameを今いるブランチ（普通はmainブランチ）に反映。
 - `git diff <base> <compare>`：base（main）とcompare（ブランチ）を作成
 - conflictが起きている場合はエディタで開いてアノーテション箇所を消す。
-- `git rebase main` : main ブランチをrebaseする
+- `git rebase main` : main ブランチをrebaseする。rebaseはマージコミットを作成しない。
 
 ## リモートリポジトリ
 - `git fetch <remote_ref>`:リモートリポの情報をとってくる。
@@ -112,3 +118,44 @@ Gitはバージョン管理システムの1つ（分散管理方式）。特定�
   `git diff -staged HEAD -- <filename>`でstaging areaとリポジトリの差分を確認
   `git diff HEAD HEAD^^ -- <filename>` 2つ前の差分を確認
   `git diff origin/main main -- <filename>`
+
+## Stashを使う。
+作業内容の一時回避
+- `git stash`
+  `git stash -a`
+  `git stash list`
+  `git stash apply`
+  `git stash drop`
+  `git stash show stash @{<i>}`
+  conflictがある場合
+  `git mergetool`でコンフリクトに対処する。
+
+  ## Commitにtagを使う。
+  - マイルストーンにtagを使ってversionを管理する
+- `git tag <tagname>`
+- `git tag --list`
+- `git tag --delete <tagname>`
+- `git tag -a <tagname>` tagをつける。
+- `git diff <tagname1> <tagname2>` 
+- `git tag -a <tagname> <commitID>` commitにtagをつける。
+- `git push <remote_ref> <tagname>` tagをリモートリポにpushする
+- `git push <remote_ref> :<tagname>` tagをリモートpushから削除
+- `git checkout tags/<tagname>`
+- `git fetch --tgas --all`
+
+# submodule
+- `git submodule add <submodule_url>`
+- `git submodule update`
+- `git -recurse-submodule update`
+  submoduleの中でgit pullする。
+- `git submodule foreach 'git pull origin main'`
+
+# others
+convertio.io
+wikiを使う
+octotree
+zenhubを使う：アジャイル開発のカンバン
+`git revert <commitID>`
+`git reset --hard`
+`git reset --sorf HEAD ファイル名`間違ってadd したとき
+`git reset –soft HEAD^`間違ってcommitしたとき
