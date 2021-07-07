@@ -848,7 +848,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git.md" class="md-nav__link">
+      <a href="../git/" class="md-nav__link">
         Git and github
       </a>
     </li>
@@ -860,7 +860,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docker.md" class="md-nav__link">
+      <a href="../docker/" class="md-nav__link">
         Docker
       </a>
     </li>
@@ -1444,6 +1444,104 @@
     <span class="k">return</span> <span class="n">g_loss</span><span class="p">,</span> <span class="n">d_loss</span>
 </code></pre></div>
 </td></tr></table>
+<h1 id="wassersteing-gan-gradient-penalty">Wassersteing GAN (Gradient penalty)<a class="headerlink" href="#wassersteing-gan-gradient-penalty" title="Permanent link">¶</a></h1>
+<p>-バッチ正規化をFalseにする。<br />
+-RMSpropにweight_decay = 1e-4を入れる.<br />
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">gradient_penalty</span><span class="p">(</span><span class="n">real_imgs</span><span class="p">,</span> <span class="n">fake_img</span><span class="p">,</span> <span class="n">gp_weight</span><span class="p">,</span> <span class="n">netD</span><span class="p">,</span> <span class="n">device</span><span class="p">):</span>
+    <span class="n">batch_size</span> <span class="o">=</span> <span class="n">real_imgs</span><span class="o">.</span><span class="n">size</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">alpha</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">batch_size</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">alpha</span> <span class="o">=</span> <span class="n">alpha</span><span class="o">.</span><span class="n">expand_as</span><span class="p">(</span><span class="n">real_imgs</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+    <span class="n">interpolated_imgs</span> <span class="o">=</span> <span class="p">(</span><span class="n">alpha</span> <span class="o">*</span> <span class="n">real_imgs</span><span class="o">.</span><span class="n">data</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">alpha</span><span class="p">)</span> <span class="o">*</span> <span class="n">fake_img</span><span class="o">.</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">requires_grad_</span><span class="p">()</span>
+    <span class="n">grad_outputs</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">autograd</span><span class="o">.</span><span class="n">grad</span><span class="p">(</span><span class="n">inyerpolated_out</span><span class="p">,</span> 
+                                        <span class="n">interpolated_imgs</span><span class="p">,</span>
+                                        <span class="n">grad_outputs</span> <span class="o">=</span> <span class="n">grad_outputs</span><span class="p">,</span> <span class="n">retain_graph</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">gradients</span> <span class="o">=</span> <span class="n">gradients</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">batch_size</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">gradients_nrom</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">gradients</span> <span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">dim</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">eps</span><span class="p">)</span>
+    <span class="n">gp</span> <span class="o">=</span> <span class="n">gp_weight</span> <span class="o">*</span> <span class="p">((</span><span class="n">gradients_norm</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</code></pre></div>
+</td></tr></table></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">optimizerG</span> <span class="o">=</span> <span class="n">optim</span><span class="o">.</span><span class="n">RMSprop</span><span class="p">(</span><span class="n">netG</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span> <span class="o">=</span> <span class="n">opt</span><span class="o">.</span><span class="n">lr</span><span class="p">,</span> <span class="n">weight_decay</span> <span class="o">=</span> <span class="mf">1e-4</span><span class="p">)</span>
+<span class="n">optimizerD</span> <span class="o">=</span> <span class="n">optim</span><span class="o">.</span><span class="n">RMSprop</span><span class="p">(</span><span class="n">netD</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span> <span class="o">=</span> <span class="n">opt</span><span class="o">.</span><span class="n">lr</span><span class="p">,</span> <span class="n">weight_decay</span> <span class="o">=</span> <span class="mf">1e-4</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">train_one_step</span><span class="p">(</span><span class="n">real_imgs</span><span class="p">,</span> <span class="n">labels_valid</span><span class="p">,</span> <span class="n">labels_fake</span><span class="p">):</span>
+    <span class="c1"># Sample noise as generator input</span>
+    <span class="n">noise</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">opt</span><span class="o">.</span><span class="n">z_dim</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+    <span class="c1"># for p in netD.parameters():</span>
+    <span class="c1">#     p.data.clamp_(opt.c_lower, opt.c_upper)</span>
+    <span class="sd">&quot;&quot;&quot;Train Discriminator&quot;&quot;&quot;</span>
+    <span class="n">optimizer_D</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+    <span class="c1"># Generate a batch of images</span>
+    <span class="n">gen_imgs</span> <span class="o">=</span> <span class="n">generator</span><span class="p">(</span><span class="n">noise</span><span class="p">)</span>
+    <span class="c1"># Measure discriminator&#39;s ability to classify real from generated samples</span>
+    <span class="n">out_real</span> <span class="o">=</span> <span class="n">discriminator</span><span class="p">(</span><span class="n">real_imgs</span><span class="p">)</span>
+    <span class="n">out_fake</span> <span class="o">=</span> <span class="n">discriminator</span><span class="p">(</span><span class="n">gen_imgs</span><span class="o">.</span><span class="n">detach</span><span class="p">())</span>
+    <span class="n">real_loss</span> <span class="o">=</span> <span class="o">-</span><span class="n">torch</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+    <span class="n">fake_loss</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+    <span class="n">gp_loss</span> <span class="o">=</span> <span class="n">gradient_penalty</span><span class="p">(</span><span class="n">real_imgs</span><span class="p">,</span> <span class="n">fake_imgs</span><span class="p">,</span> <span class="n">opt</span><span class="o">.</span><span class="n">gp_weight</span><span class="p">,</span> <span class="n">netD</span><span class="p">,</span> <span class="n">device</span><span class="p">)</span>
+    <span class="n">d_loss</span> <span class="o">=</span> <span class="n">real_loss</span> <span class="o">+</span> <span class="n">fake_loss</span> <span class="o">+</span> <span class="n">gp_loss</span>
+    <span class="n">d_loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+    <span class="n">optimizer_D</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+
+    <span class="sd">&quot;&quot;&quot;Train Generator&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="n">opt</span><span class="o">.</span><span class="n">n_critic</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">optimizer_G</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+        <span class="c1"># Loss measures generator&#39;s ability to fool the discriminator</span>
+        <span class="n">g_loss</span> <span class="o">=</span> <span class="n">BCELoss</span><span class="p">()(</span><span class="n">discriminator</span><span class="p">(</span><span class="n">gen_imgs</span><span class="p">),</span> <span class="n">labels_valid</span><span class="p">)</span>
+        <span class="n">g_loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+        <span class="n">optimizer_G</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">g_loss</span><span class="p">,</span> <span class="n">d_loss</span>
+</code></pre></div>
+</td></tr></table>
+<h2 id="cycke-gan">Cycke GAN<a class="headerlink" href="#cycke-gan" title="Permanent link">¶</a></h2>
+<ul>
+<li>基本的にEncoder-Decoder構造</li>
+<li>Instance Normalization : バッチ正規化では画像全体のみで正規化を行う。ミニバッチサイズ = 1のBNと同じ</li>
+<li>リフレクションパッド：ゼロパディングとは異なりエッジ部分を競泳面として反射させたパディング方法。折り返してつなげることで画像の中のパターンをエッジ周辺で保つ。</li>
+<li>サイクル一貫性損失</li>
+<li>同一性損失</li>
+<li>Replay Buffer</li>
+</ul>
                 
               
     
@@ -1468,7 +1566,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../dcgan/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Dcgan" rel="prev">
+        <a href="../docker/" class="md-footer__link md-footer__link--prev" aria-label="Previous: None" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1477,20 +1575,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Dcgan
+              None
             </div>
           </div>
         </a>
       
       
         
-        <a href="../labrad/" class="md-footer__link md-footer__link--next" aria-label="Next: Labrad" rel="next">
+        <a href="../git/" class="md-footer__link md-footer__link--next" aria-label="Next: None" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Labrad
+              None
             </div>
           </div>
           <div class="md-footer__button md-icon">

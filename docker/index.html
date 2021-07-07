@@ -12,21 +12,23 @@
         <meta name="author" content="Yu Saito">
       
       
-      <link rel="icon" href="/mynote/favicon.ico">
+        <link rel="canonical" href="https://www.yusaito.com/mynote/docker/">
+      
+      <link rel="icon" href="../favicon.ico">
       <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.7">
     
     
 
     
       
-        <title>YS's note</title>
+        <title>Docker - YS's note</title>
       
     
     
-      <link rel="stylesheet" href="/mynote/assets/stylesheets/main.ca7ac06f.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.ca7ac06f.min.css">
       
         
-        <link rel="stylesheet" href="/mynote/assets/stylesheets/palette.f1a3b89f.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.f1a3b89f.min.css">
         
           
           
@@ -47,7 +49,7 @@
     
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     
-      <link rel="stylesheet" href="/mynote/stylesheets/extra.css">
+      <link rel="stylesheet" href="../stylesheets/extra.css">
     
       <link rel="stylesheet" href="https://unpkg.com/mermaid@8.0.0/dist/mermaid.css">
     
@@ -66,12 +68,17 @@
     <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
-    <script>function __prefix(e){return new URL("/mynote/",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#docker-file" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -80,7 +87,7 @@
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/mynote/." title="YS&#39;s note" class="md-header__button md-logo" aria-label="YS's note" data-md-component="logo">
+    <a href=".." title="YS&#39;s note" class="md-header__button md-logo" aria-label="YS's note" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -99,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Docker
             
           </span>
         </div>
@@ -157,7 +164,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="/mynote/albumentations/" class="md-tabs__link">
+    <a href="../albumentations/" class="md-tabs__link">
       Home
     </a>
   </li>
@@ -172,7 +179,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/mynote/python.md" class="md-tabs__link">
+      <a href="../python.md" class="md-tabs__link">
         Python tips
       </a>
     </li>
@@ -193,7 +200,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/mynote/custom_dataset.md" class="md-tabs__link">
+      <a href="../custom_dataset.md" class="md-tabs__link">
         Neural Network
       </a>
     </li>
@@ -211,7 +218,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/mynote/." class="md-tabs__link">
+      <a href=".." class="md-tabs__link">
         LabRAD
       </a>
     </li>
@@ -227,7 +234,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/mynote/." class="md-tabs__link">
+      <a href=".." class="md-tabs__link">
         AL/DS
       </a>
     </li>
@@ -237,13 +244,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="/mynote/linux.md" class="md-tabs__link">
+      <a href="../linux.md" class="md-tabs__link md-tabs__link--active">
         Utils
       </a>
     </li>
@@ -270,7 +279,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/mynote/." title="YS&#39;s note" class="md-nav__button md-logo" aria-label="YS's note" data-md-component="logo">
+    <a href=".." title="YS&#39;s note" class="md-nav__button md-logo" aria-label="YS's note" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -289,7 +298,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/mynote/albumentations/" class="md-nav__link">
+      <a href="../albumentations/" class="md-nav__link">
         Home
       </a>
     </li>
@@ -325,7 +334,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/mynote/python.md" class="md-nav__link">
+      <a href="../python.md" class="md-nav__link">
         python basis
       </a>
     </li>
@@ -388,7 +397,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/mynote/custom_dataset.md" class="md-nav__link">
+      <a href="../custom_dataset.md" class="md-nav__link">
         Dataset
       </a>
     </li>
@@ -400,7 +409,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/mynote/albumentations/" class="md-nav__link">
+      <a href="../albumentations/" class="md-nav__link">
         Image Augmentations
       </a>
     </li>
@@ -412,7 +421,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/mynote/custom_model.md" class="md-nav__link">
+      <a href="../custom_model.md" class="md-nav__link">
         Model
       </a>
     </li>
@@ -424,7 +433,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/mynote/custom_loss.md" class="md-nav__link">
+      <a href="../custom_loss.md" class="md-nav__link">
         Loss Function
       </a>
     </li>
@@ -436,7 +445,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/mynote/optimizer.md" class="md-nav__link">
+      <a href="../optimizer.md" class="md-nav__link">
         Optimizers
       </a>
     </li>
@@ -448,7 +457,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/mynote/schedular.md" class="md-nav__link">
+      <a href="../schedular.md" class="md-nav__link">
         Schedulars
       </a>
     </li>
@@ -460,7 +469,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/mynote/schedular.md" class="md-nav__link">
+      <a href="../schedular.md" class="md-nav__link">
         Influence
       </a>
     </li>
@@ -472,7 +481,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/mynote/schedular.md" class="md-nav__link">
+      <a href="../schedular.md" class="md-nav__link">
         AMP
       </a>
     </li>
@@ -484,7 +493,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/mynote/schedular.md" class="md-nav__link">
+      <a href="../schedular.md" class="md-nav__link">
         Tensorboard and Weight & Bias
       </a>
     </li>
@@ -496,7 +505,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/mynote/hydra.md" class="md-nav__link">
+      <a href="../hydra.md" class="md-nav__link">
         Management log/parameters
       </a>
     </li>
@@ -535,7 +544,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/mynote/dccgan.md" class="md-nav__link">
+      <a href="../dccgan.md" class="md-nav__link">
         DCCGAN
       </a>
     </li>
@@ -547,7 +556,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/mynote/wgan.md" class="md-nav__link">
+      <a href="../wgan.md" class="md-nav__link">
         WGAN
       </a>
     </li>
@@ -559,7 +568,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/mynote/cyclegan.md" class="md-nav__link">
+      <a href="../cyclegan.md" class="md-nav__link">
         CycleGAN
       </a>
     </li>
@@ -598,7 +607,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/mynote/cyclegan.md" class="md-nav__link">
+      <a href="../cyclegan.md" class="md-nav__link">
         OpenCV
       </a>
     </li>
@@ -610,7 +619,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/mynote/cyclegan.md" class="md-nav__link">
+      <a href="../cyclegan.md" class="md-nav__link">
         Pillow
       </a>
     </li>
@@ -649,7 +658,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/mynote/tez_templates.md" class="md-nav__link">
+      <a href="../tez_templates.md" class="md-nav__link">
         General templates
       </a>
     </li>
@@ -661,7 +670,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/mynote/tez_templates.md" class="md-nav__link">
+      <a href="../tez_templates.md" class="md-nav__link">
         Tez templates
       </a>
     </li>
@@ -673,7 +682,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/mynote/tez_templates.md" class="md-nav__link">
+      <a href="../tez_templates.md" class="md-nav__link">
         Lightening templates
       </a>
     </li>
@@ -685,7 +694,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/mynote/tez_templates.md" class="md-nav__link">
+      <a href="../tez_templates.md" class="md-nav__link">
         Dali + Kornia
       </a>
     </li>
@@ -733,7 +742,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/mynote/." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         Getting started
       </a>
     </li>
@@ -745,7 +754,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/mynote/." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         Templates
       </a>
     </li>
@@ -787,7 +796,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/mynote/." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         DFS
       </a>
     </li>
@@ -806,12 +815,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" data-md-state="indeterminate" type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
       
       <label class="md-nav__link" for="__nav_6">
         Utils
@@ -829,7 +840,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/mynote/linux.md" class="md-nav__link">
+      <a href="../linux.md" class="md-nav__link">
         Linux
       </a>
     </li>
@@ -841,7 +852,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/mynote/git/" class="md-nav__link">
+      <a href="../git/" class="md-nav__link">
         Git and github
       </a>
     </li>
@@ -851,11 +862,21 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="/mynote/docker/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Docker
       </a>
+      
     </li>
   
 
@@ -886,7 +907,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/mynote/." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         matplotlib/seaborn
       </a>
     </li>
@@ -898,7 +919,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/mynote/." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         plotly
       </a>
     </li>
@@ -924,11 +945,104 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
-  <h1>404 - Not found</h1>
+    
+                
+                
+                <p>Dockerhubのインストール<br />
+DockerfileからDockerImage, DockerImageからコンテナ</p>
+<ul>
+<li><code>docker login</code>: dockerhubにログインする</li>
+<li><code>docker pull &lt;image&gt;</code>dockerhub からイメージをとってくる</li>
+<li><code>docker images</code> dockerimageの一覧を表示</li>
+<li><code>docker run &lt;image&gt;</code> create + start, dockerイメージからコンテナを作成。デフォルトのコマンドが実行される。</li>
+<li><code>docker ps -a</code> コンテナイメージの一覧を表示</li>
+<li><code>docker run -it ubuntu bash</code>:docker でubuntuのbashを起動（bashでデフォルトコマンド上書き）, -it はbashを起動状態（up）に保持する。-itがないとexit状態に変わる。-i:標準入力を開く、-t:出力がきれいになる。</li>
+<li><code>ctri + p + q</code>:detach 終了</li>
+<li><code>docker attach &lt;container&gt;</code> attachでup状態のcontainerに入る。</li>
+<li><code>exit</code>:終了</li>
+<li><code>docker restart &lt;container&gt;</code></li>
+<li>
+<p><code>docker exec -it &lt;container&gt; &lt;command&gt;</code></p>
+</li>
+<li>
+<p><code>docker commit &lt;container&gt; &lt;new image&gt;</code> コンテナからnew imageとして保存</p>
+</li>
+<li><code>docker commit &lt;container&gt; ubuntu:updated</code> セミコロンでtag名になる<br />
+  image名はrepostitory名＋tag名<br />
+<code>docker tag &lt;source&gt; &lt;target&gt;</code><br />
+<code>docker tag ubuntu:updated &lt;username&gt;/my-repo</code>:名前の変更<br />
+  library/ubuntuは, 正式にはregistry-1.docker.io/library/ubuntu:latest<br />
+<code>docker push &lt;image&gt;</code><br />
+<code>docker pull &lt;image&gt;</code><br />
+<code>docker rmi &lt;image&gt;</code> docker image を削除<br />
+<code>docker rm &lt;container&gt;</code>コンテナの削除<br />
+<code>docker stop &lt;container&gt;</code>コンテナを止める<br />
+<code>docker system prune</code>:コンテナ全削除<br />
+<code>docker run --name &lt;name&gt; &lt;image&gt;</code>:コンテナの名前をつける。<br />
+<code>docker run -d &lt;image&gt;</code>:コンテナを起動後にdetachする（hostに戻る）<br />
+<code>docker run -rm &lt;image&gt;</code>:コンテナをexit後に削除する。</li>
+</ul>
+<h1 id="docker-file">docker fileの作成<a class="headerlink" href="#docker-file" title="Permanent link">¶</a></h1>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">FROM</span> <span class="s">ubuntu:latest</span>
+<span class="k">ADD</span> copressed.tar /
+<span class="k">RUN</span> apt update <span class="o">&amp;&amp;</span> apt install -y <span class="se">\</span>
+    aaa <span class="se">\</span>
+    bbb <span class="se">\</span>
+    ccc
+<span class="k">RUN</span> apt install -y ddd
+<span class="k">COPY</span> something /new_directory/
+<span class="k">CMD</span> <span class="p">[</span><span class="s2">&quot;executable&quot;</span><span class="p">,</span> <span class="s2">&quot;param1&quot;</span><span class="p">,</span> <span class="s2">&quot;param2&quot;</span><span class="p">]</span>
+</code></pre></div>
+</td></tr></table><br />
+<code>docker build &lt;directory&gt;</code><br />
+<code>docker build -t &lt;name&gt; &lt;directory&gt;</code><br />
+<code>docker build -f &lt;dockerfilename&gt; &lt;build context&gt;</code> 名前はドットでつながることが多い。Dockerfileという名のファイルがビルドコンテキストに入っていない場合。</p>
+<p><code>FROM</code>:ベースとなるイメージを決定<br />
+<code>RUN</code>:Linuxコマンドを実行。RUN毎にLayerが作られる。Layer数を最小限にする。&amp;&amp;でつなげる。(パッケージ名をアルファベット順で)\バックスラッシュで改行する。<br />
+最初はLayerを細かく分けて通ることを確認する。最後にLayerを最小限にする。<br />
+<code>CMD</code>:コンテナのデフォルトのコマンドを指定。CMD ["command", "param1", "paramn2"] ex. CMD [/bin/bash], CMDはレイヤーを作らない。<br />
+DockerコマンドでDocker Daemonに命令を出す
+* COPY: 単純にファイルやフォルダをコピーする場合
+* ADD: tarの圧縮ファイルを解答する</p>
+                
+              
+    
+    
+        
+    
+
+              
+                
+
 
               
             </article>
@@ -939,6 +1053,41 @@
       
         
 <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../git/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Git and github" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Git and github
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href=".." class="md-footer__link md-footer__link--next" aria-label="Next: matplotlib/seaborn" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              matplotlib/seaborn
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -972,12 +1121,12 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "/mynote/", "features": ["navigation.tabs", "navigation.expand"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "/mynote/assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.expand"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
     
     
-      <script src="/mynote/assets/javascripts/bundle.76f349be.min.js"></script>
+      <script src="../assets/javascripts/bundle.76f349be.min.js"></script>
       
-        <script src="/mynote/javascripts/extra.js"></script>
+        <script src="../javascripts/extra.js"></script>
       
         <script src="https://unpkg.com/mermaid@8.0.0/dist/mermaid.min.js"></script>
       

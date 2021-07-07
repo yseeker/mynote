@@ -21,9 +21,23 @@
     "description": []
   },
   {
+    "title": "Docker",
+    "file_name": "docker",
+    "url": "https://www.yusaito.com/mynote/docker/",
+    "tags": [],
+    "description": []
+  },
+  {
     "title": "Gan",
     "file_name": "gan",
     "url": "https://www.yusaito.com/mynote/gan/",
+    "tags": [],
+    "description": []
+  },
+  {
+    "title": "Git and github",
+    "file_name": "git",
+    "url": "https://www.yusaito.com/mynote/git/",
     "tags": [],
     "description": []
   },
