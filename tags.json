@@ -1,20 +1,20 @@
 [
   {
-    "title": "plotly",
+    "title": "DFS",
     "file_name": "index",
     "url": "https://www.yusaito.com/mynote/",
     "tags": [],
     "description": []
   },
   {
-    "title": "Image Augmentations",
+    "title": "albumentations",
     "file_name": "albumentations",
     "url": "https://www.yusaito.com/mynote/albumentations/",
     "tags": [],
     "description": []
   },
   {
-    "title": "Dcgan",
+    "title": "other",
     "file_name": "dcgan",
     "url": "https://www.yusaito.com/mynote/dcgan/",
     "tags": [],
@@ -28,35 +28,35 @@
     "description": []
   },
   {
-    "title": "Gan",
+    "title": "GAN basis",
     "file_name": "gan",
     "url": "https://www.yusaito.com/mynote/gan/",
     "tags": [],
     "description": []
   },
   {
-    "title": "Git and github",
+    "title": "Git",
     "file_name": "git",
     "url": "https://www.yusaito.com/mynote/git/",
     "tags": [],
     "description": []
   },
   {
-    "title": "Labrad",
+    "title": "LabRAD",
     "file_name": "labrad",
     "url": "https://www.yusaito.com/mynote/labrad/",
     "tags": [],
     "description": []
   },
   {
-    "title": "Linux コマンド",
+    "title": "Linux",
     "file_name": "linux_command",
     "url": "https://www.yusaito.com/mynote/linux_command/",
     "tags": [],
     "description": []
   },
   {
-    "title": "Python basis",
+    "title": "Basis",
     "file_name": "python_basis",
     "url": "https://www.yusaito.com/mynote/python_basis/",
     "tags": [],
@@ -70,7 +70,7 @@
     "description": []
   },
   {
-    "title": "Templates",
+    "title": "pytorch templates",
     "file_name": "templates",
     "url": "https://www.yusaito.com/mynote/templates/",
     "tags": [],
