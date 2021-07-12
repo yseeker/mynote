@@ -21,7 +21,7 @@
 
     
       
-        <title>Gan - YS's note</title>
+        <title>GAN basis - YS's note</title>
       
     
     
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Gan
+              GAN basis
             
           </span>
         </div>
@@ -205,13 +205,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../xgboost.md" class="md-tabs__link">
+      <a href="../xgboost.md" class="md-tabs__link md-tabs__link--active">
         ML
       </a>
     </li>
@@ -429,12 +431,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
       
       <label class="md-nav__link" for="__nav_4">
         ML
@@ -486,12 +490,14 @@
             
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" data-md-state="indeterminate" type="checkbox" id="__nav_4_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" type="checkbox" id="__nav_4_4" checked>
       
       <label class="md-nav__link" for="__nav_4_4">
         Gereative models
@@ -507,11 +513,161 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../albumentations/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          GAN basis
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         GAN basis
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    変分オートエンコーダー
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gan" class="md-nav__link">
+    GAN
+  </a>
+  
+    <nav class="md-nav" aria-label="GAN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    識別器の訓練
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gan_1" class="md-nav__link">
+    GANの損失関数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    生成器の訓練
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gan_2" class="md-nav__link">
+    GANの収束条件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gan_3" class="md-nav__link">
+    GANの欠点
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    改善法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    ハック
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    識別器クラスの実装
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    生成器クラスの実装
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gan1-step" class="md-nav__link">
+    GANの学習の1 step
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dcgan-deep-convolutional-gan" class="md-nav__link">
+    DCGAN (Deep Convolutional GAN)
+  </a>
+  
+    <nav class="md-nav" aria-label="DCGAN (Deep Convolutional GAN)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    識別器クラスの実装
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    生成器クラスの実装
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1307,7 +1463,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../docker/" class="md-footer__link md-footer__link--prev" aria-label="Previous: None" rel="prev">
+        <a href="../templates/" class="md-footer__link md-footer__link--prev" aria-label="Previous: pytorch templates" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1316,20 +1472,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              None
+              pytorch templates
             </div>
           </div>
         </a>
       
       
         
-        <a href="../git/" class="md-footer__link md-footer__link--next" aria-label="Next: None" rel="next">
+        <a href="../dcgan/" class="md-footer__link md-footer__link--next" aria-label="Next: other" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              None
+              other
             </div>
           </div>
           <div class="md-footer__button md-icon">
