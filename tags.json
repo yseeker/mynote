@@ -1,6 +1,6 @@
 [
   {
-    "title": "DFS",
+    "title": "AL-DS",
     "file_name": "index",
     "url": "https://www.yusaito.com/mynote/",
     "tags": [],
@@ -56,7 +56,14 @@
     "description": []
   },
   {
-    "title": "Basis",
+    "title": "Parallel",
+    "file_name": "parallel",
+    "url": "https://www.yusaito.com/mynote/parallel/",
+    "tags": [],
+    "description": []
+  },
+  {
+    "title": "Basics",
     "file_name": "python_basis",
     "url": "https://www.yusaito.com/mynote/python_basis/",
     "tags": [],
