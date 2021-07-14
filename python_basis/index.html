@@ -483,6 +483,46 @@
     リンク
   </a>
   
+    <nav class="md-nav" aria-label="リンク">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#utils" class="md-nav__link">
+    utils
+  </a>
+  
+    <nav class="md-nav" aria-label="utils">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    ファイル取得
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    辞書などの保存
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dicom" class="md-nav__link">
+    dicomファイル
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -731,6 +771,46 @@
     リンク
   </a>
   
+    <nav class="md-nav" aria-label="リンク">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#utils" class="md-nav__link">
+    utils
+  </a>
+  
+    <nav class="md-nav" aria-label="utils">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    ファイル取得
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    辞書などの保存
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dicom" class="md-nav__link">
+    dicomファイル
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -842,22 +922,16 @@ pipenv lock)<br />
 <span class="normal">74</span>
 <span class="normal">75</span>
 <span class="normal">76</span>
-<span class="normal">77</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>* 便利なビルドイン関数
+<span class="normal">77</span>
+<span class="normal">78</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>* 便利なビルドイン関数
   * id():変数の場所のidを返す
   * dir:attributeを返す
-is演算子：同じオブジェクトかどうかを判断する
-文字列におけるf構文
-input関数
-join, split
-dictionry のget()
-型変換（casting）
-イミュータブルでは関数の中で新しい（オブジェクト）IDが作られる。
-（for文では足していくときはリストを使うほうが良い。）
-ミュータブルでは上書きされる
-Type annotation：は、あまりつけない(動的型付けの思想と食い違っているから)
-add_nums(num1 : int, num2 : int) -&gt; int:
-_は直前の実行した戻り値を格納する。
-オブジェクトタイプをisinstanceで確認
+* is演算子：同じオブジェクトかどうかを判断する
+* isinstance:オブジェクトタイプを確認
+* 型変換（casting）
+* イミュータブルとミュータブル：関数の中で新しい（オブジェクト）IDが作られる。for文では足していくときはリストを使うほうが良い。）
+* _は直前の実行した戻り値を格納する。
+* オブジェクトタイプをで確認
 ブーリアンに比較演算子を使わない。
 _は直前の実行した戻り値を格納する。
 return Noneを書く
@@ -867,15 +941,23 @@ tupleの作成に関して、間違いやすい点をいくつか。tupleは「�
 __buidins__にアクセスできる。
 アンダースコアで囲まれたものはマジックメソッド。
 __name__はモジュールのときにモジュール名が入る。そのものを動かすとmainが入る。
-__init__.pyを作る
+
 .とか..で相対インポートできる。
 Pythonは動的型付け言語、型よりも振る舞いに興味がある。
 ダックタイピング
 namedtuple
 getattr:を使う。https://qiita.com/ganyariya/items/3b8861788ec30238a8a9
-
+文章を書くときはwith openを使う。
+readとreadline, readlinesを使い分ける。
+w, 書き込みｆ.write
+mode = &#39;a&#39;, &#39;r+&#39;, w+, a+
+f.seek(0)
 py -m pip .py とpip3
 docstring
+
+* 型変換（casting）
+* join, split
+* dictionry のget()
 
 ## コーディングスタイル
 ### pep8
@@ -924,34 +1006,36 @@ lm_add = lambda x, y: x + y
 * 関数もオブジェクト、関数を引数でとれる、関数もreturnできる（オブジェクトとして返す。）Closure:状態をキープした関数。（状態を動的・静的）
 * <strong>sys.path</strong>:に入れるとカスタムでモジュールを使える。pipを使うとsite-packagesの中で管理される。</p>
 <h2 id="_2">正規表現<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
-<p>re.search('[0-9]', string)<br />
-re.search('^[0-9]', string):最初の文字<br />
-re.search('^[0-9]{4}', string):最初の文字 リピート</p>
-<p>re.search('^[0-9]{2-4}', string):最初の文字2-4文字 リピート<br />
-re.search('^[0-9]{2-4}$', string):最後の文字2-4文字 リピート</p>
-<p>re.search('a*b', 'aaaab')左のパターンを0回以上繰り返す<br />
-re.search('a+b', 'aaaab')左のパターンを1回以上繰り返す</p>
-<p>re.search('ab?c', 'aaaab')左のパターンを0回か1回繰り返す</p>
+<ul>
+<li><code>re.search('[0-9]', string)</code></li>
+<li>re.search('^[0-9]', string):最初の文字</li>
+<li>re.search('^[0-9]{4}', string):最初の文字 リピート</li>
+<li>re.search('^[0-9]{2-4}', string):最初の文字2-4文字 リピート</li>
+<li>re.search('^[0-9]{2-4}$', string):最後の文字2-4文字 リピート</li>
+<li>re.search('a*b', 'aaaab')左のパターンを0回以上繰り返す</li>
+<li>re.search('a+b', 'aaaab')左のパターンを1回以上繰り返す</li>
+<li>re.search('ab?c', 'aaaab')左のパターンを0回か1回繰り返す</li>
+</ul>
 <p>abc|012 or<br />
 te(s|x)t グループ<br />
 'h.t'任意の一文字<br />
 エスケープ'h.t'<br />
 \w [a-zA-Z0-9_]にマッチ</p>
 <h2 id="_3">クラス<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
-<p>属性とメソッド：<br />
+<p>属性（メンバ変数、メンバ関数）, メソッド（instancemethod, static method, class method）, プロパティ：<br />
 インスタンス変数とクラス変数<br />
-Python標準ライブラリ：<br />
 <a href="https://docs.python.org/ja/3/library/functions.html">https://docs.python.org/ja/3/library/functions.html</a><br />
 <a href="https://qiita.com/ichi_taro3/items/cd71a8e43040abb446a1">https://qiita.com/ichi_taro3/items/cd71a8e43040abb446a1</a>
-* dir()
-* id()
-* 慣習的な命名規則としてのプライベート(non public)化（アンダーバー）
-* ネームマングリング（難号化）要素名の前に"__"（アンダーバー2つ）をつけます。</p>
+* 慣習的な命名規則としてのプライベート(non public)化（アンダーバー）。戦闘にアンダーバーをつけて_名前とする
+* ネームマングリング（難号化）要素名の前に"__"（アンダーバー2つ）をつけます。
+* 継承時の名前修飾は__を使いこなす。
+* ポリモーフィズムは継承をしているintもstrもprintをすると同じように振る舞う
+* オーバーライド：サブクラスので同じ名前の関数を定義する。</p>
 <h3 id="_4">デコレータ<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
 <p><a href="https://qiita.com/koshigoe/items/848ddc0272b3cee92134">https://qiita.com/koshigoe/items/848ddc0272b3cee92134</a>
-* @staticmethod：ほとんどクラス外の関数として扱う。（selfはいらない）
-* @classmethod：clsに引数をとって、classの情報にアクセスできる。
-* @property：変数をカプセル化し、変数だけ外に返せるようにする。setterとセットで使う。外から内部の値をセットできる。<br />
+* <code>@staticmethod</code>：ほとんどクラス外の関数として扱う。（selfはいらない）
+* <code>@classmethod</code>：clsに引数をとって、classの情報にアクセスできる。継承するときはstaticmethodでは呼ぶときに問題が発生する。classmethodを使う。
+* <code>@property</code>：変数をカプセル化し、変数だけ外に返せるようにする。setterとセットで使う。外から内部の値をセットできる。<br />
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -975,7 +1059,7 @@ Python標準ライブラリ：<br />
         <span class="bp">self</span><span class="o">.</span><span class="n">_x</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">MAX_X</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_x</span><span class="p">))</span>
 </code></pre></div>
 </td></tr></table>
-* @dataclass：データを格納するクラスを簡単に作成するデコレータなどを提供<br />
+* <code>@dataclass</code>：データを格納するクラスを簡単に作成するデコレータなどを提供<br />
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -993,22 +1077,15 @@ Python標準ライブラリ：<br />
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">price</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">quantity</span>
 </code></pre></div>
 </td></tr></table></p>
-<ul>
-<li>@staticmethod：ほとんどクラス外の関数として扱う。（selfはいらない）</li>
-<li>@dataclass</li>
-<li>@classmethod, clsに引数をとって、classの情報にアクセスできる。<br />
-名前修飾：__nametoすると、_class__name<br />
-getterとsetterをつけるときはその変数をnon publicにする＝＞プロパティを使う。@property (必ず_をつける）</li>
-</ul>
 <h3 id="_5">マジックメソッド（特殊メソッド）<a class="headerlink" href="#_5" title="Permanent link">¶</a></h3>
-<p><a href="http://diveintopython3-ja.rdy.jp/special-method-names.html">http://diveintopython3-ja.rdy.jp/special-method-names.html</a><br />
-<strong>init</strong>：クラスの初期化。コンストラクタを呼ぶ。親クラスのコンスタクタを呼ぶときは、super.<strong>init</strong>()とする。<br />
-<strong>del</strong>：デストラクタ。基本的には使わない。代わりにwith構文を使う。<br />
-<strong>call</strong>：インスタンスを関数のように扱える。<br />
-<strong>len</strong>： lenメソッドに対するint型の値を返す<br />
-<strong>getitem</strong>:インデクシング（配列のようにオブジェクトをアクセスする）。シーケンス型（list, tuple, str, range）<br />
-<strong>iter</strong>:iteratorを返す特殊メソッド<br />
-<strong>next</strong>:要素を反復して取り出すことのできる特殊メソッドです。<br />
+<p><a href="http://diveintopython3-ja.rdy.jp/special-method-names.html">http://diveintopython3-ja.rdy.jp/special-method-names.html</a>
+* <code>__init__</code>：クラスの初期化。コンストラクタを呼ぶ。親クラスのコンスタクタを呼ぶときは、super.<strong>init</strong>()とする。
+* <code>__del__</code>：デストラクタ。基本的には使わない。代わりにwith構文を使う。
+* <code>__call__</code>：インスタンスを関数のように扱える。
+* <code>__len__</code>： lenメソッドに対するint型の値を返す
+* <code>__getitem__</code>:インデクシング（配列のようにオブジェクトをアクセスする）。シーケンス型（list, tuple, str, range）
+* <code>__iter__</code>:iteratorを返す特殊メソッド
+* <code>__next__</code>:要素を反復して取り出すことのできる特殊メソッドです。<br />
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1074,65 +1151,38 @@ getterとsetterをつけるときはその変数をnon publicにする＝＞プ�
     <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="mi">0</span>
 </code></pre></div>
-</td></tr></table><br />
-<strong>contains</strong>：コンテナ型を定義。独自クラスにinを定義できる。（list, dict, tuple, str, collections.defaultdict）<br />
-<strong>str</strong>：print関数の際に呼ばれる。<br />
-<strong>repr</strong>：オブジェクトを再生成するために使えるようなより正確な情報を返す<br />
-<strong>name</strong>:モジュール内のスクリプトにおいてはモジュール名。関数オブジェクトにおいては関数名になる。<br />
-<strong>doc</strong><br />
-属性の追加を禁止する - <strong>slots__属性<br />
-デストラクタ__del__メソッド と with 文<br />
-def __contains</strong>(self,x)<br />
-を定義することで　2 in Odd()のようにinメソッドに対する真偽値を返すことができるようになります。</p>
-<p>-<br />
-属性とメソッド<br />
-__init__はコンストラクタと呼ぶ<br />
-インスタンス変数とクラス変数<br />
-外からアクセスしない関数には_を先頭につける。</p>
-<p>継承時のコンストラクトをsuper().<strong>init</strong>()をつける。<br />
-オーバーライド：サブクラスので同じ名前の関数を定義する。<br />
-super.func()で親関数を呼べる。<br />
-継承するときはstaticmethodでは呼ぶときに問題が発生する。classmethodを使う。<br />
-継承時の名前修飾は__を使いこなす。<br />
-ポリモーフィズムは継承をしているintもstrもprintをすると同じように振る舞う</p>
+</td></tr></table>
+* <code>__contains__</code>：コンテナ型を定義。独自クラスにinを定義できる。（list, dict, tuple, str, collections.defaultdict）
+* <code>__str__</code>：print関数の際に呼ばれる。
+* <code>__repr__</code>：オブジェクトを再生成するために使えるようなより正確な情報を返す
+* <code>__name__</code>:モジュール内のスクリプトにおいてはモジュール名。関数オブジェクトにおいては関数名になる。
+* <code>__doc__</code>:
+* <code>__buidins__</code>:にアクセスできる。</p>
 <h2 id="generetor">generetor 式<a class="headerlink" href="#generetor" title="Permanent link">¶</a></h2>
 <ul>
 <li>ファイルの読み取りなど部分的にメモリに載せていく場合に使う。</li>
-<li>generatorはランダムアクセスできない<br />
+<li>generatorはランダムアクセスできない</li>
+<li>ex. range(10)<br />
 <a href="https://www.atmarkit.co.jp/ait/articles/1908/20/news024.html">https://www.atmarkit.co.jp/ait/articles/1908/20/news024.html</a><br />
 <a href="https://qiita.com/knknkn1162/items/17f7f370a2cc27f812ee">https://qiita.com/knknkn1162/items/17f7f370a2cc27f812ee</a><br />
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">)</span>
-
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># generator expression</span>
+<span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">)</span>
+<span class="c1"># generator function</span>
+<span class="c1"># イテレーションによってyieldを返す。</span>
+<span class="c1"># nextで値を取得できる。</span>
 <span class="k">def</span> <span class="nf">gen_func</span><span class="p">():</span>
     <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
         <span class="k">yield</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span>
 </code></pre></div>
-</td></tr></table><br />
-generator 関数で定義する<br />
-range(10)（iteratorでもある。）<br />
-iteration時に計算して出力している。<br />
-yieldがgeneratorに必要。<br />
-イテレーションによってyieldを返す。<br />
-nextで値を取得できる。</li>
+</td></tr></table></li>
 </ul>
-<p>yieldを使わないで内包表記でgenerator expressionをかける。<br />
-メモリの節約になる。</p>
-<p>iteraorとはnext()で回すことができる<br />
-iter()関数でiteratorを返すものをiterableという。<br />
-リストはiteratorではないが,ieteratable.<br />
-iterable</p>
-<p>iteretaroは　クラスで定義する。<br />
-<strong>next__と__iter</strong></p>
-<p>カッコでくくったもの<br />
-(len(x) for x in something)<br />
-空値かどうかは if somelistで評価<br />
-rangeよりはenumerate<br />
-try/except/else/finally<br />
-Noneを返すのではなく、例外処理をする。</p>
 <h1 id="_6">エラー<a class="headerlink" href="#_6" title="Permanent link">¶</a></h1>
 <p>Syntax Error<br />
 Exception</p>
@@ -1155,14 +1205,6 @@ if callable(method)</p>
 <p>traceback.print_exc()<br />
 tracebackmodudle</p>
 <p>コメントで# TODO</p>
-<p>イテレータは1つずつ取ってこれる。<br />
-文章を書くときはwith openを使う。<br />
-readとreadline, readlinesを使い分ける。<br />
-w, 書き込みｆ.write<br />
-mode = 'a', 'r+', w+, a+<br />
-f.seek(0)</p>
-<p>csvモジュールを使う。<br />
-jsonモジュール</p>
 <h1 id="_7">テスト<a class="headerlink" href="#_7" title="Permanent link">¶</a></h1>
 <p>assertコードでテストしていく。<br />
 テストスクリプトを書く。<br />
@@ -1180,6 +1222,146 @@ htmlやxmlで出力できる。--cov-append</p>
 <p><a href="https://qiita.com/ganyariya/items/fb3f38c2f4a35d1ee2e8">https://qiita.com/ganyariya/items/fb3f38c2f4a35d1ee2e8</a><br />
 <a href="https://qiita.com/knknkn1162/items/17f7f370a2cc27f812ee">https://qiita.com/knknkn1162/items/17f7f370a2cc27f812ee</a><br />
 <a href="http://diveintopython3-ja.rdy.jp/special-method-names.html">http://diveintopython3-ja.rdy.jp/special-method-names.html</a></p>
+<p>with open("data.pkl", "wb") as pkl_handle:<br />
+    pickle.dump(dictionary_data, pkl_handle)</p>
+<h2 id="utils">utils<a class="headerlink" href="#utils" title="Permanent link">¶</a></h2>
+<h3 id="_9">ファイル取得<a class="headerlink" href="#_9" title="Permanent link">¶</a></h3>
+<ul>
+<li>glob.glob('/folder/<em> /</em>.dcm')</li>
+</ul>
+<h3 id="_10">辞書などの保存<a class="headerlink" href="#_10" title="Permanent link">¶</a></h3>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pickle</span> 
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;data.pkl&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">pkl_handle</span><span class="p">:</span>
+    <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">dictionary_data</span><span class="p">,</span> <span class="n">pkl_handle</span><span class="p">)</span>
+
+<span class="c1"># LOAD</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;data.pkl&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">pkl_handle</span><span class="p">:</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">pkl_handle</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">mpu</span>
+<span class="n">your_data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;foo&#39;</span><span class="p">:</span> <span class="s1">&#39;bar&#39;</span><span class="p">}</span>
+<span class="n">mpu</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;filename.pickle&#39;</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<span class="n">unserialized_data</span> <span class="o">=</span> <span class="n">mpu</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;filename.pickle&#39;</span><span class="p">)</span>
+
+<span class="c1"># https://stackoverflow.com/questions/11218477/how-can-i-use-pickle-to-save-a-dict</span>
+</code></pre></div>
+</td></tr></table>
+* <strong>CSV</strong>: Super simple format (read &amp; write)
+* <strong>JSON</strong>: Nice for writing human-readable data; VERY commonly used (read &amp; write)
+* <strong>YAML</strong>: YAML is a superset of JSON, but easier to read (read &amp; write, comparison of JSON and YAML)
+* <strong>pickle</strong>: A Python serialization format (read &amp; write)
+* <strong>MessagePack</strong> (Python package): More compact representation (read &amp; write)
+* <strong>HDF5</strong> (Python package): Nice for matrices (read &amp; write)
+* <strong>XML</strong>: exists too <em>sigh</em> (read &amp; write)</p>
+<h3 id="dicom">dicomファイル<a class="headerlink" href="#dicom" title="Permanent link">¶</a></h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">dicom2array</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">voi_lut</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">fix_monochrome</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
+    <span class="c1"># Original from: https://www.kaggle.com/raddar/convert-dicom-to-np-array-the-correct-way</span>
+    <span class="n">dicom</span> <span class="o">=</span> <span class="n">pydicom</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+
+    <span class="c1"># VOI LUT (if available by DICOM device) is used to transform raw DICOM data to </span>
+    <span class="c1"># &quot;human-friendly&quot; view</span>
+    <span class="k">if</span> <span class="n">voi_lut</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">apply_voi_lut</span><span class="p">(</span><span class="n">dicom</span><span class="o">.</span><span class="n">pixel_array</span><span class="p">,</span> <span class="n">dicom</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">dicom</span><span class="o">.</span><span class="n">pixel_array</span>
+
+    <span class="c1"># depending on this value, X-ray may look inverted - fix that:</span>
+    <span class="k">if</span> <span class="n">fix_monochrome</span> <span class="ow">and</span> <span class="n">dicom</span><span class="o">.</span><span class="n">PhotometricInterpretation</span> <span class="o">==</span> <span class="s2">&quot;MONOCHROME1&quot;</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">amax</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">-</span> <span class="n">data</span>
+
+    <span class="n">data</span> <span class="o">=</span> <span class="n">data</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">data</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">(</span><span class="n">data</span> <span class="o">*</span> <span class="mi">255</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">data</span>
+
+<span class="k">def</span> <span class="nf">resize</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">keep_ratio</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">resample</span><span class="o">=</span><span class="n">Image</span><span class="o">.</span><span class="n">LANCZOS</span><span class="p">):</span>
+    <span class="c1"># Original from: https://www.kaggle.com/xhlulu/vinbigdata-process-and-resize-to-image</span>
+    <span class="n">im</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">fromarray</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">keep_ratio</span><span class="p">:</span>
+        <span class="n">im</span><span class="o">.</span><span class="n">thumbnail</span><span class="p">((</span><span class="n">size</span><span class="p">,</span> <span class="n">size</span><span class="p">),</span> <span class="n">resample</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">im</span> <span class="o">=</span> <span class="n">im</span><span class="o">.</span><span class="n">resize</span><span class="p">((</span><span class="n">size</span><span class="p">,</span> <span class="n">size</span><span class="p">),</span> <span class="n">resample</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">im</span>
+
+<span class="k">def</span> <span class="nf">resize_and_save</span><span class="p">(</span><span class="n">file_path</span><span class="p">):</span>
+    <span class="n">split</span> <span class="o">=</span> <span class="s1">&#39;train&#39;</span> <span class="k">if</span> <span class="s1">&#39;train&#39;</span> <span class="ow">in</span> <span class="n">file_path</span> <span class="k">else</span> <span class="s1">&#39;test&#39;</span>
+    <span class="n">base_dir</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;/kaggle/working/</span><span class="si">{</span><span class="n">split</span><span class="si">}</span><span class="s1">&#39;</span>
+    <span class="n">img</span> <span class="o">=</span> <span class="n">dicom2array</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+    <span class="n">h</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># orig hw</span>
+    <span class="k">if</span> <span class="n">aspect_ratio</span><span class="p">:</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">dim</span> <span class="o">/</span> <span class="nb">max</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span>  <span class="c1"># resize image to img_size</span>
+        <span class="n">interp</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">INTER_AREA</span> <span class="k">if</span> <span class="n">r</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="k">else</span> <span class="n">cv2</span><span class="o">.</span><span class="n">INTER_LINEAR</span>
+        <span class="k">if</span> <span class="n">r</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>  <span class="c1"># always resize down, only resize up if training with augmentation</span>
+            <span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">w</span> <span class="o">*</span> <span class="n">r</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">h</span> <span class="o">*</span> <span class="n">r</span><span class="p">)),</span> <span class="n">interpolation</span><span class="o">=</span><span class="n">interp</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="p">(</span><span class="n">dim</span><span class="p">,</span> <span class="n">dim</span><span class="p">),</span> <span class="n">cv2</span><span class="o">.</span><span class="n">INTER_AREA</span><span class="p">)</span>
+    <span class="n">filename</span> <span class="o">=</span> <span class="n">file_path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">cv2</span><span class="o">.</span><span class="n">imwrite</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">base_dir</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s1">.jpg&#39;</span><span class="p">),</span> <span class="n">img</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">filename</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;dcm&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;_image&#39;</span><span class="p">,</span><span class="n">w</span><span class="p">,</span> <span class="n">h</span>
+</code></pre></div>
+</td></tr></table>
                 
               
     
