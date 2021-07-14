@@ -11,6 +11,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://www.yusaito.com/mynote/colab/</loc>
+         <lastmod>2021-07-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://www.yusaito.com/mynote/dcgan/</loc>
          <lastmod>2021-07-14</lastmod>
          <changefreq>daily</changefreq>

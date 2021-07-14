@@ -213,7 +213,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../xgboost.md" class="md-tabs__link">
+      <a href="../albumentations/" class="md-tabs__link">
         ML
       </a>
     </li>
@@ -331,6 +331,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../colab/" class="md-nav__link">
+        Google Colab
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../labrad/" class="md-nav__link">
         LabRAD
       </a>
@@ -427,6 +439,19 @@
     環境構築
   </a>
   
+    <nav class="md-nav" aria-label="環境構築">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gitinstall" class="md-nav__link">
+    gitからinstall
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -520,6 +545,26 @@
   <a href="#_11" class="md-nav__link">
     テスト
   </a>
+  
+    <nav class="md-nav" aria-label="テスト">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unittest" class="md-nav__link">
+    unittest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pytest" class="md-nav__link">
+    pytest
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -619,18 +664,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../xgboost.md" class="md-nav__link">
-        Boosting
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../albumentations/" class="md-nav__link">
         albumentations
       </a>
@@ -643,7 +676,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../templates/" class="md-nav__link">
+      <a href="../xgboost.md" class="md-nav__link">
+        Boosting
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pytorch_basis/" class="md-nav__link">
         pytorch templates
       </a>
     </li>
@@ -752,6 +797,19 @@
     環境構築
   </a>
   
+    <nav class="md-nav" aria-label="環境構築">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gitinstall" class="md-nav__link">
+    gitからinstall
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -846,6 +904,26 @@
     テスト
   </a>
   
+    <nav class="md-nav" aria-label="テスト">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unittest" class="md-nav__link">
+    unittest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pytest" class="md-nav__link">
+    pytest
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -922,7 +1000,12 @@
 <li>tupleは「丸括弧で作成されるのではなく、カンマによって作成され」ます</li>
 <li>ファイルの読み書きには<code>with open</code>を使う。</li>
 <li>namedtuple</li>
-<li>getattr:を使う。<a href="https://qiita.com/ganyariya/items/3b8861788ec30238a8a9">https://qiita.com/ganyariya/items/3b8861788ec30238a8a9</a></li>
+<li>getattr:を使う。<a href="https://qiita.com/ganyariya/items/3b8861788ec30238a8a9">https://qiita.com/ganyariya/items/3b8861788ec30238a8a9</a><br />
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">method</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">animal</span><span class="p">,</span> <span class="s1">&#39;walk&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">callable</span><span class="p">(</span><span class="n">method</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table></li>
 </ul>
 <h3 id="vscode">vscode<a class="headerlink" href="#vscode" title="Permanent link">¶</a></h3>
 <ul>
@@ -950,6 +1033,10 @@ pip install -r requirements.txt
 pipenv --python <span class="m">3</span>
 pipenv install -r ./requirements.txt <span class="c1">#自動でpipfileが作成</span>
 pipenv lock<span class="o">)</span>
+</code></pre></div>
+</td></tr></table>
+<h4 id="gitinstall">gitからinstall<a class="headerlink" href="#gitinstall" title="Permanent link">¶</a></h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>!pip install git+https://github.com/yseeker/tez_custom
 </code></pre></div>
 </td></tr></table>
 <h2 id="_3">コーディングスタイル<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
@@ -1076,15 +1163,17 @@ te(s|x)t グループ<br />
 </td></tr></table></li>
 </ul>
 <h3 id="_9">マジックメソッド（特殊メソッド）<a class="headerlink" href="#_9" title="Permanent link">¶</a></h3>
-<p><a href="http://diveintopython3-ja.rdy.jp/special-method-names.html">http://diveintopython3-ja.rdy.jp/special-method-names.html</a>
-* <code>__init__</code>：クラスの初期化。コンストラクタを呼ぶ。親クラスのコンスタクタを呼ぶときは、super.<strong>init</strong>()とする。
-* <code>__del__</code>：デストラクタ。基本的には使わない。代わりにwith構文を使う。
-* <code>__call__</code>：インスタンスを関数のように扱える。
-* <code>__len__</code>： lenメソッドに対するint型の値を返す
-* <code>__getitem__</code>:インデクシング（配列のようにオブジェクトをアクセスする）。シーケンス型（list, tuple, str, range）
-* <code>__iter__</code>:iteratorを返す特殊メソッド
-* <code>__next__</code>:要素を反復して取り出すことのできる特殊メソッドです。<br />
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<p><a href="http://diveintopython3-ja.rdy.jp/special-method-names.html">http://diveintopython3-ja.rdy.jp/special-method-names.html</a></p>
+<ul>
+<li><code>__init__</code>：クラスの初期化。コンストラクタを呼ぶ。親クラスのコンスタクタを呼ぶときは、super.<strong>init</strong>()とする。</li>
+<li><code>__del__</code>：デストラクタ。基本的には使わない。代わりにwith構文を使う。</li>
+<li><code>__call__</code>：インスタンスを関数のように扱える。</li>
+<li><code>__len__</code>： lenメソッドに対するint型の値を返す</li>
+<li><code>__getitem__</code>:インデクシング（配列のようにオブジェクトをアクセスする）。シーケンス型（list, tuple, str, range）</li>
+<li><code>__iter__</code>:iteratorを返す特殊メソッド</li>
+<li><code>__next__</code>:要素を反復して取り出すことのできる特殊メソッドです。</li>
+</ul>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1184,36 +1273,188 @@ te(s|x)t グループ<br />
 </td></tr></table></li>
 </ul>
 <h2 id="_10">エラー<a class="headerlink" href="#_10" title="Permanent link">¶</a></h2>
-<p>Syntax Error<br />
-Exception</p>
-<p>try:<br />
-    最小限にする。<br />
-except ZeroDivisionError(特定のエラーの種類) as e:</p>
-<p>except ValueError(特定のエラーの種類) as e:</p>
-<p>else:<br />
-    例外が起きたときは実行しないコード<br />
-finally:<br />
-    常に実行するコード<br />
-    finally はキャッチされなくてもエラーの前に実行される</p>
-<p>raise はエラーを発生させる。<br />
+<p><a href="https://note.nkmk.me/python-error-message/">https://note.nkmk.me/python-error-message/</a><br />
+<a href="https://note.nkmk.me/python-try-except-else-finally/">https://note.nkmk.me/python-try-except-else-finally/</a><br />
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">try</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">/</span> <span class="n">b</span><span class="p">)</span>
+    <span class="c1">#例外を意図的に発生させる</span>
+    <span class="k">raise</span> <span class="ne">ZeroDivisionError</span>
+<span class="k">except</span> <span class="ne">ZeroDivisionError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;catch ZeroDivisionError:&#39;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;数字以外が入力されました。数字のみを入力してください&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;catch ValueError:&#39;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">例外が起きたときは実行しないコード</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="n">常に実行するコード</span>
+    <span class="k">finally</span> <span class="n">はキャッチされなくてもエラーの前に実行される</span>
+</code></pre></div>
+</td></tr></table><br />
+raise はエラーを発生させる。<br />
 例外の自作<br />
 Exception クラスを継承する</p>
-<p>型のチェック<br />
-isinstanceでチェック<br />
-method = getattr(animal, 'walk', None)<br />
-if callable(method)</p>
 <p>traceback.print_exc()<br />
 tracebackmodudle</p>
 <h2 id="_11">テスト<a class="headerlink" href="#_11" title="Permanent link">¶</a></h2>
-<p>assertコードでテストしていく。<br />
-テストスクリプトを書く。<br />
-Test runnner:<br />
-unittest, self.assertEqual(power(base, exp), 8)<br />
-python -m unittest test.pyを使う<br />
-例外ケースはwith ステートメントを使って書く。<br />
-with self.assertRaise(Typeerror)</p>
+<h3 id="unittest">unittest<a class="headerlink" href="#unittest" title="Permanent link">¶</a></h3>
+<ul>
+<li>assertコードでテストしていく。</li>
+<li>テストスクリプトを書く。</li>
+<li>Test runnner:</li>
+<li>unittest, self.assertEqual(power(base, exp), 8)</li>
+<li><code>python -m unittest test.pyを使う</code></li>
+<li>例外ケースはwith ステートメントを使って書く。</li>
+<li>with self.assertRaise(Typeerror)</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">#https://qiita.com/phorizon20/items/acb929772aaae4f52101</span>
+<span class="k">def</span> <span class="nf">fizzbuzz</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">15</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;FizzBuzz&quot;</span>
+    <span class="k">if</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;Buzz&quot;</span>
+    <span class="k">if</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;Fizz&quot;</span>
+
+    <span class="k">return</span> <span class="n">number</span>
+
+<span class="kn">import</span> <span class="nn">unittest</span>
+<span class="kn">import</span> <span class="nn">fizzbuzz</span> <span class="k">as</span> <span class="nn">fb</span>
+
+<span class="k">class</span> <span class="nc">FizzBuzzTest</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># 初期化処理</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">tearDown</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># 終了処理</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">test_normal</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">fb</span><span class="o">.</span><span class="n">fizzbuzz</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">test_fizz</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="s2">&quot;Fizz&quot;</span><span class="p">,</span> <span class="n">fb</span><span class="o">.</span><span class="n">fizzbuzz</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">test_buzz</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="s2">&quot;Buzz&quot;</span><span class="p">,</span> <span class="n">fb</span><span class="o">.</span><span class="n">fizzbuzz</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">test_fizzbuzz</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="s2">&quot;FizzBuzz&quot;</span><span class="p">,</span> <span class="n">fb</span><span class="o">.</span><span class="n">fizzbuzz</span><span class="p">(</span><span class="mi">15</span><span class="p">))</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="pytest">pytest<a class="headerlink" href="#pytest" title="Permanent link">¶</a></h3>
 <p>pytest<br />
-assertで簡潔に書ける。</p>
+assertで簡潔に書ける。<br />
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">#https://kazuhira-r.hatenablog.com/entry/2020/03/14/173536</span>
+<span class="k">class</span> <span class="nc">Calc</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+
+    <span class="k">def</span> <span class="nf">minus</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">x</span> <span class="o">-</span> <span class="n">y</span>
+
+    <span class="k">def</span> <span class="nf">multiply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
+
+    <span class="k">def</span> <span class="nf">divide</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">x</span> <span class="o">/</span> <span class="n">y</span>
+
+<span class="kn">from</span> <span class="nn">sample.calc</span> <span class="kn">import</span> <span class="n">Calc</span>
+
+<span class="k">def</span> <span class="nf">test_add</span><span class="p">():</span>
+    <span class="n">calc</span> <span class="o">=</span> <span class="n">Calc</span><span class="p">()</span>
+    <span class="k">assert</span> <span class="n">calc</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="mi">4</span>
+
+<span class="k">def</span> <span class="nf">test_minus</span><span class="p">():</span>
+    <span class="n">calc</span> <span class="o">=</span> <span class="n">Calc</span><span class="p">()</span>
+    <span class="k">assert</span> <span class="n">calc</span><span class="o">.</span><span class="n">minus</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span>
+
+<span class="k">def</span> <span class="nf">test_multiply</span><span class="p">():</span>
+    <span class="n">calc</span> <span class="o">=</span> <span class="n">Calc</span><span class="p">()</span>
+    <span class="k">assert</span> <span class="n">calc</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="mi">6</span>
+
+<span class="k">def</span> <span class="nf">test_divide</span><span class="p">():</span>
+    <span class="n">calc</span> <span class="o">=</span> <span class="n">Calc</span><span class="p">()</span>
+    <span class="k">assert</span> <span class="n">calc</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">5</span>
+</code></pre></div>
+</td></tr></table></p>
 <p>テストカバレッジ<br />
 pytest-cov:カバー率をチェックする。<br />
 htmlやxmlで出力できる。--cov-append</p>
