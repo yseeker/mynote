@@ -521,8 +521,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#sigmoid" class="md-nav__link">
-    Sigmoid関数
+  <a href="#sigmoidndarray" class="md-nav__link">
+    Sigmoid関数（ndarray）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seed" class="md-nav__link">
+    seed設定
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mixup" class="md-nav__link">
+    mixup
   </a>
   
 </li>
@@ -679,8 +693,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#sigmoid" class="md-nav__link">
-    Sigmoid関数
+  <a href="#sigmoidndarray" class="md-nav__link">
+    Sigmoid関数（ndarray）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seed" class="md-nav__link">
+    seed設定
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mixup" class="md-nav__link">
+    mixup
   </a>
   
 </li>
@@ -746,7 +774,7 @@
 </ul>
 <h2 id="utils">Utils<a class="headerlink" href="#utils" title="Permanent link">¶</a></h2>
 <h3 id="functions">functions<a class="headerlink" href="#functions" title="Permanent link">¶</a></h3>
-<h4 id="sigmoid">Sigmoid関数<a class="headerlink" href="#sigmoid" title="Permanent link">¶</a></h4>
+<h4 id="sigmoidndarray">Sigmoid関数（ndarray）<a class="headerlink" href="#sigmoidndarray" title="Permanent link">¶</a></h4>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -760,7 +788,8 @@
 <span class="n">sigmoid_v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vectorize</span><span class="p">(</span><span class="n">sigmoid</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
-<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<h4 id="seed">seed設定<a class="headerlink" href="#seed" title="Permanent link">¶</a></h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
@@ -776,7 +805,8 @@
     <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;PYTHONHASHSEED&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">random_state</span>
 </code></pre></div>
-</td></tr></table><br />
+</td></tr></table>
+<h4 id="mixup">mixup<a class="headerlink" href="#mixup" title="Permanent link">¶</a></h4>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -805,7 +835,7 @@
 <span class="k">def</span> <span class="nf">mixup_criterion</span><span class="p">(</span><span class="n">criterion</span><span class="p">,</span> <span class="n">outputs</span><span class="p">,</span> <span class="n">targets_a</span><span class="p">,</span> <span class="n">targets_b</span><span class="p">,</span> <span class="n">lam</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">lam</span> <span class="o">*</span> <span class="n">criterion</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span> <span class="n">targets_a</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">lam</span><span class="p">)</span> <span class="o">*</span> <span class="n">criterion</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span> <span class="n">targets_b</span><span class="p">)</span>
 </code></pre></div>
-</td></tr></table></p>
+</td></tr></table>
 <h3 id="classes">classes<a class="headerlink" href="#classes" title="Permanent link">¶</a></h3>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
