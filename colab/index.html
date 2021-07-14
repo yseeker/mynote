@@ -373,6 +373,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#datacontentunzip" class="md-nav__link">
+    Dataをcontent直下に移動してunzip
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#kaggle" class="md-nav__link">
     Kaggleコマンドを使う
   </a>
@@ -623,6 +630,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#datacontentunzip" class="md-nav__link">
+    Dataをcontent直下に移動してunzip
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#kaggle" class="md-nav__link">
     Kaggleコマンドを使う
   </a>
@@ -668,6 +682,14 @@
 <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;colab-connect-button&quot;</span><span class="p">).</span><span class="nx">click</span><span class="p">()</span>
 <span class="p">}</span>
 <span class="nx">setInterval</span><span class="p">(</span><span class="nx">KeepClicking</span><span class="p">,</span><span class="mf">60000</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<h2 id="datacontentunzip">Dataをcontent直下に移動してunzip<a class="headerlink" href="#datacontentunzip" title="Permanent link">¶</a></h2>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>%%capture
+!unzip <span class="s2">&quot;/content/drive/MyDrive/kaggle/input/seti-breakthrough-listen/seti-train.zip&quot;</span> -d <span class="s2">&quot;/content&quot;</span>
+print<span class="o">(</span><span class="s1">&#39;Downlaod done&#39;</span><span class="o">)</span>
 </code></pre></div>
 </td></tr></table>
 <h2 id="kaggle">Kaggleコマンドを使う<a class="headerlink" href="#kaggle" title="Permanent link">¶</a></h2>
