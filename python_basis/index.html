@@ -1032,10 +1032,11 @@ te(s|x)t グループ<br />
 * ポリモーフィズムは継承をしているintもstrもprintをすると同じように振る舞う
 * オーバーライド：サブクラスので同じ名前の関数を定義する。</p>
 <h3 id="_4">デコレータ<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
-<p><a href="https://qiita.com/koshigoe/items/848ddc0272b3cee92134">https://qiita.com/koshigoe/items/848ddc0272b3cee92134</a>
-* <code>@staticmethod</code>：ほとんどクラス外の関数として扱う。（selfはいらない）
-* <code>@classmethod</code>：clsに引数をとって、classの情報にアクセスできる。継承するときはstaticmethodでは呼ぶときに問題が発生する。classmethodを使う。
-* <code>@property</code>：変数をカプセル化し、変数だけ外に返せるようにする。setterとセットで使う。外から内部の値をセットできる。<br />
+<p><a href="https://qiita.com/koshigoe/items/848ddc0272b3cee92134">https://qiita.com/koshigoe/items/848ddc0272b3cee92134</a></p>
+<ul>
+<li><code>@staticmethod</code>：ほとんどクラス外の関数として扱う。（selfはいらない）</li>
+<li><code>@classmethod</code>：clsに引数をとって、classの情報にアクセスできる。継承するときはstaticmethodでは呼ぶときに問題が発生する。classmethodを使う。</li>
+<li><code>@property</code>：変数をカプセル化し、変数だけ外に返せるようにする。setterとセットで使う。外から内部の値をセットできる。<br />
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1058,8 +1059,8 @@ te(s|x)t グループ<br />
         <span class="bp">self</span><span class="o">.</span><span class="n">_x</span> <span class="o">+=</span> <span class="n">dx</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_x</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">MAX_X</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_x</span><span class="p">))</span>
 </code></pre></div>
-</td></tr></table>
-* <code>@dataclass</code>：データを格納するクラスを簡単に作成するデコレータなどを提供<br />
+</td></tr></table></li>
+<li><code>@dataclass</code>：データを格納するクラスを簡単に作成するデコレータなどを提供<br />
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -1076,7 +1077,8 @@ te(s|x)t グループ<br />
     <span class="k">def</span> <span class="nf">total_cost</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">price</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">quantity</span>
 </code></pre></div>
-</td></tr></table></p>
+</td></tr></table></li>
+</ul>
 <h3 id="_5">マジックメソッド（特殊メソッド）<a class="headerlink" href="#_5" title="Permanent link">¶</a></h3>
 <p><a href="http://diveintopython3-ja.rdy.jp/special-method-names.html">http://diveintopython3-ja.rdy.jp/special-method-names.html</a>
 * <code>__init__</code>：クラスの初期化。コンストラクタを呼ぶ。親クラスのコンスタクタを呼ぶときは、super.<strong>init</strong>()とする。
