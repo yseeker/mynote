@@ -825,6 +825,8 @@
 <li>ブーリアンに比較演算子を使わない。</li>
 <li>tupleは「丸括弧で作成されるのではなく、カンマによって作成され」ます</li>
 <li>ファイルの読み書きには<code>with open</code>を使う。</li>
+<li>namedtuple</li>
+<li>getattr:を使う。<a href="https://qiita.com/ganyariya/items/3b8861788ec30238a8a9">https://qiita.com/ganyariya/items/3b8861788ec30238a8a9</a></li>
 </ul>
 <h3 id="vscode">vscode<a class="headerlink" href="#vscode" title="Permanent link">¶</a></h3>
 <ul>
@@ -853,32 +855,6 @@ pipenv install -r ./requirements.txt <span class="c1">#自動でpipfileが作成
 pipenv lock<span class="o">)</span>
 </code></pre></div>
 </td></tr></table>
-<p>ブーリアンに比較演算子を使わない。<br />
-_は直前の実行した戻り値を格納する。<br />
-return Noneを書く<br />
-dir(object)でattributeを表示してくれる。<br />
-dir()だとアクセスできるものをが出る。<br />
-tupleの作成に関して、間違いやすい点をいくつか。tupleは「丸括弧で作成されるのではなく、カンマによって作成され」ます5：<br />
-__buidins__にアクセスできる。<br />
-アンダースコアで囲まれたものはマジックメソッド。<br />
-__name__はモジュールのときにモジュール名が入る。そのものを動かすとmainが入る。</p>
-<p>.とか..で相対インポートできる。<br />
-Pythonは動的型付け言語、型よりも振る舞いに興味がある。<br />
-ダックタイピング<br />
-namedtuple<br />
-getattr:を使う。<a href="https://qiita.com/ganyariya/items/3b8861788ec30238a8a9">https://qiita.com/ganyariya/items/3b8861788ec30238a8a9</a><br />
-文章を書くときはwith openを使う。<br />
-readとreadline, readlinesを使い分ける。<br />
-w, 書き込みｆ.write<br />
-mode = 'a', 'r+', w+, a+<br />
-f.seek(0)<br />
-py -m pip .py とpip3<br />
-docstring</p>
-<ul>
-<li>型変換（casting）</li>
-<li>join, split</li>
-<li>dictionry のget()</li>
-</ul>
 <h2 id="_3">コーディングスタイル<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
 <h3 id="pep8">pep8<a class="headerlink" href="#pep8" title="Permanent link">¶</a></h3>
 <ul>
@@ -957,7 +933,8 @@ te(s|x)t グループ<br />
 * ネームマングリング（難号化）要素名の前に"__"（アンダーバー2つ）をつけます。
 * 継承時の名前修飾は__を使いこなす。
 * ポリモーフィズムは継承をしているintもstrもprintをすると同じように振る舞う
-* オーバーライド：サブクラスので同じ名前の関数を定義する。</p>
+* オーバーライド：サブクラスので同じ名前の関数を定義する。
+* .とか..で相対インポートできる。</p>
 <h3 id="_8">デコレータ<a class="headerlink" href="#_8" title="Permanent link">¶</a></h3>
 <p><a href="https://qiita.com/koshigoe/items/848ddc0272b3cee92134">https://qiita.com/koshigoe/items/848ddc0272b3cee92134</a></p>
 <ul>
