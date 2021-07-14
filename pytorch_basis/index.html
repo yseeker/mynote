@@ -546,15 +546,15 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#classes" class="md-nav__link">
     classes
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -576,6 +576,61 @@
   <a href="#trainer" class="md-nav__link">
     Trainer
   </a>
+  
+    <nav class="md-nav" aria-label="Trainer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    初期化
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wandb" class="md-nav__link">
+    wandb初期化
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimizer-schedular-metric" class="md-nav__link">
+    optimizer, schedular, metricの設定
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1step" class="md-nav__link">
+    1stepごとの訓練、検証、推論
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1epoch" class="md-nav__link">
+    1epochごとの訓練、検証、推論
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    モデルの保存と読み込み
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fit" class="md-nav__link">
+    モデルの訓練と検証（fit関数）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -718,15 +773,15 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#classes" class="md-nav__link">
     classes
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -748,6 +803,61 @@
   <a href="#trainer" class="md-nav__link">
     Trainer
   </a>
+  
+    <nav class="md-nav" aria-label="Trainer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    初期化
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wandb" class="md-nav__link">
+    wandb初期化
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimizer-schedular-metric" class="md-nav__link">
+    optimizer, schedular, metricの設定
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1step" class="md-nav__link">
+    1stepごとの訓練、検証、推論
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1epoch" class="md-nav__link">
+    1epochごとの訓練、検証、推論
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    モデルの保存と読み込み
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fit" class="md-nav__link">
+    モデルの訓練と検証（fit関数）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -836,7 +946,7 @@
     <span class="k">return</span> <span class="n">lam</span> <span class="o">*</span> <span class="n">criterion</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span> <span class="n">targets_a</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">lam</span><span class="p">)</span> <span class="o">*</span> <span class="n">criterion</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span> <span class="n">targets_b</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
-<h2 id="classes">classes<a class="headerlink" href="#classes" title="Permanent link">¶</a></h2>
+<h3 id="classes">classes<a class="headerlink" href="#classes" title="Permanent link">¶</a></h3>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -939,7 +1049,8 @@
 </code></pre></div>
 </td></tr></table>
 <h2 id="trainer">Trainer<a class="headerlink" href="#trainer" title="Permanent link">¶</a></h2>
-<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<h3 id="_1">初期化<a class="headerlink" href="#_1" title="Permanent link">¶</a></h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1047,7 +1158,8 @@
             <span class="n">pin_memory</span> <span class="o">=</span> <span class="kc">True</span>
         <span class="p">)</span>
 </code></pre></div>
-</td></tr></table><br />
+</td></tr></table>
+<h3 id="wandb">wandb初期化<a class="headerlink" href="#wandb" title="Permanent link">¶</a></h3>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1070,7 +1182,8 @@
         <span class="p">)</span>
         <span class="n">wandb</span><span class="o">.</span><span class="n">watch</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">)</span>
 </code></pre></div>
-</td></tr></table><br />
+</td></tr></table>
+<h3 id="optimizer-schedular-metric">optimizer, schedular, metricの設定<a class="headerlink" href="#optimizer-schedular-metric" title="Permanent link">¶</a></h3>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1086,7 +1199,22 @@
 <span class="normal">13</span>
 <span class="normal">14</span>
 <span class="normal">15</span>
-<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    <span class="k">def</span> <span class="nf">configure_optimizer</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    <span class="k">def</span> <span class="nf">configure_optimizer</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">opt</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="n">CFG</span><span class="o">.</span><span class="n">lr</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">opt</span>
 
@@ -1102,22 +1230,8 @@
             <span class="n">final_div_factor</span> <span class="o">=</span> <span class="mf">1.0e+3</span>
         <span class="p">)</span>
         <span class="k">return</span> <span class="n">sch</span>
-</code></pre></div>
-</td></tr></table><br />
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    <span class="k">def</span> <span class="nf">configure_scheduler_after_epoch</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">configure_scheduler_after_epoch</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="kc">None</span>
 
     <span class="k">def</span> <span class="nf">epoch_metrics</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">outputs</span><span class="p">,</span> <span class="n">targets</span><span class="p">):</span>
@@ -1132,7 +1246,8 @@
         <span class="k">else</span><span class="p">:</span> <span class="n">roc_auc</span> <span class="o">=</span> <span class="mf">0.5</span>
         <span class="k">return</span> <span class="n">roc_auc</span>
 </code></pre></div>
-</td></tr></table><br />
+</td></tr></table>
+<h3 id="1step">1stepごとの訓練、検証、推論<a class="headerlink" href="#1step" title="Permanent link">¶</a></h3>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1235,7 +1350,8 @@
         <span class="n">outputs</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">validate_one_step</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">outputs</span>
 </code></pre></div>
-</td></tr></table><br />
+</td></tr></table>
+<h3 id="1epoch">1epochごとの訓練、検証、推論<a class="headerlink" href="#1epoch" title="Permanent link">¶</a></h3>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1366,7 +1482,8 @@
         <span class="n">outputs_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">outputs_list</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">outputs_arr</span>
 </code></pre></div>
-</td></tr></table><br />
+</td></tr></table>
+<h3 id="_2">モデルの保存と読み込み<a class="headerlink" href="#_2" title="Permanent link">¶</a></h3>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1427,7 +1544,8 @@
         <span class="n">model_dict</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">model_path</span><span class="p">,</span> <span class="n">map_location</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">load_state_dict</span><span class="p">(</span><span class="n">model_dict</span><span class="p">[</span><span class="s2">&quot;state_dict&quot;</span><span class="p">])</span>
 </code></pre></div>
-</td></tr></table><br />
+</td></tr></table>
+<h3 id="fit">モデルの訓練と検証（fit関数）<a class="headerlink" href="#fit" title="Permanent link">¶</a></h3>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1485,7 +1603,7 @@
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">cfg</span><span class="p">,</span>
         <span class="n">epochs</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span>
-        <span class="n">checkpoint_save_path</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="n">checkpoint_save_path</span> <span class="o">=</span> <span class="s1">&#39;./&#39;</span><span class="p">,</span>
         <span class="n">mode</span> <span class="o">=</span> <span class="s1">&#39;max&#39;</span><span class="p">,</span>
         <span class="n">patience</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>
         <span class="n">delta</span> <span class="o">=</span> <span class="mf">0.001</span><span class="p">,</span>
@@ -1536,7 +1654,7 @@
         <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">empty_cache</span><span class="p">()</span>
         <span class="n">gc</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
 </code></pre></div>
-</td></tr></table></p>
+</td></tr></table>
                 
               
     
