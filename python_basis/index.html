@@ -456,13 +456,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#linterformatter" class="md-nav__link">
-    Linterとformatter
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -733,13 +726,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#linterformatter" class="md-nav__link">
-    Linterとformatter
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -831,11 +817,12 @@
 <h3 id="vscode">vscode<a class="headerlink" href="#vscode" title="Permanent link">¶</a></h3>
 <ul>
 <li>vscodeで自動で変数を制御。書き換え</li>
-<li>vscodeで下記を設定<ul>
+<li>vscodeでlinterとformatterを設定<ul>
 <li>black: <a href="https://github.com/psf/black">https://github.com/psf/black</a></li>
 <li>flake8: <a href="https://github.com/PyCQA/flake8">https://github.com/PyCQA/flake8</a></li>
 <li>isort: <a href="https://github.com/PyCQA/isort">https://github.com/PyCQA/isort</a></li>
 <li>mypy</li>
+<li>コメントで# TODO</li>
 </ul>
 </li>
 </ul>
@@ -878,13 +865,6 @@ pipenv lock<span class="o">)</span>
 <ul>
 <li>pyenv + pipenvを使う。</li>
 </ul>
-<h3 id="linterformatter">Linterとformatter<a class="headerlink" href="#linterformatter" title="Permanent link">¶</a></h3>
-<p>linter: pycodestyle, pyflakes,flake8(両方), pylint(より厳しい)<br />
-formetter, yapf, black
-* black: <a href="https://github.com/psf/black">https://github.com/psf/black</a>
-* flake8: <a href="https://github.com/PyCQA/flake8">https://github.com/PyCQA/flake8</a>
-* isort: <a href="https://github.com/PyCQA/isort">https://github.com/PyCQA/isort</a>
-* mypy</p>
 <h2 id="_5">関数<a class="headerlink" href="#_5" title="Permanent link">¶</a></h2>
 <ul>
 <li>Pythonでは<strong>全て参照渡し</strong>。</li>
@@ -925,16 +905,18 @@ te(s|x)t グループ<br />
 エスケープ'h.t'<br />
 \w [a-zA-Z0-9_]にマッチ</p>
 <h2 id="_7">クラス<a class="headerlink" href="#_7" title="Permanent link">¶</a></h2>
-<p>属性（メンバ変数、メンバ関数）, メソッド（instancemethod, static method, class method）, プロパティ：<br />
-インスタンス変数とクラス変数<br />
-<a href="https://docs.python.org/ja/3/library/functions.html">https://docs.python.org/ja/3/library/functions.html</a><br />
-<a href="https://qiita.com/ichi_taro3/items/cd71a8e43040abb446a1">https://qiita.com/ichi_taro3/items/cd71a8e43040abb446a1</a>
-* 慣習的な命名規則としてのプライベート(non public)化（アンダーバー）。戦闘にアンダーバーをつけて_名前とする
-* ネームマングリング（難号化）要素名の前に"__"（アンダーバー2つ）をつけます。
-* 継承時の名前修飾は__を使いこなす。
-* ポリモーフィズムは継承をしているintもstrもprintをすると同じように振る舞う
-* オーバーライド：サブクラスので同じ名前の関数を定義する。
-* .とか..で相対インポートできる。</p>
+<p><strong>属性（メンバ変数、メンバ関数）, メソッド（instancemethod, static method, class method）, プロパティ</strong>
+* インスタンス変数とクラス変数</p>
+<p><a href="https://docs.python.org/ja/3/library/functions.html">https://docs.python.org/ja/3/library/functions.html</a><br />
+<a href="https://qiita.com/ichi_taro3/items/cd71a8e43040abb446a1">https://qiita.com/ichi_taro3/items/cd71a8e43040abb446a1</a></p>
+<ul>
+<li>慣習的な命名規則としてのプライベート(non public)化（アンダーバー）。戦闘にアンダーバーをつけて_名前とする</li>
+<li>ネームマングリング（難号化）要素名の前に"__"（アンダーバー2つ）をつけます。</li>
+<li>継承時の名前修飾は__を使いこなす。</li>
+<li>ポリモーフィズムは継承をしているintもstrもprintをすると同じように振る舞う</li>
+<li>オーバーライド：サブクラスので同じ名前の関数を定義する。</li>
+<li>.とか..で相対インポートできる。</li>
+</ul>
 <h3 id="_8">デコレータ<a class="headerlink" href="#_8" title="Permanent link">¶</a></h3>
 <p><a href="https://qiita.com/koshigoe/items/848ddc0272b3cee92134">https://qiita.com/koshigoe/items/848ddc0272b3cee92134</a></p>
 <ul>
@@ -1110,7 +1092,6 @@ method = getattr(animal, 'walk', None)<br />
 if callable(method)</p>
 <p>traceback.print_exc()<br />
 tracebackmodudle</p>
-<p>コメントで# TODO</p>
 <h1 id="_11">テスト<a class="headerlink" href="#_11" title="Permanent link">¶</a></h1>
 <p>assertコードでテストしていく。<br />
 テストスクリプトを書く。<br />
@@ -1128,8 +1109,6 @@ htmlやxmlで出力できる。--cov-append</p>
 <p><a href="https://qiita.com/ganyariya/items/fb3f38c2f4a35d1ee2e8">https://qiita.com/ganyariya/items/fb3f38c2f4a35d1ee2e8</a><br />
 <a href="https://qiita.com/knknkn1162/items/17f7f370a2cc27f812ee">https://qiita.com/knknkn1162/items/17f7f370a2cc27f812ee</a><br />
 <a href="http://diveintopython3-ja.rdy.jp/special-method-names.html">http://diveintopython3-ja.rdy.jp/special-method-names.html</a></p>
-<p>with open("data.pkl", "wb") as pkl_handle:<br />
-    pickle.dump(dictionary_data, pkl_handle)</p>
 <h2 id="utils">utils<a class="headerlink" href="#utils" title="Permanent link">¶</a></h2>
 <h3 id="_13">ファイル取得<a class="headerlink" href="#_13" title="Permanent link">¶</a></h3>
 <ul>
