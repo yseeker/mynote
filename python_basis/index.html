@@ -509,6 +509,61 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    エラー
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    テスト
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    リンク
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utils" class="md-nav__link">
+    utils
+  </a>
+  
+    <nav class="md-nav" aria-label="utils">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    ファイル取得
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    辞書などの保存
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dicom" class="md-nav__link">
+    dicomファイル
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -776,6 +831,61 @@
   <a href="#generetor" class="md-nav__link">
     generetor 式
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    エラー
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    テスト
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    リンク
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utils" class="md-nav__link">
+    utils
+  </a>
+  
+    <nav class="md-nav" aria-label="utils">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    ファイル取得
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    辞書などの保存
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dicom" class="md-nav__link">
+    dicomファイル
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1073,7 +1183,7 @@ te(s|x)t グループ<br />
 </code></pre></div>
 </td></tr></table></li>
 </ul>
-<h1 id="_10">エラー<a class="headerlink" href="#_10" title="Permanent link">¶</a></h1>
+<h2 id="_10">エラー<a class="headerlink" href="#_10" title="Permanent link">¶</a></h2>
 <p>Syntax Error<br />
 Exception</p>
 <p>try:<br />
@@ -1094,7 +1204,7 @@ method = getattr(animal, 'walk', None)<br />
 if callable(method)</p>
 <p>traceback.print_exc()<br />
 tracebackmodudle</p>
-<h1 id="_11">テスト<a class="headerlink" href="#_11" title="Permanent link">¶</a></h1>
+<h2 id="_11">テスト<a class="headerlink" href="#_11" title="Permanent link">¶</a></h2>
 <p>assertコードでテストしていく。<br />
 テストスクリプトを書く。<br />
 Test runnner:<br />
@@ -1107,17 +1217,19 @@ assertで簡潔に書ける。</p>
 <p>テストカバレッジ<br />
 pytest-cov:カバー率をチェックする。<br />
 htmlやxmlで出力できる。--cov-append</p>
-<h1 id="_12">リンク<a class="headerlink" href="#_12" title="Permanent link">¶</a></h1>
+<h2 id="_12">リンク<a class="headerlink" href="#_12" title="Permanent link">¶</a></h2>
 <p><a href="https://qiita.com/ganyariya/items/fb3f38c2f4a35d1ee2e8">https://qiita.com/ganyariya/items/fb3f38c2f4a35d1ee2e8</a><br />
 <a href="https://qiita.com/knknkn1162/items/17f7f370a2cc27f812ee">https://qiita.com/knknkn1162/items/17f7f370a2cc27f812ee</a><br />
 <a href="http://diveintopython3-ja.rdy.jp/special-method-names.html">http://diveintopython3-ja.rdy.jp/special-method-names.html</a></p>
 <h2 id="utils">utils<a class="headerlink" href="#utils" title="Permanent link">¶</a></h2>
 <h3 id="_13">ファイル取得<a class="headerlink" href="#_13" title="Permanent link">¶</a></h3>
-<ul>
-<li>glob.glob('/folder/<em> /</em>.dcm')</li>
-</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">glob</span>
+<span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;/folder/* /*.dcm&#39;</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
 <h3 id="_14">辞書などの保存<a class="headerlink" href="#_14" title="Permanent link">¶</a></h3>
-<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1146,13 +1258,15 @@ htmlやxmlで出力できる。--cov-append</p>
 <span class="c1"># https://stackoverflow.com/questions/11218477/how-can-i-use-pickle-to-save-a-dict</span>
 </code></pre></div>
 </td></tr></table>
-* <strong>CSV</strong>: Super simple format (read &amp; write)
-* <strong>JSON</strong>: Nice for writing human-readable data; VERY commonly used (read &amp; write)
-* <strong>YAML</strong>: YAML is a superset of JSON, but easier to read (read &amp; write, comparison of JSON and YAML)
-* <strong>pickle</strong>: A Python serialization format (read &amp; write)
-* <strong>MessagePack</strong> (Python package): More compact representation (read &amp; write)
-* <strong>HDF5</strong> (Python package): Nice for matrices (read &amp; write)
-* <strong>XML</strong>: exists too <em>sigh</em> (read &amp; write)</p>
+<ul>
+<li><strong>CSV</strong>: Super simple format (read &amp; write)</li>
+<li><strong>JSON</strong>: Nice for writing human-readable data; VERY commonly used (read &amp; write)</li>
+<li><strong>YAML</strong>: YAML is a superset of JSON, but easier to read (read &amp; write, comparison of JSON and YAML)</li>
+<li><strong>pickle</strong>: A Python serialization format (read &amp; write)</li>
+<li><strong>MessagePack</strong> (Python package): More compact representation (read &amp; write)</li>
+<li><strong>HDF5</strong> (Python package): Nice for matrices (read &amp; write)</li>
+<li><strong>XML</strong>: exists too <em>sigh</em> (read &amp; write)</li>
+</ul>
 <h3 id="dicom">dicomファイル<a class="headerlink" href="#dicom" title="Permanent link">¶</a></h3>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
