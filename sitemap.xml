@@ -51,6 +51,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://www.yusaito.com/mynote/plot/</loc>
+         <lastmod>2021-10-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://www.yusaito.com/mynote/python_basis/</loc>
          <lastmod>2021-10-28</lastmod>
          <changefreq>daily</changefreq>
