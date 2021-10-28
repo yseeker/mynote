@@ -12,7 +12,7 @@
         <meta name="author" content="Yu Saito">
       
       
-        <link rel="canonical" href="https://www.yusaito.com/mynote/templates/">
+        <link rel="canonical" href="https://www.yusaito.com/mynote/colab/">
       
       <link rel="icon" href="../favicon.ico">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.5">
@@ -21,7 +21,7 @@
 
     
       
-        <title>Templates - YS's note</title>
+        <title>Google Colab - YS's note</title>
       
     
     
@@ -77,6 +77,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#google-colab" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -105,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Templates
+              Google Colab
             
           </span>
         </div>
@@ -178,13 +183,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../linux_command/" class="md-tabs__link">
+      <a href="../linux_command/" class="md-tabs__link md-tabs__link--active">
         Utils
       </a>
     </li>
@@ -276,12 +283,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -344,11 +353,81 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../colab/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Google Colab
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Google Colab
       </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#timeout" class="md-nav__link">
+    Timeout
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datacontentunzip" class="md-nav__link">
+    Dataをcontent直下に移動してunzip
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kaggle" class="md-nav__link">
+    Kaggleコマンドを使う
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#github" class="md-nav__link">
+    Githubからインストール
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#output" class="md-nav__link">
+    Outputセルを非表示
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -580,6 +659,68 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#timeout" class="md-nav__link">
+    Timeout
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datacontentunzip" class="md-nav__link">
+    Dataをcontent直下に移動してunzip
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kaggle" class="md-nav__link">
+    Kaggleコマンドを使う
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#github" class="md-nav__link">
+    Githubからインストール
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#output" class="md-nav__link">
+    Outputセルを非表示
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
@@ -587,76 +728,53 @@
     
                 
                 
-                  <h1>Templates</h1>
-                
-                <p><a href="https://colab.research.google.com/drive/1WtzFTkfqR4SCT8FS9R5vPO1B-YRpEv-D"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
-<table>
-<thead>
-<tr>
-<th align="left">TH 左寄せ</th>
-<th align="center">TH 中央寄せ</th>
-<th align="right">TH 右寄せ</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">TD</td>
-<td align="center">TD</td>
-<td align="right">TD</td>
-</tr>
-<tr>
-<td align="left">TD</td>
-<td align="center">TD</td>
-<td align="right">TD</td>
-</tr>
-</tbody>
-</table>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>これはノートです。</p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>ヒントです。</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>これは警告です。</p>
-</div>
-<div class="admonition danger">
-<p class="admonition-title">Danger</p>
-<p>これは危険です。</p>
-</div>
-<div class="admonition success">
-<p class="admonition-title">Success</p>
-<p>これは成功です。</p>
-</div>
-<div class="admonition failure">
-<p class="admonition-title">Failure</p>
-<p>これは失敗です。</p>
-</div>
-<div class="admonition bug">
-<p class="admonition-title">Bug</p>
-<p>これはバグです。</p>
-</div>
-<div class="admonition summary">
-<p class="admonition-title">Summary</p>
-<p>これは概要です。</p>
-</div>
-<p>Mkdocs とは静的サイトジェネレータです。<br />
-コンテンツは基本的に markdown<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> 形式で記述したソースファイルになります。</p>
-<dl>
-<dt>定義語</dt>
-<dd>ここに説明を書きます</dd>
-</dl>
-<div class="footnote">
-<hr />
-<ol>
-<li id="fn:1">
-<p>文書を記述するための軽量マークアップ言語のひとつ&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-</ol>
-</div>
+                <h1 id="google-colab">Google colab<a class="headerlink" href="#google-colab" title="Permanent link">¶</a></h1>
+<h2 id="timeout">Timeout<a class="headerlink" href="#timeout" title="Permanent link">¶</a></h2>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">function</span> <span class="nx">KeepClicking</span><span class="p">(){</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Clicking&quot;</span><span class="p">);</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;colab-connect-button&quot;</span><span class="p">).</span><span class="nx">click</span><span class="p">()</span>
+<span class="p">}</span>
+<span class="nx">setInterval</span><span class="p">(</span><span class="nx">KeepClicking</span><span class="p">,</span><span class="mf">60000</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<h2 id="datacontentunzip">Dataをcontent直下に移動してunzip<a class="headerlink" href="#datacontentunzip" title="Permanent link">¶</a></h2>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>%%capture
+!unzip <span class="s2">&quot;/content/drive/MyDrive/kaggle/input/seti-breakthrough-listen/seti-train.zip&quot;</span> -d <span class="s2">&quot;/content&quot;</span>
+print<span class="o">(</span><span class="s1">&#39;Downlaod done&#39;</span><span class="o">)</span>
+</code></pre></div>
+</td></tr></table>
+<h2 id="kaggle">Kaggleコマンドを使う<a class="headerlink" href="#kaggle" title="Permanent link">¶</a></h2>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;/content/drive/My Drive/Kaggle/kaggle.json&quot;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">json_data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="c1">#JSON形式で読み込む</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;KAGGLE_USERNAME&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">json_data</span><span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">]</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;KAGGLE_KEY&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">json_data</span><span class="p">[</span><span class="s1">&#39;key&#39;</span><span class="p">]</span>
+
+<span class="err">!</span><span class="n">kaggle</span> <span class="n">competitions</span> <span class="n">submit</span> <span class="n">digit</span><span class="o">-</span><span class="n">recognizer</span> <span class="o">-</span><span class="n">f</span> <span class="n">my_submission</span><span class="o">.</span><span class="n">csv</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;Yeah! I submit my file through the Google Colab!&quot;</span>
+</code></pre></div>
+</td></tr></table>
+<h2 id="github">Githubからインストール<a class="headerlink" href="#github" title="Permanent link">¶</a></h2>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>!pip install git+https://github.com/yseeker/tez_custom
+</code></pre></div>
+</td></tr></table>
+<h2 id="output">Outputセルを非表示<a class="headerlink" href="#output" title="Permanent link">¶</a></h2>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>%%capture
+</code></pre></div>
+</td></tr></table>
                 
               
     
@@ -681,7 +799,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../ssh/" class="md-footer__link md-footer__link--prev" aria-label="Previous: リモートでJupyterlabを開く" rel="prev">
+        <a href="../docker/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Docker" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -690,11 +808,26 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              リモートでJupyterlabを開く
+              Docker
             </div>
           </div>
         </a>
       
+      
+        
+        <a href="../labrad/" class="md-footer__link md-footer__link--next" aria-label="Next: LabRAD" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              LabRAD
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
       
     </nav>
   

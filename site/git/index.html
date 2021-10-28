@@ -12,7 +12,7 @@
         <meta name="author" content="Yu Saito">
       
       
-        <link rel="canonical" href="https://www.yusaito.com/mynote/linux_command/">
+        <link rel="canonical" href="https://www.yusaito.com/mynote/git/">
       
       <link rel="icon" href="../favicon.ico">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.5">
@@ -21,7 +21,7 @@
 
     
       
-        <title>Linux - YS's note</title>
+        <title>Git - YS's note</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#linux" class="md-skip">
+        <a href="#git" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Linux
+              Git
             
           </span>
         </div>
@@ -191,7 +191,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="./" class="md-tabs__link md-tabs__link--active">
+      <a href="../linux_command/" class="md-tabs__link md-tabs__link--active">
         Utils
       </a>
     </li>
@@ -311,6 +311,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../linux_command/" class="md-nav__link">
+        Linux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -323,12 +337,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Linux
+          Git
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Linux
+        Git
       </a>
       
         
@@ -348,8 +362,64 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#git_1" class="md-nav__link">
+    Gitとは
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    スラッシュの意味合い
+    用語
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#github" class="md-nav__link">
+    Github
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    基本的な流れ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    基本操作
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rebase" class="md-nav__link">
+    ブランチとローカルでマージ,ローカルでのみrebaseする
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    リモートリポジトリ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diff" class="md-nav__link">
+    差分diffを見る
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stash" class="md-nav__link">
+    Stashを使う。
   </a>
   
 </li>
@@ -358,20 +428,6 @@
   
 </nav>
       
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../git/" class="md-nav__link">
-        Git
-      </a>
     </li>
   
 
@@ -652,8 +708,64 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#git_1" class="md-nav__link">
+    Gitとは
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    スラッシュの意味合い
+    用語
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#github" class="md-nav__link">
+    Github
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    基本的な流れ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    基本操作
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rebase" class="md-nav__link">
+    ブランチとローカルでマージ,ローカルでのみrebaseする
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    リモートリポジトリ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diff" class="md-nav__link">
+    差分diffを見る
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stash" class="md-nav__link">
+    Stashを使う。
   </a>
   
 </li>
@@ -672,97 +784,171 @@
     
                 
                 
-                <h1 id="linux">Linux コマンド<a class="headerlink" href="#linux" title="Permanent link">¶</a></h1>
-<p>シェルはカーネルに命令を出してカーネルから結果を受け取るためのもの</p>
-<p>bash はシェルの１つ　echo $SHELLで確認</p>
-<p>shの1つ</p>
-<p>ターミナル：入出力　ハードウェア（Linuxの場合では入出力ソフトウェアのターミナルエミュレータを指す。コマンドをうけとったり出力）</p>
-<p>プロンプト：カーソルの左側[  ^^^^@ ~]　コマンド入力を促す</p>
-<p>コマンドライン: プロンプトの右側</p>
-<p>基本操作<br />
-ctl + a: atamaに移動</p>
-<p>ctrl + e: endに移動 </p>
-<p>ctrl + w:　 word: 単語単位で削除</p>
-<p>カット　アンド　ヤンク</p>
-<p>ctrl + u 行頭までカット</p>
-<p>ctrl + k:行末までカット</p>
-<p>ctrl + y (yank)</p>
-<p>タブでオートコンプリート</p>
-<p>ls<br />
-ls -a</p>
-<p>echo コマンド</p>
-<p>cat/less</p>
-<p>space(一画面下)　b（一画面上）</p>
-<p>j（一行ずつ下）  k（一行ずつ上）</p>
-<p>q はもとの画面に戻る（quit）</p>
-<p>wget コマンド</p>
-<p>unzip</p>
-<p>touch コマンド<br />
-rm とrm -r</p>
-<p>echo <span class="arithmatex">\(PATH
-export PATH = /path/to/something:\)</span>PATHを追加する。</p>
-<p>cp /etc/crontab file2</p>
-<p>cp file1 directoryでディレクトリにコピー可能</p>
-<p>指定したコピー先が存在する場合は、ディレクトリの中になる</p>
-<p>存在しない場合は新しいファイル名になる。</p>
-<p>cp -r dir1 dir2で再帰的にディレクトリをコピー可能</p>
-<p>mvコマンドで名前を変えることもできるし、ファイルを移動できる。</p>
-<p>sh -x でオプションを確認<br />
-docker ファイルのときは-b -pをつける。<br />
-ハードリンク</p>
-<p>シンボリックリンク</p>
-<p>ln file1 file2 (file1にfile2というハードリンクを作成する。file1を作成してもfile2が残る)</p>
-<p>ln -s file1 file2でシンボリックリンクを作成する</p>
-<p>mkdir -p dir1/dir2/dir3/target</p>
-<p>touch p dir1/dir2/dir3/target/file</p>
-<p>ln -s dir1/dir2/dir3/target/ target</p>
-<p><a href="https://qiita.com/maztak/items/9e1e2883cc3b7e52d2cf">ルートディレクトリ(/)とホームディレクトリ(~)のちゃんとした理解 - Qiita</a></p>
-<p>ものすごい細かいことだけど、パスの指定方法での<code>~</code>（チルダ）と<code>/</code>（スラッシュ）の理解が曖昧で気持ち悪い思いをしたのでメモ。</p>
-<p><code>/</code>: ルートディレクトリ<code>~</code>：今のユーザーのホームディレクトリ<code>~taro</code>: taroというユーザーのホームディレクトリ</p>
-<h2 id="_1"><strong>スラッシュの意味合い</strong><a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
-<p>ルートディレクトリの<code>/</code>と、各ファイルやディレクトリの前につく<code>/</code>は意味合いが違っている模様。</p>
+                <h1 id="git">Git<a class="headerlink" href="#git" title="Permanent link">¶</a></h1>
+<h2 id="git_1">Gitとは<a class="headerlink" href="#git_1" title="Permanent link">¶</a></h2>
+<p>Gitはバージョン管理システムの1つ（分散管理方式）。特定のバージョンの差分を確認したり、前のバージョンを確認したりする。</p>
+<h2 id="_1">用語<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
 <ul>
-<li>前者：ルートディレクトリそのもの</li>
-<li>後者：ディレクトリを区切るもの</li>
+<li>リポジトリ：プロジェクトの全てのファイル（変更履歴や設定ファイルもすべて）を管理している。</li>
+<li>コミット：親子関係を持つグラフ。ファイルの状態をセーブすること。Working directory =&gt; staging area （インデックスとも呼ばれる）=&gt; リポジトリにコミット</li>
+<li>ブランチ：コミットを指すポインタ。HEADは今自分が作業しているブランチを指すポインタ。コミット前に分岐させる。マージコミットをしてマージさせる。</li>
 </ul>
-<p>なので、一見ルートディレクトリのせいで「ディレクトリとは末尾にスラッシュが付いているもの」という勘違いを（少なくも筆者は）しちゃうが、<code>hogehoge/</code>がディレクトリなのではなく<code>hogehoge</code>がディレクトリなのだ。ホームディレクトリを<code>~/</code>だと思ってしまっている人は多いのではないか？</p>
-<p>history</p>
-<p>!393で使える</p>
-<p>ピリオドでカレントディレクトリ</p>
-<p>find . -name '*.txt' -print</p>
-<p>このアスタリスクはワイルドカードでパス名展開とは違う。ダブルクオーテションかどうか</p>
-<p>find . -type d</p>
-<p>ディレクトリだけ検索</p>
-<p>find . -type d -a -name share </p>
-<p>locate コマンドはfindコマンドよりも高速（データベースから検索）</p>
-<p>sudo updatedbをしてから</p>
-<p>locate bash -A doc 　and 検索</p>
-<p>locate bash doc</p>
-<p>grep bin /etc/crontab</p>
-<p>フィルタ</p>
-<p>history | head</p>
-<p>wc:文字数を数える</p>
-<p>wc -l </p>
-<p>ls / | wc -l ディレクトリの個数行数</p>
-<p>ソートコマンド</p>
-<p>sort word.txt</p>
-<p>sort -r word.txt</p>
-<p>sort -n number.txt</p>
-<p>重複を取り出す</p>
-<p>uniq number.txt</p>
-<p>sort -n number.txt | uniq</p>
-<p>sort -n number.txt | uniq -c | sort -nr | head -n 3</p>
-<p>ファイルを監視する</p>
-<p>tail -f log.txt</p>
-<p>メモリから見た実行状態にあるプログラムをプロセスという</p>
-<p>ジョブはコマンドラインに入力された行（パイプラインのときは複数になる。）</p>
-<p>psコマンド</p>
-<p>ps -x</p>
-<p>ps -u</p>
-<p>sleepコマンド</p>
-<p>jobsコマンド</p>
-<p>fgコマンド</p>
-<p>bgコマンド</p>
+<h2 id="github">Github<a class="headerlink" href="#github" title="Permanent link">¶</a></h2>
+<ul>
+<li>ハイフンで名前を区切るのが一般的</li>
+<li>sshでの認証する必要がある。</li>
+</ul>
+<h2 id="_2">基本的な流れ<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<ul>
+<li>ローカルにユーザ情報をセット確認<br />
+<code>git config --global user.name "&lt;username, githubのusername&gt;"</code><br />
+<code>git config --global user.email "&lt;email&gt;"</code><br />
+<code>git config --global --list</code><br />
+<code>git config --global --replace-all core.pager "less -F -X"</code><br />
+<code>git config --global pull.rebase true</code></li>
+<li>リポジトリをclone<br />
+<code>git clone &lt;remote_repo_url&gt;</code><br />
+<code>git remote -v</code> : 登録してあるリモートリボを確認 <code>git clone</code>デフォルトでは<code>origin</code>がリモートリポに紐付いている</li>
+<li>ブランチを作成（ブランチを切る）<br />
+<code>git branch</code> ブランチ一覧<br />
+<code>git branch -a</code> リモートリポを含む全てのブランチの一覧<br />
+<code>git branch &lt;branch name&gt;</code> branch nameというbranchを作成, HEADのポインタ先を切り替えている。<br />
+<code>git branch -m &lt;old name&gt; &lt;new name&gt;</code><br />
+<code>git branch -d &lt;branch-name&gt;</code> ブランチを削除<br />
+<code>git checkout &lt;branch name&gt;</code> branch nameに移動。HEADポインタの切り替え<br />
+<code>git checkout -b &lt;branch name&gt;</code> （実用上）branch 作成してbranch nameに移動<br />
+  ブランチ名はハイフンで区切る</li>
+<li>ローカルファイル（at working directory, working tree）を更新してStagingエリアにあげる<br />
+<code>git diff --&lt;filename&gt;</code> でworking directoryとstaging areaのdissを確認<br />
+<code>git diff HEAD --&lt;filename&gt;</code>でworking directoryとリポジトリの差分を確認<br />
+<code>git diff -staged HEAD --&lt;filename&gt;</code>でstaging areaとリポジトリの差分を確認<br />
+<code>git diff HEAD HEAD^^ --&lt;filename&gt;</code> 2つ前の差分を確認<br />
+<code>git diff origin/main main --&lt;filename&gt;</code><br />
+<code>git add &lt;file name&gt;</code><br />
+<code>git add .</code><br />
+<code>git status</code> 状況を確認</li>
+<li>コミットする<br />
+<code>git commit -m "commit message"</code></li>
+<li><code>git tag &lt;tagname&gt;</code></li>
+<li><code>git tag --list</code><br />
+<code>git log --oneline --all --graph</code> コミットした履歴を確認</li>
+<li>リモートリポの情報をpullしてから、リモートリポジトリにpush。pullはfetch + merge<br />
+<code>git pull &lt;remote ref&gt; &lt;branch name&gt;</code><br />
+<code>git pull --rebase &lt;remote ref&gt; &lt;branch name&gt;</code> : pullするときにrebaseする<br />
+<code>git pull origin main</code><br />
+<code>git push &lt;remote ref&gt; &lt;branch name&gt;</code><br />
+<code>git push origin new-branch</code></li>
+<li><code>git tag -a &lt;tagname&gt; &lt;commitID&gt;</code> commitにtagをつける。</li>
+<li><code>git push &lt;remote_ref&gt; &lt;tagname&gt;</code> tagをリモートリポにpushする</li>
+<li>OSSなどの場合では、まずフォークもとのリポをpullする。<br />
+<code>git remote add upstream &lt;repourl&gt;</code><br />
+<code>git pull upstream main</code><br />
+<code>git push origin new-branch</code></li>
+<li>pushしたブランチをpull requestを作ってリモートのmainブランチにマージ<br />
+  Githubで作業。<code>pull request</code>をクリック =&gt; <code>base</code> (main)と<code>compare</code> (new branch)を指定,自分のリポかフォークもとのリポかを確認 =&gt; <code>create pull request</code> =&gt; <code>Merge pull request</code> を押す。</li>
+<li>リモートリポのmainの反映をローカルリポのmainに反映（pull）<br />
+<code>git checkout main</code><br />
+<code>git pull origin main</code></li>
+<li>不要なブランチを削除する。<br />
+<code>git branch -d &lt;branch-name&gt;</code><br />
+  Gighubで<code>branches</code>から削除</li>
+</ul>
+<h2 id="_3">基本操作<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
+<ul>
+<li>スクラッチから作成（.gitの作成）<br />
+<code>git init &lt;project-name&gt;</code></li>
+<li>.git の削除<br />
+<code>rm -rf .git</code></li>
+<li>既存のフォルダをgitリポにする。<br />
+<code>git init</code>　そのディレクトリに移動してから.gitの作成</li>
+<li>既存のリモートリポを自分のリポをフォークしてclone<br />
+<code>git clone &lt;httsps or ssh&gt;</code></li>
+<li>trackファイルとuntrackファイル<br />
+<code>git ls-files</code>でtrackしているファイルを一覧を確認</li>
+<li>Staging areaへのaddをキャンセル(gitの内部ではリポジトリの内容をstaging areaに上書き)<br />
+<code>git reset HEAD &lt;filename&gt;</code></li>
+<li>Working directoryの内容を無しにする。(gitの内部ではworking directoryの内容をstaging area で上書きしている。)<br />
+<code>git checkout -- &lt;file name&gt;</code></li>
+<li>ファイル名の変更をgitで管理<br />
+<code>git mv &lt;filename1&gt; &lt;filename2&gt;</code> (シェルのmvで変更した場合は<code>git add -A</code>)</li>
+<li>ファイルの削除をGitで管理する。<br />
+<code>git rm &lt;filename&gt;</code>(コミットしてからでないと使えない)<br />
+<code>git commit -m "deleted"</code></li>
+<li>削除内容の取り消し<br />
+<code>git reset HEAD &lt;filename&gt;</code><br />
+<code>git checkout -- &lt;file name&gt;</code> </li>
+<li>コミットの履歴を確認する<br />
+<code>git log --oneline, --graph, --&lt;filename&gt;, --follow &lt;filename&gt;</code><br />
+<code>git show &lt;commitID&gt;</code></li>
+<li>Gitの管理から外す。<br />
+<code>.gitignore</code>ファイル<br />
+  サイズが大きいファイルやバイナリーファイル、中間ファイル、パスワードを含むファイル、くアッシュファイルなど</li>
+</ul>
+<h2 id="rebase">ブランチとローカルでマージ,ローカルでのみrebaseする<a class="headerlink" href="#rebase" title="Permanent link">¶</a></h2>
+<ul>
+<li><code>git merge &lt;branchname&gt;</code>：branchnameを今いるブランチ（普通はmainブランチ）に反映。</li>
+<li><code>git diff &lt;base&gt; &lt;compare&gt;</code>：base（main）とcompare（ブランチ）を作成</li>
+<li>conflictが起きている場合はエディタで開いてアノーテション箇所を消す。</li>
+<li><code>git rebase main</code> : main ブランチをrebaseする。rebaseはマージコミットを作成しない。</li>
+</ul>
+<h2 id="_4">リモートリポジトリ<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
+<ul>
+<li><code>git fetch &lt;remote_ref&gt;</code>:リモートリポの情報をとってくる。</li>
+<li><code>git pull &lt;remote_ref&gt; &lt;branchname&gt;</code>: git pull でコンフリクトがある場合は対処する。</li>
+<li>Githubはデフォルトでフォーク元のリポジトリへのpull requestを出す。</li>
+<li><code>git remote add upstream &lt;repourl&gt;</code> : ローカルにはoriginでアクセス可能</li>
+<li>まずフォークもとのリポをpullしてから自分のリモートリポにpushしてpull requestを作成。</li>
+</ul>
+<h2 id="diff">差分diffを見る<a class="headerlink" href="#diff" title="Permanent link">¶</a></h2>
+<ul>
+<li><code>p4merge</code>を導入する。<br />
+<code>git diff</code> でworking directoryとstaging areaのdissを確認<br />
+<code>git HEAD</code>でworking directoryとリポジトリの差分を確認<br />
+<code>git diff -- &lt;filename&gt;</code> でworking directoryとstaging areaのdissを確認<br />
+<code>git diff HEAD -- &lt;filename&gt;</code>でworking directoryとリポジトリの差分を確認<br />
+<code>git diff -staged HEAD -- &lt;filename&gt;</code>でstaging areaとリポジトリの差分を確認<br />
+<code>git diff HEAD HEAD^^ -- &lt;filename&gt;</code> 2つ前の差分を確認<br />
+<code>git diff origin/main main -- &lt;filename&gt;</code></li>
+</ul>
+<h2 id="stash">Stashを使う。<a class="headerlink" href="#stash" title="Permanent link">¶</a></h2>
+<p>作業内容の一時回避<br />
+- <code>git stash</code><br />
+<code>git stash -a</code><br />
+<code>git stash list</code><br />
+<code>git stash apply</code><br />
+<code>git stash drop</code><br />
+<code>git stash show stash @{&lt;i&gt;}</code><br />
+  conflictがある場合<br />
+<code>git mergetool</code>でコンフリクトに対処する。</p>
+<p>## Commitにtagを使う。<br />
+  - マイルストーンにtagを使ってversionを管理する<br />
+- <code>git tag &lt;tagname&gt;</code><br />
+- <code>git tag --list</code><br />
+- <code>git tag --delete &lt;tagname&gt;</code><br />
+- <code>git tag -a &lt;tagname&gt;</code> tagをつける。<br />
+- <code>git diff &lt;tagname1&gt; &lt;tagname2&gt;</code> <br />
+- <code>git tag -a &lt;tagname&gt; &lt;commitID&gt;</code> commitにtagをつける。<br />
+- <code>git push &lt;remote_ref&gt; &lt;tagname&gt;</code> tagをリモートリポにpushする<br />
+- <code>git push &lt;remote_ref&gt; :&lt;tagname&gt;</code> tagをリモートpushから削除<br />
+- <code>git checkout tags/&lt;tagname&gt;</code><br />
+- <code>git fetch --tgas --all</code></p>
+<h1 id="submodule">submodule<a class="headerlink" href="#submodule" title="Permanent link">¶</a></h1>
+<ul>
+<li><code>git submodule add &lt;submodule_url&gt;</code></li>
+<li><code>git submodule update</code></li>
+<li><code>git -recurse-submodule update</code><br />
+  submoduleの中でgit pullする。</li>
+<li><code>git submodule foreach 'git pull origin main'</code></li>
+</ul>
+<h1 id="others">others<a class="headerlink" href="#others" title="Permanent link">¶</a></h1>
+<p>convertio.io<br />
+wikiを使う<br />
+octotree<br />
+zenhubを使う：アジャイル開発のカンバン<br />
+<code>git revert &lt;commitID&gt;</code><br />
+<code>git reset --hard</code><br />
+<code>git reset --sorf HEAD ファイル名</code>間違ってadd したとき<br />
+<code>git reset –soft HEAD^</code>間違ってcommitしたとき</p>
                 
               
     
@@ -787,7 +973,7 @@ docker ファイルのときは-b -pをつける。<br />
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../albumentations/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Home" rel="prev">
+        <a href="../linux_command/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Linux" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -796,20 +982,20 @@ docker ファイルのときは-b -pをつける。<br />
               <span class="md-footer__direction">
                 Previous
               </span>
-              Home
+              Linux
             </div>
           </div>
         </a>
       
       
         
-        <a href="../git/" class="md-footer__link md-footer__link--next" aria-label="Next: Git" rel="next">
+        <a href="../docker/" class="md-footer__link md-footer__link--next" aria-label="Next: Docker" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Git
+              Docker
             </div>
           </div>
           <div class="md-footer__button md-icon">

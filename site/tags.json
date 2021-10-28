@@ -1,57 +1,92 @@
 [
   {
-    "title": "plotly",
+    "title": "AL-DS",
     "file_name": "index",
     "url": "https://www.yusaito.com/mynote/",
     "tags": [],
     "description": []
   },
   {
-    "title": "Image Augmentations",
+    "title": "albumentations",
     "file_name": "albumentations",
     "url": "https://www.yusaito.com/mynote/albumentations/",
     "tags": [],
     "description": []
   },
   {
-    "title": "Dcgan",
+    "title": "Google Colab",
+    "file_name": "colab",
+    "url": "https://www.yusaito.com/mynote/colab/",
+    "tags": [],
+    "description": []
+  },
+  {
+    "title": "other",
     "file_name": "dcgan",
     "url": "https://www.yusaito.com/mynote/dcgan/",
     "tags": [],
     "description": []
   },
   {
-    "title": "Gan",
+    "title": "Docker",
+    "file_name": "docker",
+    "url": "https://www.yusaito.com/mynote/docker/",
+    "tags": [],
+    "description": []
+  },
+  {
+    "title": "GAN basis",
     "file_name": "gan",
     "url": "https://www.yusaito.com/mynote/gan/",
     "tags": [],
     "description": []
   },
   {
-    "title": "Labrad",
+    "title": "Git",
+    "file_name": "git",
+    "url": "https://www.yusaito.com/mynote/git/",
+    "tags": [],
+    "description": []
+  },
+  {
+    "title": "LabRAD",
     "file_name": "labrad",
     "url": "https://www.yusaito.com/mynote/labrad/",
     "tags": [],
     "description": []
   },
   {
-    "title": "Linux コマンド",
+    "title": "Linux",
     "file_name": "linux_command",
     "url": "https://www.yusaito.com/mynote/linux_command/",
     "tags": [],
     "description": []
   },
   {
-    "title": "Python basis",
+    "title": "Parallel",
+    "file_name": "parallel",
+    "url": "https://www.yusaito.com/mynote/parallel/",
+    "tags": [],
+    "description": []
+  },
+  {
+    "title": "Basics",
     "file_name": "python_basis",
     "url": "https://www.yusaito.com/mynote/python_basis/",
     "tags": [],
     "description": []
   },
   {
-    "title": "Pytorch basis",
+    "title": "pytorch templates",
     "file_name": "pytorch_basis",
     "url": "https://www.yusaito.com/mynote/pytorch_basis/",
+    "tags": [],
+    "description": []
+  },
+  {
+    "title": "リモートでJupyterlabを開く",
+    "file_name": "ssh",
+    "url": "https://www.yusaito.com/mynote/ssh/",
     "tags": [],
     "description": []
   },

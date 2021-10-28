@@ -32,7 +32,6 @@ extra_javascript:
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
-
 plugins:
   - search:
       lang:
@@ -75,45 +74,22 @@ markdown_extensions:
   - pymdownx.highlight:
       linenums: true
 
-
 # Page tree
 nav:
   - Home: albumentations.md
-  - Python tips:
-    - python basis: python.md
-  - Neural Network:
-    - Pytorch Basis:
-      - Dataset : custom_dataset.md
-      - Image Augmentations : albumentations.md
-      - Model : custom_model.md
-      - Loss Function : custom_loss.md
-      - Optimizers : optimizer.md
-      - Schedulars : schedular.md
-      - Influence : schedular.md
-      - AMP : schedular.md
-      - Tensorboard and Weight & Bias : schedular.md
-      - Management log/parameters : hydra.md
-    - GAN:
-      - DCCGAN: dccgan.md
-      - WGAN : wgan.md
-      - CycleGAN : cyclegan.md
-    - Image Processing :
-      - OpenCV : cyclegan.md
-      - Pillow : cyclegan.md
-    - Templates:
-      - General templates : tez_templates.md
-      - Tez templates : tez_templates.md
-      - Lightening templates : tez_templates.md
-      - Dali + Kornia : tez_templates.md
-  - LabRAD:
-    - Getting started: index.md
-    - Templates: index.md
-  - AL/DS:
-    - DFS : index.md
   - Utils:
-    - Linux : linux.md
-    - Git and github : git.md
-    - Docker : docker.md
-    - Plotting:
-      - matplotlib/seaborn: index.md
-      - plotly: index.md
+      - Linux: linux_command.md
+      - Git: git.md
+      - Docker: docker.md
+      - Google Colab: colab.md
+      - LabRAD: labrad.md
+  - Python:
+      - Basics: python_basis.md
+      - AL-DS: index.md
+  - ML:
+      - albumentations: albumentations.md
+      - Boosting: xgboost.md
+      - pytorch templates: pytorch_basis.md
+      - Gereative models:
+          - GAN basis: gan.md
+          - other: dcgan.md

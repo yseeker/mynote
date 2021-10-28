@@ -33,6 +33,8 @@ ctrl + y (yank)
 ls
 ls -a
 
+echo コマンド
+
 cat/less
 
 space(一画面下)　b（一画面上）
@@ -49,6 +51,8 @@ unzip
 touch コマンド
 rm とrm -r
 
+echo $PATH
+export PATH = /path/to/something:$PATHを追加する。
 
 cp /etc/crontab file2
 
@@ -62,6 +66,8 @@ cp -r dir1 dir2で再帰的にディレクトリをコピー可能
 
 mvコマンドで名前を変えることもできるし、ファイルを移動できる。
 
+sh -x でオプションを確認
+docker ファイルのときは-b -pをつける。
 ハードリンク
 
 シンボリックリンク
