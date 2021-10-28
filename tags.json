@@ -84,6 +84,13 @@
     "description": []
   },
   {
+    "title": "リモートでJupyterlabを開く",
+    "file_name": "ssh",
+    "url": "https://www.yusaito.com/mynote/ssh/",
+    "tags": [],
+    "description": []
+  },
+  {
     "title": "Templates",
     "file_name": "templates",
     "url": "https://www.yusaito.com/mynote/templates/",
