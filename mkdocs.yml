@@ -88,7 +88,6 @@ nav:
       - AL-DS: index.md
   - ML:
       - albumentations: albumentations.md
-      - Boosting: xgboost.md
       - pytorch templates: pytorch_basis.md
       - Gereative models:
           - GAN basis: gan.md
