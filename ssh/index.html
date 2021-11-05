@@ -654,15 +654,25 @@
                 
                 
                 <h1 id="jupyterlab">リモートでJupyterlabを開く<a class="headerlink" href="#jupyterlab" title="Permanent link">¶</a></h1>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>ssh -L &lt;host port&gt;:localhost:&lt;remote port&gt; user@remote
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>ssh -L &lt;host port&gt;:localhost:&lt;remote port&gt; user@remote
 
-docker run -it --rm -p &lt;host port&gt;:&lt;remote port&gt; --name &lt;container-name&gt; -v:<span class="nv">$PWD</span>:/work &lt;image-name&gt; /bin/bash
+docker run -it --rm -p &lt;host port&gt;:&lt;remote port&gt; --name &lt;container-name&gt; -v:<span class="nv">$PWD</span>:/work -w /work &lt;image-name&gt; /bin/bash
 
 jupyter lab --ip <span class="m">0</span>.0.0.0 --port &lt;container port&gt; --allow-root
+
+<span class="c1">#同時に</span>
+docker run -it --rm -p <span class="m">9999</span>:9999 --name kaggle-docker <span class="se">\</span>
+            -v:<span class="nv">$PWD</span>:/work -w /work kaggle/python-gpu-build /bin/bash <span class="se">\</span>
+            jupyter lab --ip <span class="m">0</span>.0.0.0 --port <span class="m">9999</span> --allow-root
 </code></pre></div>
 </td></tr></table>
                 
