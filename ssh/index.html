@@ -664,7 +664,8 @@
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
 <span class="normal">10</span>
-<span class="normal">11</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>ssh -L &lt;host port&gt;:localhost:&lt;remote port&gt; user@remote
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>ssh -L &lt;host port&gt;:localhost:&lt;remote port&gt; user@remote
 
 docker run -it --rm -p &lt;host port&gt;:&lt;remote port&gt; --name &lt;container-name&gt; -v:<span class="nv">$PWD</span>:/work -w /work &lt;image-name&gt; /bin/bash
 
@@ -672,7 +673,8 @@ jupyter lab --ip <span class="m">0</span>.0.0.0 --port &lt;container port&gt; --
 
 <span class="c1">#同時に</span>
 docker run -it --rm -p <span class="m">9999</span>:9999 --name kaggle-docker <span class="se">\</span>
-            -v:<span class="nv">$PWD</span>:/work -v: /dataset:/dataset 
+            -v <span class="nv">$PWD</span>:/work <span class="se">\</span>
+            -v /dataset:/dataset <span class="se">\</span>
             -w /work kaggle/python-gpu-build <span class="se">\</span>
             jupyter lab --ip <span class="m">0</span>.0.0.0 --port <span class="m">9999</span> --allow-root
 </code></pre></div>
