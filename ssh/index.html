@@ -32,7 +32,7 @@
         
           
           
-          <meta name="theme-color" content="#4051b5">
+          <meta name="theme-color" content="#000000">
         
       
     
@@ -67,7 +67,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="indigo">
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="indigo">
   
     
     <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
@@ -327,6 +327,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../shell_script.md" class="md-nav__link">
+        shell script
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tmux/" class="md-nav__link">
+        tmux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../git/" class="md-nav__link">
         Git
       </a>
@@ -396,6 +424,34 @@
         SSH
       </a>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../slack_api/" class="md-nav__link">
+        slack API
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../image_anal.md" class="md-nav__link">
+        Pillow and OpenCV
+      </a>
     </li>
   
 
@@ -674,11 +730,19 @@ jupyter lab --ip <span class="m">0</span>.0.0.0 --port &lt;container port&gt; --
 <span class="c1">#同時に</span>
 docker run -it --rm -p <span class="m">9999</span>:9999 --name kaggle-docker <span class="se">\</span>
             -v <span class="nv">$PWD</span>:/work <span class="se">\</span>
-            -v /dataset:/dataset <span class="se">\</span>
+            -v /dataset:/dataset:ro <span class="se">\</span>
             -w /work kaggle/python-gpu-build <span class="se">\</span>
             jupyter lab --ip <span class="m">0</span>.0.0.0 --port <span class="m">9999</span> --allow-root
 </code></pre></div>
 </td></tr></table>
+<p><a href="https://uxmilk.jp/50946">https://uxmilk.jp/50946</a><br />
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>ssh 
+
+scp 
+</code></pre></div>
+</td></tr></table></p>
                 
               
     
@@ -719,13 +783,13 @@ docker run -it --rm -p <span class="m">9999</span>:9999 --name kaggle-docker <sp
       
       
         
-        <a href="../python_basis/" class="md-footer__link md-footer__link--next" aria-label="Next: Basics" rel="next">
+        <a href="../slack_api/" class="md-footer__link md-footer__link--next" aria-label="Next: slack API" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Basics
+              slack API
             </div>
           </div>
           <div class="md-footer__button md-icon">

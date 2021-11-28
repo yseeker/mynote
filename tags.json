@@ -70,6 +70,13 @@
     "description": []
   },
   {
+    "title": "pillow openCV",
+    "file_name": "pillow_openCV",
+    "url": "https://www.yusaito.com/mynote/pillow_openCV/",
+    "tags": [],
+    "description": []
+  },
+  {
     "title": "Plot",
     "file_name": "plot",
     "url": "https://www.yusaito.com/mynote/plot/",
@@ -84,9 +91,30 @@
     "description": []
   },
   {
+    "title": "Python other",
+    "file_name": "python_other",
+    "url": "https://www.yusaito.com/mynote/python_other/",
+    "tags": [],
+    "description": []
+  },
+  {
     "title": "pytorch templates",
     "file_name": "pytorch_basis",
     "url": "https://www.yusaito.com/mynote/pytorch_basis/",
+    "tags": [],
+    "description": []
+  },
+  {
+    "title": "Shellscript",
+    "file_name": "shellscript",
+    "url": "https://www.yusaito.com/mynote/shellscript/",
+    "tags": [],
+    "description": []
+  },
+  {
+    "title": "slack API",
+    "file_name": "slack_api",
+    "url": "https://www.yusaito.com/mynote/slack_api/",
     "tags": [],
     "description": []
   },
@@ -101,6 +129,13 @@
     "title": "Templates",
     "file_name": "templates",
     "url": "https://www.yusaito.com/mynote/templates/",
+    "tags": [],
+    "description": []
+  },
+  {
+    "title": "tmux",
+    "file_name": "tmux",
+    "url": "https://www.yusaito.com/mynote/tmux/",
     "tags": [],
     "description": []
   }

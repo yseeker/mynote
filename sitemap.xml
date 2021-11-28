@@ -2,77 +2,102 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://www.yusaito.com/mynote/</loc>
-         <lastmod>2021-11-05</lastmod>
+         <lastmod>2021-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.yusaito.com/mynote/albumentations/</loc>
-         <lastmod>2021-11-05</lastmod>
+         <lastmod>2021-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.yusaito.com/mynote/colab/</loc>
-         <lastmod>2021-11-05</lastmod>
+         <lastmod>2021-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.yusaito.com/mynote/dcgan/</loc>
-         <lastmod>2021-11-05</lastmod>
+         <lastmod>2021-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.yusaito.com/mynote/docker/</loc>
-         <lastmod>2021-11-05</lastmod>
+         <lastmod>2021-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.yusaito.com/mynote/gan/</loc>
-         <lastmod>2021-11-05</lastmod>
+         <lastmod>2021-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.yusaito.com/mynote/git/</loc>
-         <lastmod>2021-11-05</lastmod>
+         <lastmod>2021-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.yusaito.com/mynote/labrad/</loc>
-         <lastmod>2021-11-05</lastmod>
+         <lastmod>2021-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.yusaito.com/mynote/linux_command/</loc>
-         <lastmod>2021-11-05</lastmod>
+         <lastmod>2021-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.yusaito.com/mynote/parallel/</loc>
-         <lastmod>2021-11-05</lastmod>
+         <lastmod>2021-11-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://www.yusaito.com/mynote/pillow_openCV/</loc>
+         <lastmod>2021-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.yusaito.com/mynote/plot/</loc>
-         <lastmod>2021-11-05</lastmod>
+         <lastmod>2021-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.yusaito.com/mynote/python_basis/</loc>
-         <lastmod>2021-11-05</lastmod>
+         <lastmod>2021-11-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://www.yusaito.com/mynote/python_other/</loc>
+         <lastmod>2021-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.yusaito.com/mynote/pytorch_basis/</loc>
-         <lastmod>2021-11-05</lastmod>
+         <lastmod>2021-11-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://www.yusaito.com/mynote/shellscript/</loc>
+         <lastmod>2021-11-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://www.yusaito.com/mynote/slack_api/</loc>
+         <lastmod>2021-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.yusaito.com/mynote/ssh/</loc>
-         <lastmod>2021-11-05</lastmod>
+         <lastmod>2021-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.yusaito.com/mynote/templates/</loc>
-         <lastmod>2021-11-05</lastmod>
+         <lastmod>2021-11-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://www.yusaito.com/mynote/tmux/</loc>
+         <lastmod>2021-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

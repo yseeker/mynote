@@ -32,7 +32,7 @@
         
           
           
-          <meta name="theme-color" content="#4051b5">
+          <meta name="theme-color" content="#000000">
         
       
     
@@ -67,7 +67,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="indigo">
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="indigo">
   
     
     <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
@@ -325,6 +325,34 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../shell_script.md" class="md-nav__link">
+        shell script
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tmux/" class="md-nav__link">
+        tmux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -483,6 +511,34 @@
     <li class="md-nav__item">
       <a href="../ssh/" class="md-nav__link">
         SSH
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../slack_api/" class="md-nav__link">
+        slack API
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../image_anal.md" class="md-nav__link">
+        Pillow and OpenCV
       </a>
     </li>
   
@@ -836,7 +892,11 @@
 <code>git config --global pull.rebase true</code></li>
 <li>リポジトリをclone<br />
 <code>git clone &lt;remote_repo_url&gt;</code><br />
-<code>git remote -v</code> : 登録してあるリモートリボを確認 <code>git clone</code>デフォルトでは<code>origin</code>がリモートリポに紐付いている</li>
+<code>git remote -v</code> : 登録してあるリモートリボを確認 <code>git clone</code>デフォルトでは<code>origin</code>がリモートリポに紐付いている<br />
+  ディレクトリ名指定：<br />
+<code>git clone https://github.com/user/{リポジトリ名}.git {ディレクトリ名}</code></li>
+<li>ブランチを指定する場合<br />
+<code>git clone -b [ブランチ名][リポジトリのアドレス] {ディレクトリ名}</code></li>
 <li>ブランチを作成（ブランチを切る）<br />
 <code>git branch</code> ブランチ一覧<br />
 <code>git branch -a</code> リモートリポを含む全てのブランチの一覧<br />
@@ -872,6 +932,7 @@
 <code>git remote add upstream &lt;repourl&gt;</code><br />
 <code>git pull upstream main</code><br />
 <code>git push origin new-branch</code></li>
+<li>git管理対象から外す。<code>git rm -r --cached</code></li>
 <li>pushしたブランチをpull requestを作ってリモートのmainブランチにマージ<br />
   Githubで作業。<code>pull request</code>をクリック =&gt; <code>base</code> (main)と<code>compare</code> (new branch)を指定,自分のリポかフォークもとのリポかを確認 =&gt; <code>create pull request</code> =&gt; <code>Merge pull request</code> を押す。</li>
 <li>リモートリポのmainの反映をローカルリポのmainに反映（pull）<br />
@@ -1001,7 +1062,7 @@ zenhubを使う：アジャイル開発のカンバン<br />
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../linux_command/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Linux" rel="prev">
+        <a href="../tmux/" class="md-footer__link md-footer__link--prev" aria-label="Previous: tmux" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1010,7 +1071,7 @@ zenhubを使う：アジャイル開発のカンバン<br />
               <span class="md-footer__direction">
                 Previous
               </span>
-              Linux
+              tmux
             </div>
           </div>
         </a>
