@@ -452,6 +452,61 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#submodule" class="md-nav__link">
+    submodule
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#others" class="md-nav__link">
+    others
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#githubssh" class="md-nav__link">
+    Githubにsshで接続
+  </a>
+  
+    <nav class="md-nav" aria-label="Githubにsshで接続">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    鍵の作成
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sshconfig" class="md-nav__link">
+    .ssh/configを変更
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    接続確認
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gitssh" class="md-nav__link">
+    .gitファイルの変更またはsshのリポジトリをクローン
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -882,6 +937,61 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#submodule" class="md-nav__link">
+    submodule
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#others" class="md-nav__link">
+    others
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#githubssh" class="md-nav__link">
+    Githubにsshで接続
+  </a>
+  
+    <nav class="md-nav" aria-label="Githubにsshで接続">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    鍵の作成
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sshconfig" class="md-nav__link">
+    .ssh/configを変更
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    接続確認
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gitssh" class="md-nav__link">
+    .gitファイルの変更またはsshのリポジトリをクローン
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1049,7 +1159,7 @@
 - <code>git push &lt;remote_ref&gt; :&lt;tagname&gt;</code> tagをリモートpushから削除<br />
 - <code>git checkout tags/&lt;tagname&gt;</code><br />
 - <code>git fetch --tgas --all</code></p>
-<h1 id="submodule">submodule<a class="headerlink" href="#submodule" title="Permanent link">¶</a></h1>
+<h2 id="submodule">submodule<a class="headerlink" href="#submodule" title="Permanent link">¶</a></h2>
 <ul>
 <li><code>git submodule add &lt;submodule_url&gt;</code></li>
 <li><code>git submodule update</code></li>
@@ -1057,7 +1167,7 @@
   submoduleの中でgit pullする。</li>
 <li><code>git submodule foreach 'git pull origin main'</code></li>
 </ul>
-<h1 id="others">others<a class="headerlink" href="#others" title="Permanent link">¶</a></h1>
+<h2 id="others">others<a class="headerlink" href="#others" title="Permanent link">¶</a></h2>
 <p>convertio.io<br />
 wikiを使う<br />
 octotree<br />
@@ -1066,6 +1176,69 @@ zenhubを使う：アジャイル開発のカンバン<br />
 <code>git reset --hard</code><br />
 <code>git reset --sorf HEAD ファイル名</code>間違ってadd したとき<br />
 <code>git reset –soft HEAD^</code>間違ってcommitしたとき</p>
+<h2 id="githubssh">Githubにsshで接続<a class="headerlink" href="#githubssh" title="Permanent link">¶</a></h2>
+<h3 id="_5">鍵の作成<a class="headerlink" href="#_5" title="Permanent link">¶</a></h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>ssh-keygen -t rsa
+<span class="c1"># ssh-keygen -t ed25519</span>
+
+Generating public/private rsa key pair.
+Enter file <span class="k">in</span> which to save the key <span class="o">(</span>/Users/yu/.ssh/id_rsa<span class="o">)</span>: /Users/yu/.ssh/github_rsa
+Enter passphrase <span class="o">(</span>empty <span class="k">for</span> no passphrase<span class="o">)</span>: 
+Enter same passphrase again:
+
+<span class="c1"># .pubをGithubに登録</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="sshconfig">.ssh/configを変更<a class="headerlink" href="#sshconfig" title="Permanent link">¶</a></h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>Host github github.com
+  HostName github.com
+  IdentityFile ~/.ssh/github_rsa <span class="c1">#ここに自分の鍵のファイル名</span>
+  User git
+</code></pre></div>
+</td></tr></table>
+<h3 id="_6">接続確認<a class="headerlink" href="#_6" title="Permanent link">¶</a></h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>ssh -T git@github.com
+</code></pre></div>
+</td></tr></table>
+<h3 id="gitssh">.gitファイルの変更またはsshのリポジトリをクローン<a class="headerlink" href="#gitssh" title="Permanent link">¶</a></h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">[</span>core<span class="o">]</span>
+  <span class="nv">repositoryformatversion</span> <span class="o">=</span> <span class="m">0</span>
+  <span class="nv">filemode</span> <span class="o">=</span> <span class="nb">false</span>
+  <span class="nv">bare</span> <span class="o">=</span> <span class="nb">false</span>
+  <span class="nv">logallrefupdates</span> <span class="o">=</span> <span class="nb">true</span>
+  <span class="nv">symlinks</span> <span class="o">=</span> <span class="nb">false</span>
+  <span class="nv">ignorecase</span> <span class="o">=</span> <span class="nb">true</span>
+<span class="o">[</span>remote <span class="s2">&quot;origin&quot;</span><span class="o">]</span>
+  <span class="nv">url</span> <span class="o">=</span> git@github.com:xxxxx/yyyyy.git <span class="c1">######ここを変更する</span>
+  <span class="nv">fetch</span> <span class="o">=</span> +refs/heads/*:refs/remotes/origin/*
+<span class="o">[</span>branch <span class="s2">&quot;master&quot;</span><span class="o">]</span>
+  <span class="nv">remote</span> <span class="o">=</span> origin
+  <span class="nv">merge</span> <span class="o">=</span> refs/heads/master
+</code></pre></div>
+</td></tr></table>
                 
               
     
