@@ -49,6 +49,13 @@
     "description": []
   },
   {
+    "title": "Image Process",
+    "file_name": "image_process",
+    "url": "https://www.yusaito.com/mynote/image_process/",
+    "tags": [],
+    "description": []
+  },
+  {
     "title": "LabRAD",
     "file_name": "labrad",
     "url": "https://www.yusaito.com/mynote/labrad/",
@@ -59,6 +66,20 @@
     "title": "Linux",
     "file_name": "linux_command",
     "url": "https://www.yusaito.com/mynote/linux_command/",
+    "tags": [],
+    "description": []
+  },
+  {
+    "title": "ML utils",
+    "file_name": "mlutils",
+    "url": "https://www.yusaito.com/mynote/mlutils/",
+    "tags": [],
+    "description": []
+  },
+  {
+    "title": "Pandas",
+    "file_name": "pandas",
+    "url": "https://www.yusaito.com/mynote/pandas/",
     "tags": [],
     "description": []
   },

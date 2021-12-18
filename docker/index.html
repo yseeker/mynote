@@ -489,6 +489,34 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../image_process/" class="md-nav__link">
+        Image Process
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mlutils/" class="md-nav__link">
+        ML utils
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -794,6 +822,9 @@ DockerfileからDockerImage, DockerImageからコンテナ</p>
 <code>docker run -d &lt;image&gt;</code>:コンテナを起動後にdetachする（hostに戻る）<br />
 <code>docker run -rm &lt;image&gt;</code>:コンテナをexit後に削除する。</li>
 </ul>
+<p><code>docker images -aq | xargs docker rmi</code><br />
+<code>docker ps -aq | xargs docker rm</code><br />
+  ``</p>
 <h1 id="docker-file">docker fileの作成<a class="headerlink" href="#docker-file" title="Permanent link">¶</a></h1>
 <p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
