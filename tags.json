@@ -7,7 +7,7 @@
     "description": []
   },
   {
-    "title": "Image Augumentations",
+    "title": "albumentations",
     "file_name": "albumentations",
     "url": "https://www.yusaito.com/mynote/albumentations/",
     "tags": [],
@@ -21,7 +21,7 @@
     "description": []
   },
   {
-    "title": "Dcgan",
+    "title": "other",
     "file_name": "dcgan",
     "url": "https://www.yusaito.com/mynote/dcgan/",
     "tags": [],
@@ -35,7 +35,7 @@
     "description": []
   },
   {
-    "title": "Gan",
+    "title": "GAN basis",
     "file_name": "gan",
     "url": "https://www.yusaito.com/mynote/gan/",
     "tags": [],
@@ -147,7 +147,7 @@
     "description": []
   },
   {
-    "title": "Pytorch basis",
+    "title": "pytorch templates",
     "file_name": "pytorch_basis",
     "url": "https://www.yusaito.com/mynote/pytorch_basis/",
     "tags": [],

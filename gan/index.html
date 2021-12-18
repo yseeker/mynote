@@ -3,6 +3,7 @@
 <html lang="en" class="no-js">
   <head>
     
+    
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
@@ -17,8 +18,10 @@
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.5">
     
     
+
+    
       
-        <title>Gan - YS's note</title>
+        <title>GAN basis - YS's note</title>
       
     
     
@@ -107,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Gan
+              GAN basis
             
           </span>
         </div>
@@ -204,6 +207,24 @@
     <li class="md-tabs__item">
       <a href="../python_basis/" class="md-tabs__link">
         Python
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../albumentations/" class="md-tabs__link md-tabs__link--active">
+        ML
       </a>
     </li>
   
@@ -520,6 +541,299 @@
   
 
     
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          ML
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="ML" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          ML
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../albumentations/" class="md-nav__link">
+        albumentations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xgboost.md" class="md-nav__link">
+        Boosting
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pytorch_basis/" class="md-nav__link">
+        pytorch templates
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" type="checkbox" id="__nav_4_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4">
+          Gereative models
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Gereative models" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          Gereative models
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          GAN basis
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        GAN basis
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    変分オートエンコーダー
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gan" class="md-nav__link">
+    GAN
+  </a>
+  
+    <nav class="md-nav" aria-label="GAN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    識別器の訓練
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gan_1" class="md-nav__link">
+    GANの損失関数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    生成器の訓練
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gan_2" class="md-nav__link">
+    GANの収束条件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gan_3" class="md-nav__link">
+    GANの欠点
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    改善法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    ハック
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    識別器クラスの実装
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    生成器クラスの実装
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gan1-step" class="md-nav__link">
+    GANの学習の1 step
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dcgan-deep-convolutional-gan" class="md-nav__link">
+    DCGAN (Deep Convolutional GAN)
+  </a>
+  
+    <nav class="md-nav" aria-label="DCGAN (Deep Convolutional GAN)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    識別器クラスの実装
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    生成器クラスの実装
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dcgan/" class="md-nav__link">
+        other
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -675,6 +989,7 @@
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
+    
                 
                 
                 <h1 id="_1">生成モデル<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
@@ -1266,6 +1581,11 @@
 </ul>
                 
               
+    
+    
+        
+    
+
               
                 
 
@@ -1283,7 +1603,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../docker/" class="md-footer__link md-footer__link--prev" aria-label="Previous: None" rel="prev">
+        <a href="../pytorch_basis/" class="md-footer__link md-footer__link--prev" aria-label="Previous: pytorch templates" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1292,20 +1612,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              None
+              pytorch templates
             </div>
           </div>
         </a>
       
       
         
-        <a href="../gif/" class="md-footer__link md-footer__link--next" aria-label="Next: Gif" rel="next">
+        <a href="../dcgan/" class="md-footer__link md-footer__link--next" aria-label="Next: other" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Gif
+              other
             </div>
           </div>
           <div class="md-footer__button md-icon">
