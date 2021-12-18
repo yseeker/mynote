@@ -1842,7 +1842,15 @@ ls -F <span class="p">|</span> grep -v / <span class="p">|</span> wc -l
 <span class="normal"> 7</span>
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
-<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># grep ERROR *.log: 拡張子がlogのファイルから、ERRORを含む行だけ抽出</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># grep ERROR *.log: 拡張子がlogのファイルから、ERRORを含む行だけ抽出</span>
 <span class="c1"># cat error.log | grep ERROR: error.logからERRORを含む行だけ抽出</span>
 <span class="c1"># cat error.log | grep -2 ERROR: error.logからERRORを含む行とその前後2行を出力</span>
 <span class="c1"># cat error.log | grep -e ERROR -e WARN: error.logからERRORまたはWARNを含む行を抽出</span>
@@ -1852,6 +1860,14 @@ ls -F <span class="p">|</span> grep -v / <span class="p">|</span> wc -l
 
 <span class="c1"># どのファイルか分からないけど、Hogeディレクトリ配下で、piyoという文字列を含んでいる部分とそのテキストファイルを知りたい</span>
 find ~/Hoge -name <span class="s1">&#39;*.txt&#39;</span> <span class="p">|</span> xargs grep piyo
+
+$ pgrep -f vagrant
+<span class="c1"># 始末</span>
+$ pkill -f vagrant
+
+<span class="c1"># シグナルを指定</span>
+$ pkill -SIGKILL -f vagrant
+https://qiita.com/uraura/items/12ff6112fd392f1be424
 </code></pre></div>
 </td></tr></table>
 <h3 id="find">find<a class="headerlink" href="#find" title="Permanent link">¶</a></h3>

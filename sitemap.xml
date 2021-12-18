@@ -66,6 +66,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://www.yusaito.com/mynote/pararell-async/</loc>
+         <lastmod>2021-12-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://www.yusaito.com/mynote/pillow_openCV/</loc>
          <lastmod>2021-12-18</lastmod>
          <changefreq>daily</changefreq>
