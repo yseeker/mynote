@@ -21,7 +21,7 @@
 
     
       
-        <title>Server setup - YS's note</title>
+        <title>PCサーバー設定関連 - YS's note</title>
       
     
     
@@ -77,6 +77,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#pc" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -105,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Server setup
+              PCサーバー設定関連
             
           </span>
         </div>
@@ -520,7 +525,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../plot/" class="md-nav__link">
+      <a href="../plot.md" class="md-nav__link">
         Plot
       </a>
     </li>
@@ -678,6 +683,74 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pc_1" class="md-nav__link">
+    PCセットアップ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ssh" class="md-nav__link">
+    ssh
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gpu" class="md-nav__link">
+    GPU環境構築
+  </a>
+  
+    <nav class="md-nav" aria-label="GPU環境構築">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-a100x8" class="md-nav__link">
+    Azure A100x8の場合
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vscode" class="md-nav__link">
+    VSCode
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
@@ -685,11 +758,122 @@
     
                 
                 
-                  <h1>Server setup</h1>
-                
-                
-                
-                  
+                <h1 id="pc">PCサーバー設定関連<a class="headerlink" href="#pc" title="Permanent link">¶</a></h1>
+<h2 id="pc_1">PCセットアップ<a class="headerlink" href="#pc_1" title="Permanent link">¶</a></h2>
+<p><a href="https://qiita.com/koba-jon/items/019a3b4eac4f60ca89c9">https://qiita.com/koba-jon/items/019a3b4eac4f60ca89c9</a></p>
+<h2 id="ssh">ssh<a class="headerlink" href="#ssh" title="Permanent link">¶</a></h2>
+<p><a href="https://frute.hatenablog.com/entry/2018/11/19/003056">https://frute.hatenablog.com/entry/2018/11/19/003056</a><br />
+<a href="https://enjoyall.comichi.com/pc_setting_ssh/">https://enjoyall.comichi.com/pc_setting_ssh/</a></p>
+<h2 id="gpu">GPU環境構築<a class="headerlink" href="#gpu" title="Permanent link">¶</a></h2>
+<h3 id="azure-a100x8">Azure A100x8の場合<a class="headerlink" href="#azure-a100x8" title="Permanent link">¶</a></h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># cuda install</span>
+wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-ubuntu1804.pin
+sudo mv cuda-ubuntu1804.pin /etc/apt/preferences.d/cuda-repository-pin-600
+wget https://developer.download.nvidia.com/compute/cuda/11.5.0/local_installers/cuda-repo-ubuntu1804-11-5-local_11.5.0-495.29.05-1_amd64.deb
+sudo dpkg -i cuda-repo-ubuntu1804-11-5-local_11.5.0-495.29.05-1_amd64.deb
+sudo apt-key add /var/cuda-repo-ubuntu1804-11-5-local/7fa2af80.pub
+sudo apt-get update
+sudo apt-get -y install cuda
+
+<span class="c1"># Error対処</span>
+git clone https://github.com/NVIDIA/cuda-samples.git
+<span class="nb">cd</span> cuda-samples/Samples/bandwidthTest
+make
+./bandwidthTest
+
+wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-ubuntu2004.pin
+sudo mv cuda-ubuntu2004.pin /etc/apt/preferences.d/cuda-repository-pin-600
+sudo apt-key adv --keyserver-options http-proxy<span class="o">=</span>http://proxy-chain.intel.com:911  --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/7fa2af80.pub
+
+sudo apt-key adv  --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/7fa2af80.pub
+sudo add-apt-repository <span class="s2">&quot;deb https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/ /&quot;</span>
+sudo apt-get update
+sudo apt-get install -y datacenter-gpu-manager
+
+sudo nv-hostengine -t
+
+sudo service nvidia-fabricmanager start
+
+sudo apt-get install -y cuda-drivers-fabricmanager-495
+sudo service nvidia-fabricmanager start
+
+./bandwidthTest
+
+<span class="c1">#docker installイメージチェック</span>
+sudo apt update
+sudo apt install -y docker.io
+sudo docker pull nvcr.io/nvidia/pytorch:21.10-py3
+
+sudo docker run -it --gpus all --shm-size 16g --rm  -v <span class="nv">$PWD</span>:/work -w /work 030c24bd72ba /bin/bash
+
+import torch
+torch.cuda.is_available<span class="o">()</span>
+
+
+<span class="c1"># error対処２ </span>
+curl -s -L https://nvidia.github.io/nvidia-container-runtime/gpgkey <span class="p">|</span>   sudo apt-key add -
+<span class="nv">distribution</span><span class="o">=</span><span class="k">$(</span>. /etc/os-release<span class="p">;</span><span class="nb">echo</span> <span class="nv">$ID$VERSION_ID</span><span class="k">)</span>
+curl -s -L https://nvidia.github.io/nvidia-container-runtime/<span class="nv">$distribution</span>/nvidia-container-runtime.list <span class="p">|</span>   sudo tee /etc/apt/sources.list.d/nvidia-container-runtime.list
+sudo apt-get update
+sudo apt-get install -y nvidia-container-runtime
+sudo service docker restart
+</code></pre></div>
+</td></tr></table>
+<h2 id="vscode">VSCode<a class="headerlink" href="#vscode" title="Permanent link">¶</a></h2>
+<ul>
+<li>sync settingを行う。</li>
+<li>black, flake8, mypy, isortの設定を行う。</li>
+</ul>
                 
               
     
@@ -730,13 +914,13 @@
       
       
         
-        <a href="../shellscript/" class="md-footer__link md-footer__link--next" aria-label="Next: Shellscript" rel="next">
+        <a href="../shell/" class="md-footer__link md-footer__link--next" aria-label="Next: Shell" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Shellscript
+              Shell
             </div>
           </div>
           <div class="md-footer__button md-icon">

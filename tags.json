@@ -14,6 +14,13 @@
     "description": []
   },
   {
+    "title": "Coding style",
+    "file_name": "coding_style",
+    "url": "https://www.yusaito.com/mynote/coding_style/",
+    "tags": [],
+    "description": []
+  },
+  {
     "title": "Google Colab",
     "file_name": "colab",
     "url": "https://www.yusaito.com/mynote/colab/",
@@ -59,6 +66,13 @@
     "title": "Image Process",
     "file_name": "image_process",
     "url": "https://www.yusaito.com/mynote/image_process/",
+    "tags": [],
+    "description": []
+  },
+  {
+    "title": "Jupyter",
+    "file_name": "jupyter",
+    "url": "https://www.yusaito.com/mynote/jupyter/",
     "tags": [],
     "description": []
   },
@@ -112,7 +126,7 @@
     "description": []
   },
   {
-    "title": "Pararell async",
+    "title": "並列処理と非同期処理",
     "file_name": "pararell-async",
     "url": "https://www.yusaito.com/mynote/pararell-async/",
     "tags": [],
@@ -122,13 +136,6 @@
     "title": "pillow openCV",
     "file_name": "pillow_openCV",
     "url": "https://www.yusaito.com/mynote/pillow_openCV/",
-    "tags": [],
-    "description": []
-  },
-  {
-    "title": "Plot",
-    "file_name": "plot",
-    "url": "https://www.yusaito.com/mynote/plot/",
     "tags": [],
     "description": []
   },
@@ -154,9 +161,16 @@
     "description": []
   },
   {
-    "title": "Server setup",
+    "title": "PCサーバー設定関連",
     "file_name": "server_setup",
     "url": "https://www.yusaito.com/mynote/server_setup/",
+    "tags": [],
+    "description": []
+  },
+  {
+    "title": "Shell",
+    "file_name": "shell",
+    "url": "https://www.yusaito.com/mynote/shell/",
     "tags": [],
     "description": []
   },
@@ -192,6 +206,13 @@
     "title": "tmux",
     "file_name": "tmux",
     "url": "https://www.yusaito.com/mynote/tmux/",
+    "tags": [],
+    "description": []
+  },
+  {
+    "title": "Util",
+    "file_name": "util",
+    "url": "https://www.yusaito.com/mynote/util/",
     "tags": [],
     "description": []
   }

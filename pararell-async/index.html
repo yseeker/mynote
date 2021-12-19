@@ -21,7 +21,7 @@
 
     
       
-        <title>Pararell async - YS's note</title>
+        <title>並列処理と非同期処理 - YS's note</title>
       
     
     
@@ -77,6 +77,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -105,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Pararell async
+              並列処理と非同期処理
             
           </span>
         </div>
@@ -520,7 +525,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../plot/" class="md-nav__link">
+      <a href="../plot.md" class="md-nav__link">
         Plot
       </a>
     </li>
@@ -678,6 +683,88 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    リンク
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    並列処理
+  </a>
+  
+    <nav class="md-nav" aria-label="並列処理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#subprocesspopen" class="md-nav__link">
+    subprocess.Popen
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#threading" class="md-nav__link">
+    threading
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concurrentfutures" class="md-nav__link">
+    concurrent.futures
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    非同期処理、イベントループ（コルーチン）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    合わせ技
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
@@ -685,10 +772,27 @@
     
                 
                 
-                  <h1>Pararell async</h1>
-                
-                <p><a href="https://qiita.com/icoxfog417/items/07cbf5110ca82629aca0">https://qiita.com/icoxfog417/items/07cbf5110ca82629aca0</a><br />
-<a href="https://qiita.com/takey/items/917a48aa5d1882e125f4">https://qiita.com/takey/items/917a48aa5d1882e125f4</a></p>
+                <h1 id="_1">並列処理と非同期処理<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
+<h2 id="_2">リンク<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<p><a href="https://qiita.com/HidKamiya/items/e192a55371a2961ca8a4">subprocessについてより深く（3系，更新版）</a><br />
+<a href="https://qiita.com/desertfox_i/items/dbd6fd390f6db13fd3e4">pythonのsubprocessでかんたん並列実行</a><br />
+<a href="https://tech.morikatron.ai/entry/2020/03/13/100000">Python のプログラムを並列処理で高速化する</a><br />
+<a href="https://qiita.com/tag1216/items/db5adcf1ddcb67cfefc8">Pythonでconcurrent.futuresを使った並列タスク実行</a></p>
+<p><a href="https://qiita.com/icoxfog417/items/07cbf5110ca82629aca0">Pythonにおける非同期処理: asyncio逆引きリファレンス</a><br />
+<a href="https://qiita.com/takey/items/917a48aa5d1882e125f4">並列プログラミングに入門する</a><br />
+<a href="https://qiita.com/kaitolucifer/items/e4ace07bd8e112388c75">Pythonのthreadingとmultiprocessingを完全理解</a><br />
+<a href="https://qiita.com/ab-boy_ringo/items/934d18f244f40ddb3300">Python3 Subprocess.Popen()とcommunicate()について</a><br />
+<a href="https://tech.jxpress.net/entry/2021/07/29/101150">Python multiprocessing vs threading vs asyncio</a><br />
+<a href="https://zenn.dev/ryo_kawamata/articles/python-concurrent-thread">Pythonの並行処理を理解したい [マルチスレッド編]</a><br />
+<a href="https://stackoverflow.com/questions/30982217/python-popen-wait-vs-communicate-vs-calledprocesserror">Python Popen - wait vs communicate vs CalledProcessError</a><br />
+<a href="https://stackoverflow.com/questions/51117209/combining-asyncio-with-a-multi-worker-processpoolexecutor?noredirect=1&amp;lq=1">https://stackoverflow.com/questions/51117209/combining-asyncio-with-a-multi-worker-processpoolexecutor?noredirect=1&amp;lq=1</a><br />
+<a href="https://stackoverflow.com/questions/55993833/combining-asyncio-with-a-multi-worker-processpoolexecutor-and-for-async?noredirect=1&amp;lq=1">https://stackoverflow.com/questions/55993833/combining-asyncio-with-a-multi-worker-processpoolexecutor-and-for-async?noredirect=1&amp;lq=1</a></p>
+<p><a href="https://qiita.com/matsui-k20xx/items/4d1c00c4eefd60ba635b">https://qiita.com/matsui-k20xx/items/4d1c00c4eefd60ba635b</a></p>
+<blockquote>
+<p>Pythonのasync/awaitは、C#などと違って、全部一つのスレッド上でやるので、CPUバウンドな処理や、大きなファイルを保存するようなI/Oバウンドな処理を速くするのは無理。通信を待ってる自分が何もしてない時間に他の処理をやりたいようなときに使える。CPUバウンドなときはmultiprocessingやconcurrent.futures.ProccessPoolExecutorを使うべし. I/Oバウンドなときはconcurrent.futures.ThreadPoolExecutorを使うべき</p>
+</blockquote>
+<h2 id="_3">並列処理<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
+<h3 id="subprocesspopen">subprocess.Popen<a class="headerlink" href="#subprocesspopen" title="Permanent link">¶</a></h3>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -753,30 +857,87 @@
 <span class="normal">19</span>
 <span class="normal">20</span>
 <span class="normal">21</span>
-<span class="normal">22</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">subprocess</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># https://qiita.com/takey/items/917a48aa5d1882e125f4</span>
+
+<span class="kn">import</span> <span class="nn">cv2</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 <span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">subprocess</span>
 
-<span class="k">def</span> <span class="nf">run_multisleep</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot; 複数の子プロセスでrun_sleep.pyを実行する &quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="nf">run_sleep</span><span class="p">():</span>
-        <span class="n">proc</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">([</span><span class="s2">&quot;python&quot;</span><span class="p">,</span> <span class="s2">&quot;run_sleep.py&quot;</span><span class="p">])</span>
-        <span class="k">return</span> <span class="n">proc</span>
+<span class="n">IMAGE_PATH</span> <span class="o">=</span> <span class="s2">&quot;../../../tmp/image&quot;</span>
 
-    <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot; 100枚の画像から、100枚のモザイク処理した画像を生成する</span>
+<span class="sd">    Popenを使って並列処理でモザイク画像を生成する</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">files</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">IMAGE_PATH</span> <span class="o">+</span> <span class="s2">&quot;/origin/&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*&quot;</span><span class="p">)</span>
     <span class="n">procs</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
-        <span class="n">procs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">run_sleep</span><span class="p">())</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="mi">5</span>  <span class="c1"># メモリ不足にならないようにNを適切に設定する必要がある</span>
+    <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+        <span class="n">proc</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">([</span><span class="s2">&quot;python&quot;</span><span class="p">,</span> <span class="s2">&quot;image2mosaic2_sub.py&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">file</span><span class="p">),</span> <span class="n">file</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">IMAGE_PATH</span><span class="p">])</span>
+        <span class="n">procs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">proc</span><span class="p">)</span>
 
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">procs</span><span class="p">)</span> <span class="o">==</span> <span class="n">N</span><span class="p">:</span>
+            <span class="c1"># メモリ不足で実行に失敗するので、</span>
+            <span class="c1"># 子プロセスの数がNになったら、一旦全ての子プロセスの終了を待つ</span>
+            <span class="k">for</span> <span class="n">proc</span> <span class="ow">in</span> <span class="n">procs</span><span class="p">:</span>
+                <span class="n">proc</span><span class="o">.</span><span class="n">communicate</span><span class="p">()</span>
+                <span class="c1">#proc.wait()</span>
+            <span class="n">procs</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
     <span class="k">for</span> <span class="n">proc</span> <span class="ow">in</span> <span class="n">procs</span><span class="p">:</span>
         <span class="n">proc</span><span class="o">.</span><span class="n">communicate</span><span class="p">()</span>
 
-    <span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Finished in </span><span class="si">{}</span><span class="s2"> seconds.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">end</span><span class="o">-</span><span class="n">start</span><span class="p">))</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">run_multisleep</span><span class="p">()</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="n">main</span><span class="p">()</span>
+    <span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Finished in </span><span class="si">{}</span><span class="s2"> seconds.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">end</span><span class="o">-</span><span class="n">start</span><span class="p">))</span>
 </code></pre></div>
 </td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">subprocess</span>
+<span class="n">proc</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span><span class="s1">&#39;ls&#39;</span><span class="p">,</span>
+                       <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                       <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span>
+                       <span class="p">)</span>
+<span class="k">while</span> <span class="n">proc</span><span class="o">.</span><span class="n">poll</span><span class="p">()</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="n">proc</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+    <span class="nb">print</span> <span class="n">output</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">p1</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">([</span><span class="s1">&#39;ps&#39;</span><span class="p">,</span> <span class="s1">&#39;aux&#39;</span><span class="p">],</span> <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">)</span> <span class="c1"># 出力先にパイプ</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">([</span><span class="s1">&#39;grep&#39;</span><span class="p">,</span> <span class="s1">&#39;python&#39;</span><span class="p">],</span> <span class="n">stdin</span><span class="o">=</span><span class="n">p1</span><span class="o">.</span><span class="n">stdout</span><span class="p">,</span> <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">)</span> <span class="c1"># 入力にp1の受取</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> <span class="c1"># Allow p1 to receive a SIGPIPE if p2 exits.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p2</span><span class="o">.</span><span class="n">communicate</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">))</span> <span class="c1"># stdout取得</span>
+</code></pre></div>
+</td></tr></table>
+<h2 id="threading">threading<a class="headerlink" href="#threading" title="Permanent link">¶</a></h2>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -792,24 +953,67 @@
 <span class="normal">13</span>
 <span class="normal">14</span>
 <span class="normal">15</span>
-<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">task</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
-    <span class="n">getLogger</span><span class="p">()</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> start&quot;</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
-    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
-    <span class="n">getLogger</span><span class="p">()</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> end&quot;</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">v</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">threading</span>
 
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="n">init_logger</span><span class="p">()</span>
-    <span class="n">getLogger</span><span class="p">()</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;main start&quot;</span><span class="p">)</span>
-    <span class="k">with</span> <span class="n">ThreadPoolExecutor</span><span class="p">(</span><span class="n">max_workers</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">thread_name_prefix</span><span class="o">=</span><span class="s2">&quot;thread&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">executor</span><span class="p">:</span>
-        <span class="n">futures</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-            <span class="n">futures</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">executor</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span><span class="n">task</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span>
-        <span class="n">getLogger</span><span class="p">()</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;submit end&quot;</span><span class="p">)</span>
-        <span class="n">getLogger</span><span class="p">()</span><span class="o">.</span><span class="n">info</span><span class="p">([</span><span class="n">f</span><span class="o">.</span><span class="n">result</span><span class="p">()</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">futures</span><span class="p">])</span>
-    <span class="n">getLogger</span><span class="p">()</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;main end&quot;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">func1</span><span class="p">():</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;func1&quot;</span><span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">func2</span><span class="p">():</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;func2&quot;</span><span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">thread_1</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">func1</span><span class="p">)</span>
+    <span class="n">thread_2</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">func2</span><span class="p">)</span>
+
+    <span class="n">thread_1</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+    <span class="n">thread_2</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 </code></pre></div>
 </td></tr></table>
+<h2 id="concurrentfutures">concurrent.futures<a class="headerlink" href="#concurrentfutures" title="Permanent link">¶</a></h2>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="k">with</span> <span class="n">ThreadPoolExecutor</span><span class="p">(</span><span class="n">max_workers</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">thread_name_prefix</span><span class="o">=</span><span class="s2">&quot;thread&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">executor</span><span class="p">:</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="n">executor</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">task</span><span class="p">,</span> <span class="n">files</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="k">with</span> <span class="n">ProcessPoolExecutor</span><span class="p">(</span><span class="n">max_workers</span><span class="o">=</span><span class="n">max_workers</span><span class="p">)</span> <span class="k">as</span> <span class="n">executor</span><span class="p">:</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="n">executor</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">task</span><span class="p">,</span> <span class="n">files</span><span class="p">,</span> <span class="n">chunksize</span><span class="o">=</span><span class="n">chunk_size</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table><br />
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>with confu.ThreadPoolExecutor(max_workers=os.cpu_count()) as executor:
+    futures = [executor.submit(target_func, x) for x in range(8)]
+    (done, notdone) = confu.wait(futures)
+    for future in futures:
+        print(future.result())
+</code></pre></div>
+</td></tr></table><br />
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -860,54 +1064,10 @@
     <span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Finished in </span><span class="si">{}</span><span class="s2"> seconds.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">end</span><span class="o">-</span><span class="n">start</span><span class="p">))</span>
 </code></pre></div>
-</td></tr></table>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">task</span><span class="p">(</span><span class="n">params</span><span class="p">):</span>
-    <span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">num_calc</span><span class="p">)</span> <span class="o">=</span> <span class="n">params</span>
-    <span class="n">a</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_calc</span><span class="p">):</span>
-        <span class="n">a</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">a</span>
-
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="n">init_logger</span><span class="p">()</span>
-
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">5</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;usage: 05_process.py max_workers chunk_size num_tasks num_calc&quot;</span><span class="p">)</span>
-        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-    <span class="p">(</span><span class="n">max_workers</span><span class="p">,</span> <span class="n">chunk_size</span><span class="p">,</span> <span class="n">num_tasks</span><span class="p">,</span> <span class="n">num_calc</span><span class="p">)</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
-
-    <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
-
-    <span class="k">with</span> <span class="n">ProcessPoolExecutor</span><span class="p">(</span><span class="n">max_workers</span><span class="o">=</span><span class="n">max_workers</span><span class="p">)</span> <span class="k">as</span> <span class="n">executor</span><span class="p">:</span>
-        <span class="n">params</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">_</span><span class="p">:</span> <span class="p">(</span><span class="n">random</span><span class="p">(),</span> <span class="n">num_calc</span><span class="p">),</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_tasks</span><span class="p">))</span>
-        <span class="n">results</span> <span class="o">=</span> <span class="n">executor</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">task</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">chunksize</span><span class="o">=</span><span class="n">chunk_size</span><span class="p">)</span>
-    <span class="n">getLogger</span><span class="p">()</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">results</span><span class="p">))</span>
-
-    <span class="n">getLogger</span><span class="p">()</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:.3f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span><span class="p">))</span>
-</code></pre></div>
-</td></tr></table>
+</td></tr></table></p>
+<h2 id="_4">非同期処理、イベントループ（コルーチン）<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
+<p>シングルスレッドの処理<br />
+<a href="https://note.crohaco.net/2019/python-asyncio/">https://note.crohaco.net/2019/python-asyncio/</a></p>
 <p><a href="https://qiita.com/icoxfog417/items/07cbf5110ca82629aca0">https://qiita.com/icoxfog417/items/07cbf5110ca82629aca0</a></p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -976,8 +1136,257 @@
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;asyncio.wait result: </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dr</span><span class="p">))</span>
 </code></pre></div>
 </td></tr></table>
-                
-                  
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">async</span> <span class="k">def</span> <span class="nf">queue_execution</span><span class="p">(</span><span class="n">arg_urls</span><span class="p">,</span> <span class="n">callback</span><span class="p">,</span> <span class="n">parallel</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+    <span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span>
+    <span class="n">queue</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">Queue</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">arg_urls</span><span class="p">:</span>
+        <span class="n">queue</span><span class="o">.</span><span class="n">put_nowait</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">fetch</span><span class="p">(</span><span class="n">q</span><span class="p">):</span>
+        <span class="k">while</span> <span class="ow">not</span> <span class="n">q</span><span class="o">.</span><span class="n">empty</span><span class="p">():</span>
+            <span class="n">u</span> <span class="o">=</span> <span class="k">await</span> <span class="n">q</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+            <span class="n">future</span> <span class="o">=</span> <span class="n">loop</span><span class="o">.</span><span class="n">run_in_executor</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">,</span> <span class="n">u</span><span class="p">)</span>
+            <span class="n">future</span><span class="o">.</span><span class="n">add_done_callback</span><span class="p">(</span><span class="n">callback</span><span class="p">)</span>
+            <span class="k">await</span> <span class="n">future</span>
+
+    <span class="n">tasks</span> <span class="o">=</span> <span class="p">[</span><span class="n">fetch</span><span class="p">(</span><span class="n">queue</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">parallel</span><span class="p">)]</span>
+    <span class="k">return</span> <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="n">tasks</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span>
+
+    <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">def</span> <span class="nf">store_result</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+        <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">result</span><span class="p">())</span>
+    <span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">queue_execution</span><span class="p">([</span>
+        <span class="s2">&quot;http://www.google.com&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;http://www.yahoo.com&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;https://github.com/&quot;</span>
+    <span class="p">],</span> <span class="n">store_result</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;queue execution: </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">url</span><span class="p">))</span>
+</code></pre></div>
+</td></tr></table>
+<h2 id="_5">合わせ技<a class="headerlink" href="#_5" title="Permanent link">¶</a></h2>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">concurrent.futures</span>
+
+<span class="c1"># ランダム処理</span>
+<span class="k">def</span> <span class="nf">print_num</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s2"> - </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> sec - 開始&quot;</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s2"> 終了&quot;</span><span class="p">)</span>
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">multi_process</span><span class="p">(</span><span class="n">loop</span><span class="p">,</span><span class="n">stock</span><span class="p">):</span>
+    <span class="n">executor</span> <span class="o">=</span> <span class="n">concurrent</span><span class="o">.</span><span class="n">futures</span><span class="o">.</span><span class="n">ProcessPoolExecutor</span><span class="p">()</span>
+    <span class="n">queue</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">Queue</span><span class="p">()</span>
+    <span class="p">[</span><span class="n">queue</span><span class="o">.</span><span class="n">put_nowait</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">stock</span><span class="p">]</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">p</span><span class="p">(</span><span class="n">q</span><span class="p">):</span>
+        <span class="k">while</span> <span class="ow">not</span> <span class="n">q</span><span class="o">.</span><span class="n">empty</span><span class="p">():</span>
+            <span class="n">i</span> <span class="o">=</span> <span class="k">await</span> <span class="n">q</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+            <span class="n">future</span> <span class="o">=</span> <span class="n">loop</span><span class="o">.</span><span class="n">run_in_executor</span><span class="p">(</span><span class="n">executor</span><span class="p">,</span> <span class="n">print_num</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+            <span class="k">await</span> <span class="n">future</span>
+
+    <span class="c1"># 8プロセスで処理</span>
+    <span class="n">tasks</span> <span class="o">=</span> <span class="p">[</span><span class="n">asyncio</span><span class="o">.</span><span class="n">create_task</span><span class="p">(</span><span class="n">p</span><span class="p">(</span><span class="n">queue</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">)]</span>
+    <span class="k">return</span> <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="n">tasks</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">stock</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;aaa&quot;</span><span class="p">,</span><span class="s2">&quot;bbb&quot;</span><span class="p">,</span><span class="s2">&quot;ccc&quot;</span><span class="p">,</span><span class="s2">&quot;ddd&quot;</span><span class="p">,</span><span class="s2">&quot;eee&quot;</span><span class="p">,</span><span class="s2">&quot;fff&quot;</span><span class="p">,</span><span class="s2">&quot;ggg&quot;</span><span class="p">,</span><span class="s2">&quot;hhh&quot;</span><span class="p">]</span>
+    <span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span>
+    <span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">multi_process</span><span class="p">(</span><span class="n">loop</span><span class="p">,</span><span class="n">stock</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>  <span class="n">main</span><span class="p">()</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span><span class="p">,</span> <span class="n">time</span>
+<span class="kn">from</span> <span class="nn">concurrent.futures</span> <span class="kn">import</span> <span class="n">ProcessPoolExecutor</span>
+
+<span class="n">num_jobs</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">queue</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">Queue</span><span class="p">()</span>
+<span class="n">executor</span> <span class="o">=</span> <span class="n">ProcessPoolExecutor</span><span class="p">(</span><span class="n">max_workers</span><span class="o">=</span><span class="n">num_jobs</span><span class="p">)</span>
+<span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">work</span><span class="p">():</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">producer</span><span class="p">():</span>
+    <span class="n">tasks</span> <span class="o">=</span> <span class="p">[</span><span class="n">loop</span><span class="o">.</span><span class="n">run_in_executor</span><span class="p">(</span><span class="n">executor</span><span class="p">,</span> <span class="n">work</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_jobs</span><span class="p">)]</span>
+    <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">as_completed</span><span class="p">(</span><span class="n">tasks</span><span class="p">,</span> <span class="n">loop</span><span class="o">=</span><span class="n">loop</span><span class="p">):</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="k">await</span> <span class="n">f</span>
+        <span class="k">await</span> <span class="n">queue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">consumer</span><span class="p">():</span>
+    <span class="n">completed</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">completed</span> <span class="o">&lt;</span> <span class="n">num_jobs</span><span class="p">:</span>
+        <span class="n">job</span> <span class="o">=</span> <span class="k">await</span> <span class="n">queue</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+        <span class="n">completed</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+<span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="n">producer</span><span class="p">(),</span> <span class="n">consumer</span><span class="p">()))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;duration&quot;</span><span class="p">,</span> <span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">s</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">concurrent.futures</span> <span class="kn">import</span> <span class="n">ProcessPoolExecutor</span>
+<span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">mygen</span><span class="p">(</span><span class="n">u</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">2</span><span class="p">):</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">u</span><span class="p">:</span>
+        <span class="k">yield</span> <span class="n">i</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="k">def</span> <span class="nf">blocking</span><span class="p">(</span><span class="n">delay</span><span class="p">):</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">delay</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span><span class="p">(</span><span class="s1">&#39;EXECUTOR: Completed blocking task number &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">delay</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">run_blocking</span><span class="p">(</span><span class="n">executor</span><span class="p">,</span> <span class="n">task_no</span><span class="p">,</span> <span class="n">delay</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MASTER: Sending to executor blocking task number &#39;</span>
+          <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">task_no</span><span class="p">))</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="k">await</span> <span class="n">loop</span><span class="o">.</span><span class="n">run_in_executor</span><span class="p">(</span><span class="n">executor</span><span class="p">,</span> <span class="n">blocking</span><span class="p">,</span> <span class="n">delay</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MASTER: Well done executor - you seem to have completed &#39;</span>
+          <span class="s1">&#39;blocking task number &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">task_no</span><span class="p">))</span>
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">non_blocking</span><span class="p">(</span><span class="n">loop</span><span class="p">):</span>
+    <span class="n">tasks</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">with</span> <span class="n">ProcessPoolExecutor</span><span class="p">(</span><span class="n">max_workers</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="k">as</span> <span class="n">executor</span><span class="p">:</span>
+        <span class="k">async</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">mygen</span><span class="p">():</span>
+            <span class="c1"># spawn the task and let it run in the background</span>
+            <span class="n">tasks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">asyncio</span><span class="o">.</span><span class="n">create_task</span><span class="p">(</span>
+                <span class="n">run_blocking</span><span class="p">(</span><span class="n">executor</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">)))</span>
+        <span class="c1"># if there was an exception, retrieve it now</span>
+        <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="n">tasks</span><span class="p">)</span>
+
+<span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span>
+<span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">non_blocking</span><span class="p">(</span><span class="n">loop</span><span class="p">))</span>
+</code></pre></div>
+</td></tr></table>
                 
               
     

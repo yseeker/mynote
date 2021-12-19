@@ -12,7 +12,7 @@
         <meta name="author" content="Yu Saito">
       
       
-        <link rel="canonical" href="https://www.yusaito.com/mynote/plot/">
+        <link rel="canonical" href="https://www.yusaito.com/mynote/util/">
       
       <link rel="icon" href="../favicon.ico">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.5">
@@ -21,7 +21,7 @@
 
     
       
-        <title>Plot - YS's note</title>
+        <title>Util - YS's note</title>
       
     
     
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Plot
+              Util
             
           </span>
         </div>
@@ -194,15 +194,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../python_basis/" class="md-tabs__link md-tabs__link--active">
+      <a href="../python_basis/" class="md-tabs__link">
         Python
       </a>
     </li>
@@ -480,14 +478,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
       
       
       
@@ -522,19 +518,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../plot.md" class="md-nav__link">
         Plot
       </a>
-      
     </li>
   
 
@@ -697,9 +685,29 @@
     
                 
                 
-                  <h1>Plot</h1>
+                  <h1>Util</h1>
                 
-                
+                <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">check_create_dir</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">get_file_list</span><span class="p">(</span><span class="n">input_dir</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span>
+        <span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">input_dir</span><span class="p">,</span> <span class="s2">&quot;**&quot;</span><span class="p">),</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+    <span class="p">]</span>
+</code></pre></div>
+</td></tr></table>
                 
               
     
@@ -724,7 +732,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../python_basis/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Basics" rel="prev">
+        <a href="../tmux/" class="md-footer__link md-footer__link--prev" aria-label="Previous: None" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -733,26 +741,11 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Basics
+              None
             </div>
           </div>
         </a>
       
-      
-        
-        <a href="../albumentations/" class="md-footer__link md-footer__link--next" aria-label="Next: albumentations" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              albumentations
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
       
     </nav>
   

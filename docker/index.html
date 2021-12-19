@@ -571,7 +571,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../plot/" class="md-nav__link">
+      <a href="../plot.md" class="md-nav__link">
         Plot
       </a>
     </li>
@@ -886,7 +886,7 @@ ENTRYPOINTはコンテナをコマンドのように使いたいとき。<br />
 </code></pre></div>
 </td></tr></table><br />
 <code>docker run -p 8888:8888 -v ~/Desktop/ds-pyhton:/work --name my-lab &lt;container&gt;</code></p>
-<h1 id="gpu">GPU環境例<a class="headerlink" href="#gpu" title="Permanent link">¶</a></h1>
+<h2 id="gpu">GPU環境例<a class="headerlink" href="#gpu" title="Permanent link">¶</a></h2>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -918,6 +918,150 @@ ENTRYPOINTはコンテナをコマンドのように使いたいとき。<br />
   tensorflow-gpu<span class="o">==</span><span class="m">2</span>.1
 <span class="k">WORKDIR</span><span class="s"> /</span>
 <span class="k">CMD</span> <span class="p">[</span><span class="s2">&quot;jupyter&quot;</span><span class="p">,</span> <span class="s2">&quot;lab&quot;</span><span class="p">,</span> <span class="s2">&quot;--ip=0.0.0.0&quot;</span><span class="p">,</span> <span class="s2">&quot;--allow-root&quot;</span><span class="p">,</span> <span class="s2">&quot;--LabAPP.token=&#39;&#39;&quot;</span><span class="p">]</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="20211205c">20211205c<a class="headerlink" href="#20211205c" title="Permanent link">¶</a></h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">FROM</span> <span class="s">nvcr.io/nvidia/pytorch:21.11-py3</span>
+
+<span class="k">ENV</span> <span class="nv">DEBIAN_FRONTEND</span><span class="o">=</span>noninteractive
+<span class="k">ENV</span> <span class="nv">TZ</span><span class="o">=</span>Asia/Tokyo
+<span class="k">RUN</span> ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+
+<span class="k">RUN</span> apt-get update <span class="o">&amp;&amp;</span> apt-get upgrade -y <span class="se">\</span>
+    <span class="o">&amp;&amp;</span> apt-get install -y --no-install-recommends <span class="se">\</span>
+    sudo <span class="se">\</span>
+    wget <span class="se">\</span>
+    curl <span class="se">\</span>
+    git <span class="se">\</span>
+    vim <span class="se">\</span>
+    make <span class="se">\</span>
+    cmake <span class="se">\</span>
+    nodejs <span class="se">\</span>
+    default-jdk <span class="se">\</span>
+    default-jre <span class="se">\</span>
+    libgl1-mesa-dev <span class="se">\</span>
+    <span class="o">&amp;&amp;</span> apt-get autoremove -y <span class="se">\</span>
+    <span class="o">&amp;&amp;</span> apt-get clean <span class="se">\</span>
+    <span class="o">&amp;&amp;</span> rm -rf <span class="se">\</span>
+    /var/lib/apt/lists/* <span class="se">\</span>
+    /var/cache/apt/* <span class="se">\</span>
+    /usr/local/src/* <span class="se">\</span>
+    /tmp/*
+
+<span class="k">COPY</span> .netrc /root/.netrc
+
+<span class="k">RUN</span> conda install -y <span class="se">\</span>
+    nodejs <span class="o">&amp;&amp;</span><span class="se">\</span>
+    conda clean -i -t -y
+
+<span class="k">RUN</span> python3 -m pip install --upgrade pip <span class="se">\</span>
+    <span class="o">&amp;&amp;</span> pip install --no-cache-dir --upgrade<span class="se">\</span>
+    black <span class="se">\</span>
+    jupyterlab <span class="se">\</span>
+    jupyterlab_code_formatter <span class="se">\</span>
+    lckr-jupyterlab-variableinspector <span class="se">\</span>
+    jupyterlab_widgets <span class="se">\</span>
+    ipywidgets <span class="se">\</span>
+    import-ipynb <span class="se">\</span>
+    <span class="o">&amp;&amp;</span> jupyter labextension install jupyterlab-plotly@5.4.0
+
+<span class="k">RUN</span> pip install --no-cache-dir --upgrade<span class="se">\</span>
+    numpy <span class="se">\</span>
+    <span class="nv">pandas</span><span class="o">==</span><span class="m">1</span>.2.5 <span class="se">\</span>
+    scipy <span class="se">\</span>
+    scikit-learn <span class="se">\</span>
+    matplotlib <span class="se">\</span>
+    seaborn <span class="se">\</span>
+    plotly <span class="se">\</span>
+    Pillow <span class="se">\</span>
+    opencv-python <span class="se">\</span>
+    opencv-contrib-python <span class="se">\</span>
+    albumentations <span class="se">\</span>
+    requests <span class="se">\</span>
+    tqdm <span class="se">\</span>
+    xgboost <span class="se">\</span>
+    lightgbm <span class="se">\</span>
+    catboost <span class="se">\</span>
+    optuna <span class="se">\</span>
+    timm <span class="se">\</span>
+    omegaconf <span class="se">\</span>
+    hydra-core <span class="se">\</span>
+    pytorch-pfn-extras <span class="se">\</span>
+    wandb <span class="se">\</span>
+    mlflow <span class="se">\</span>
+    pyyaml <span class="se">\</span>
+    <span class="o">&amp;&amp;</span> pip install -f http://h2o-release.s3.amazonaws.com/h2o/latest_stable_Py.html h2o <span class="se">\</span>
+    <span class="o">&amp;&amp;</span> rm -rf ~/.cache/pip
 </code></pre></div>
 </td></tr></table>
                 

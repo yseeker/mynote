@@ -12,21 +12,23 @@
         <meta name="author" content="Yu Saito">
       
       
-      <link rel="icon" href="/mynote/favicon.ico">
+        <link rel="canonical" href="https://www.yusaito.com/mynote/jupyter/">
+      
+      <link rel="icon" href="../favicon.ico">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.5">
     
     
 
     
       
-        <title>YS's note</title>
+        <title>Jupyter - YS's note</title>
       
     
     
-      <link rel="stylesheet" href="/mynote/assets/stylesheets/main.cdeb8541.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.cdeb8541.min.css">
       
         
-        <link rel="stylesheet" href="/mynote/assets/stylesheets/palette.3f5d1f46.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
         
           
           
@@ -47,7 +49,7 @@
     
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     
-      <link rel="stylesheet" href="/mynote/stylesheets/extra.css">
+      <link rel="stylesheet" href="../stylesheets/extra.css">
     
       <link rel="stylesheet" href="https://unpkg.com/mermaid@8.0.0/dist/mermaid.css">
     
@@ -68,12 +70,17 @@
     <body dir="ltr" data-md-color-scheme="" data-md-color-primary="white" data-md-color-accent="indigo">
   
     
-    <script>function __prefix(e){return new URL("/mynote/",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#dynamical-plot" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -84,7 +91,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/mynote/." title="YS&#39;s note" class="md-header__button md-logo" aria-label="YS's note" data-md-component="logo">
+    <a href=".." title="YS&#39;s note" class="md-header__button md-logo" aria-label="YS's note" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -103,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Jupyter
             
           </span>
         </div>
@@ -167,7 +174,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="/mynote/." class="md-tabs__link">
+    <a href=".." class="md-tabs__link">
       Home
     </a>
   </li>
@@ -182,7 +189,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/mynote/linux_command/" class="md-tabs__link">
+      <a href="../linux_command/" class="md-tabs__link">
         Utils
       </a>
     </li>
@@ -198,7 +205,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/mynote/python_basis/" class="md-tabs__link">
+      <a href="../python_basis/" class="md-tabs__link">
         Python
       </a>
     </li>
@@ -214,7 +221,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/mynote/albumentations/" class="md-tabs__link">
+      <a href="../albumentations/" class="md-tabs__link">
         ML
       </a>
     </li>
@@ -242,7 +249,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/mynote/." title="YS&#39;s note" class="md-nav__button md-logo" aria-label="YS's note" data-md-component="logo">
+    <a href=".." title="YS&#39;s note" class="md-nav__button md-logo" aria-label="YS's note" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -261,7 +268,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/mynote/." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         Home
       </a>
     </li>
@@ -302,7 +309,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/mynote/linux_command/" class="md-nav__link">
+      <a href="../linux_command/" class="md-nav__link">
         Linux
       </a>
     </li>
@@ -316,7 +323,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/mynote/shell_script.md" class="md-nav__link">
+      <a href="../shell_script.md" class="md-nav__link">
         shell script
       </a>
     </li>
@@ -330,7 +337,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/mynote/tmux/" class="md-nav__link">
+      <a href="../tmux/" class="md-nav__link">
         tmux
       </a>
     </li>
@@ -344,7 +351,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/mynote/git/" class="md-nav__link">
+      <a href="../git/" class="md-nav__link">
         Git
       </a>
     </li>
@@ -358,7 +365,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/mynote/docker/" class="md-nav__link">
+      <a href="../docker/" class="md-nav__link">
         Docker
       </a>
     </li>
@@ -372,7 +379,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/mynote/colab/" class="md-nav__link">
+      <a href="../colab/" class="md-nav__link">
         Google Colab
       </a>
     </li>
@@ -386,7 +393,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/mynote/labrad/" class="md-nav__link">
+      <a href="../labrad/" class="md-nav__link">
         LabRAD
       </a>
     </li>
@@ -400,7 +407,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/mynote/ssh/" class="md-nav__link">
+      <a href="../ssh/" class="md-nav__link">
         SSH
       </a>
     </li>
@@ -414,7 +421,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/mynote/slack_api/" class="md-nav__link">
+      <a href="../slack_api/" class="md-nav__link">
         slack API
       </a>
     </li>
@@ -428,7 +435,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/mynote/image_anal.md" class="md-nav__link">
+      <a href="../image_anal.md" class="md-nav__link">
         Pillow and OpenCV
       </a>
     </li>
@@ -442,7 +449,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/mynote/image_process/" class="md-nav__link">
+      <a href="../image_process/" class="md-nav__link">
         Image Process
       </a>
     </li>
@@ -456,7 +463,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/mynote/mlutils/" class="md-nav__link">
+      <a href="../mlutils/" class="md-nav__link">
         ML utils
       </a>
     </li>
@@ -504,7 +511,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/mynote/python_basis/" class="md-nav__link">
+      <a href="../python_basis/" class="md-nav__link">
         Basics
       </a>
     </li>
@@ -518,7 +525,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/mynote/plot.md" class="md-nav__link">
+      <a href="../plot.md" class="md-nav__link">
         Plot
       </a>
     </li>
@@ -566,7 +573,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/mynote/albumentations/" class="md-nav__link">
+      <a href="../albumentations/" class="md-nav__link">
         albumentations
       </a>
     </li>
@@ -580,7 +587,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/mynote/xgboost.md" class="md-nav__link">
+      <a href="../xgboost.md" class="md-nav__link">
         Boosting
       </a>
     </li>
@@ -594,7 +601,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/mynote/pytorch_basis/" class="md-nav__link">
+      <a href="../pytorch_basis/" class="md-nav__link">
         pytorch templates
       </a>
     </li>
@@ -634,7 +641,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/mynote/gan/" class="md-nav__link">
+      <a href="../gan/" class="md-nav__link">
         GAN basis
       </a>
     </li>
@@ -648,7 +655,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/mynote/dcgan/" class="md-nav__link">
+      <a href="../dcgan/" class="md-nav__link">
         other
       </a>
     </li>
@@ -676,11 +683,59 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dynamical-plot" class="md-nav__link">
+    dynamical plot
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
-  <h1>404 - Not found</h1>
+    
+                
+                
+                  <h1>Jupyter</h1>
+                
+                <h2 id="dynamical-plot">dynamical plot<a class="headerlink" href="#dynamical-plot" title="Permanent link">¶</a></h2>
+<p><a href="https://stackoverflow.com/questions/34486642/what-is-the-currently-correct-way-to-dynamically-update-plots-in-jupyter-ipython">https://stackoverflow.com/questions/34486642/what-is-the-currently-correct-way-to-dynamically-update-plots-in-jupyter-ipython</a></p>
+                
+              
+    
+    
+        
+    
+
+              
+                
+
 
               
             </article>
@@ -691,6 +746,41 @@
       
         
 <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../image_process/" class="md-footer__link md-footer__link--prev" aria-label="Previous: None" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              None
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../labrad/" class="md-footer__link md-footer__link--next" aria-label="Next: None" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              None
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -726,12 +816,12 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "/mynote/", "features": ["navigation.tabs", "navigation.expand"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "/mynote/assets/javascripts/workers/search.8397ff9e.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.expand"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.8397ff9e.min.js", "version": null}</script>
     
     
-      <script src="/mynote/assets/javascripts/bundle.1e84347e.min.js"></script>
+      <script src="../assets/javascripts/bundle.1e84347e.min.js"></script>
       
-        <script src="/mynote/javascripts/extra.js"></script>
+        <script src="../javascripts/extra.js"></script>
       
         <script src="https://unpkg.com/mermaid@8.0.0/dist/mermaid.min.js"></script>
       
