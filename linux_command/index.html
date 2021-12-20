@@ -1941,17 +1941,21 @@ du -h -d <span class="m">1</span> <span class="p">|</span> sort -h
 <span class="normal">11</span>
 <span class="normal">12</span>
 <span class="normal">13</span>
-<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># top: CPUやメモリの使用状況を確認</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># top: CPUやメモリの使用状況を確認</span>
 <span class="c1">#  * デフォルトだとCPU使用率の多いプロセスが上に来る</span>
 <span class="c1">#  * %CPUがCPU使用率。どのプロセスが高負荷かを確認できる。</span>
 
 <span class="c1"># ps -ef: 全てのプロセスの詳細な情報を見る(由来: every, full)</span>
 <span class="c1">#  * 用途1: あるプロセスが生きてるかどうかチェック  (webサーバ起動してる?)</span>
 <span class="c1">#  * 用途2: あるプロセスのPID(プロセスID)をチェック -&gt; kill ${PID}</span>
+ps aux
 
 <span class="c1"># kill 123: プロセスIDが123のプロセスを停止させる(SIGTERMを送る)</span>
 <span class="c1"># kill -9 123: プロセスIDが123のプロセスを問答無用で殺す(9はSIGKILLのシグナル番号)</span>
 <span class="c1"># kill -KILL 123: -9と同じ</span>
+<span class="nb">kill</span> -9 <span class="o">[</span>番号<span class="o">]</span>
 
 <span class="c1"># pkill process_name_prefix: process_name_prefixで始まるプロセスすべてを終了させる</span>
 <span class="c1"># pkill -9 process_name_prefix: process_name_prefixで始まるプロセスすべてを問答無用で終了させる</span>
@@ -1988,7 +1992,9 @@ du -h -d <span class="m">1</span> <span class="p">|</span> sort -h
 <span class="normal"> 7</span>
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
-<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># -i : 鍵ファイル</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># -i : 鍵ファイル</span>
 <span class="c1"># -L: ポートフォワーディング</span>
 ssh -L &lt;host port&gt;:localhost:&lt;remote port&gt; user@remote
 <span class="c1">#https://qiita.com/wnoguchi/items/a72a042bb8159c35d056</span>
@@ -1998,6 +2004,8 @@ ssh-keygen -t ecdsa -b <span class="m">521</span> -C <span class="s2">&quot;wnog
 <span class="c1"># 圧倒的に意識高い Ed25519</span>
 ssh-keygen -t ed25519 -P <span class="s2">&quot;&quot;</span> -f serial-server.pem
 ssh-keygen -t ed25519
+
+cat .ssh/rsa_key.pub &gt;&gt; authorised_keys
 </code></pre></div>
 </td></tr></table>
 <h4 id="scp">scp<a class="headerlink" href="#scp" title="Permanent link">¶</a></h4>
