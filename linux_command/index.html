@@ -1994,18 +1994,20 @@ ps aux
 <span class="normal"> 9</span>
 <span class="normal">10</span>
 <span class="normal">11</span>
-<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># -i : 鍵ファイル</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># -i : 鍵ファイル</span>
 <span class="c1"># -L: ポートフォワーディング</span>
 ssh -L &lt;host port&gt;:localhost:&lt;remote port&gt; user@remote
 <span class="c1">#https://qiita.com/wnoguchi/items/a72a042bb8159c35d056</span>
 <span class="c1"># ECDSA521 bit</span>
 ssh-keygen -t ecdsa -b <span class="m">521</span> -C <span class="s2">&quot;wnoguchi-mbp&quot;</span>
 
-<span class="c1"># 圧倒的に意識高い Ed25519</span>
+<span class="c1"># Ed25519</span>
 ssh-keygen -t ed25519 -P <span class="s2">&quot;&quot;</span> -f serial-server.pem
 ssh-keygen -t ed25519
 
-cat .ssh/rsa_key.pub &gt;&gt; authorised_keys
+cat public_key &gt;&gt; ~/.ssh/authorized_keys
+chmod <span class="m">600</span> ~/.ssh/authorized_keys
 </code></pre></div>
 </td></tr></table>
 <h4 id="scp">scp<a class="headerlink" href="#scp" title="Permanent link">¶</a></h4>
