@@ -890,9 +890,9 @@
 
 
 <span class="k">def</span> <span class="nf">get_file_list</span><span class="p">(</span><span class="n">input_dir</span><span class="p">):</span>
-    <span class="k">return</span> <span class="p">[</span>
+    <span class="k">return</span> <span class="nb">sorted</span><span class="p">([</span>
         <span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">input_dir</span><span class="p">,</span> <span class="s2">&quot;**&quot;</span><span class="p">),</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="p">)</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
     <span class="p">]</span>
 
 <span class="k">def</span> <span class="nf">jpg2png</span><span class="p">(</span><span class="n">file_list</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">):</span>

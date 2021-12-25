@@ -715,7 +715,14 @@
     並列処理
   </a>
   
-    <nav class="md-nav" aria-label="並列処理">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#joblib" class="md-nav__link">
+    joblib
+  </a>
+  
+    <nav class="md-nav" aria-label="joblib">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -758,6 +765,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#aiohttp" class="md-nav__link">
+    aiohttp
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -792,48 +806,23 @@
 <p>Pythonのasync/awaitは、C#などと違って、全部一つのスレッド上でやるので、CPUバウンドな処理や、大きなファイルを保存するようなI/Oバウンドな処理を速くするのは無理。通信を待ってる自分が何もしてない時間に他の処理をやりたいようなときに使える。CPUバウンドなときはmultiprocessingやconcurrent.futures.ProccessPoolExecutorを使うべし. I/Oバウンドなときはconcurrent.futures.ThreadPoolExecutorを使うべき</p>
 </blockquote>
 <h2 id="_3">並列処理<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
+<h2 id="joblib">joblib<a class="headerlink" href="#joblib" title="Permanent link">¶</a></h2>
 <h3 id="subprocesspopen">subprocess.Popen<a class="headerlink" href="#subprocesspopen" title="Permanent link">¶</a></h3>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">time</span>
-<span class="kn">import</span> <span class="nn">subprocess</span>
-
-<span class="n">start</span><span class="o">=</span><span class="n">time</span><span class="p">()</span>
-
-<span class="c1">#並列プロセス実行数の最大値</span>
-<span class="n">max_process</span> <span class="o">=</span> <span class="mi">16</span>
-<span class="n">proc_list</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="n">loop_num</span> <span class="o">=</span> <span class="mi">64</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">loop_num</span><span class="p">):</span>
-    <span class="n">proc</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">([</span><span class="s1">&#39;python&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;.\fib_sample.py&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="mi">500000</span> <span class="o">+</span> <span class="n">i</span><span class="p">)])</span>
-    <span class="n">proc_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">proc</span><span class="p">)</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="n">max_process</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="n">loop_num</span><span class="p">:</span>
-        <span class="c1">#max_process毎に、全プロセスの終了を待つ</span>
-        <span class="k">for</span> <span class="n">subproc</span> <span class="ow">in</span> <span class="n">proc_list</span><span class="p">:</span>
-            <span class="n">subproc</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">subprocess_popen</span><span class="p">(</span><span class="n">max_process</span><span class="p">,</span> <span class="n">loop_number</span><span class="p">,</span> <span class="n">cmd</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">loop_num</span><span class="p">):</span>
         <span class="n">proc_list</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="n">end</span><span class="o">=</span><span class="n">time</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%f</span><span class="s2"> sec&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">end</span><span class="o">-</span><span class="n">start</span><span class="p">))</span>
+        <span class="n">proc</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
+        <span class="n">proc_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">proc</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="n">max_process</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="n">loop_num</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">subproc</span> <span class="ow">in</span> <span class="n">proc_list</span><span class="p">:</span>
+                <span class="n">subproc</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
 </code></pre></div>
 </td></tr></table>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -1385,6 +1374,60 @@
 
 <span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span>
 <span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">non_blocking</span><span class="p">(</span><span class="n">loop</span><span class="p">))</span>
+</code></pre></div>
+</td></tr></table>
+<h2 id="aiohttp">aiohttp<a class="headerlink" href="#aiohttp" title="Permanent link">¶</a></h2>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">aiohttp</span>
+<span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span><span class="n">session</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">with</span> <span class="n">session</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+        <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span>
+        <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span>
+        <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span>
+        <span class="n">data</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">(),</span>
+        <span class="n">timeout</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+    <span class="p">)</span> <span class="k">as</span> <span class="n">resp</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">resp</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">data</span>
+
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">total_number</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">with</span> <span class="n">aiohttp</span><span class="o">.</span><span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+        <span class="n">tasks</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">total_number</span><span class="p">):</span>
+            <span class="n">tasks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">asyncio</span><span class="o">.</span><span class="n">ensure_future</span><span class="p">(</span><span class="n">get_data</span><span class="p">(</span><span class="n">session</span><span class="p">)))</span>
+
+        <span class="n">all_data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="n">tasks</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
                 
