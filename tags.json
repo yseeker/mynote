@@ -28,7 +28,7 @@
     "description": []
   },
   {
-    "title": "other",
+    "title": "Dcgan",
     "file_name": "dcgan",
     "url": "https://www.yusaito.com/mynote/dcgan/",
     "tags": [],
@@ -42,7 +42,7 @@
     "description": []
   },
   {
-    "title": "GAN basis",
+    "title": "Gan",
     "file_name": "gan",
     "url": "https://www.yusaito.com/mynote/gan/",
     "tags": [],
@@ -105,7 +105,7 @@
     "description": []
   },
   {
-    "title": "ML utils",
+    "title": "Mlutils",
     "file_name": "mlutils",
     "url": "https://www.yusaito.com/mynote/mlutils/",
     "tags": [],
@@ -161,7 +161,7 @@
     "description": []
   },
   {
-    "title": "PCサーバー設定関連",
+    "title": "PC and server setup",
     "file_name": "server_setup",
     "url": "https://www.yusaito.com/mynote/server_setup/",
     "tags": [],
@@ -203,14 +203,14 @@
     "description": []
   },
   {
-    "title": "tmux",
+    "title": "Tmux",
     "file_name": "tmux",
     "url": "https://www.yusaito.com/mynote/tmux/",
     "tags": [],
     "description": []
   },
   {
-    "title": "Util",
+    "title": "Python util",
     "file_name": "util",
     "url": "https://www.yusaito.com/mynote/util/",
     "tags": [],

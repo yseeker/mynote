@@ -21,7 +21,7 @@
 
     
       
-        <title>Util - YS's note</title>
+        <title>Python util - YS's note</title>
       
     
     
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Util
+              Python util
             
           </span>
         </div>
@@ -183,13 +183,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../linux_command/" class="md-tabs__link">
+      <a href="../server_setup/" class="md-tabs__link md-tabs__link--active">
         Utils
       </a>
     </li>
@@ -281,12 +283,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -309,36 +313,22 @@
   
   
     <li class="md-nav__item">
+      <a href="../server_setup/" class="md-nav__link">
+        PC and server setup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../linux_command/" class="md-nav__link">
         Linux
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../shell_script.md" class="md-nav__link">
-        shell script
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../tmux/" class="md-nav__link">
-        tmux
       </a>
     </li>
   
@@ -368,6 +358,168 @@
       <a href="../docker/" class="md-nav__link">
         Docker
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shell_script.md" class="md-nav__link">
+        shell script
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Python util
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Python util
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#util-pyfile-templates" class="md-nav__link">
+    util pyfile templates
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#general-util" class="md-nav__link">
+    General util
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#image" class="md-nav__link">
+    Image
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grid" class="md-nav__link">
+    画像をGrid上に表示
+  </a>
+  
+    <nav class="md-nav" aria-label="画像をGrid上に表示">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#torch" class="md-nav__link">
+    torch
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plot-util" class="md-nav__link">
+    Plot util
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pandas" class="md-nav__link">
+    pandas
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#argparse" class="md-nav__link">
+    argparse
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parallel-asyncronized" class="md-nav__link">
+    parallel, asyncronized
+  </a>
+  
+    <nav class="md-nav" aria-label="parallel, asyncronized">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#subprocess" class="md-nav__link">
+    subprocess
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multithread-multiprocess" class="md-nav__link">
+    multithread, multiprocess
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asyncio-multiprocess" class="md-nav__link">
+    asyncio &amp; multiprocess
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asyncio-aiohttp" class="md-nav__link">
+    asyncio &amp; aiohttp
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -451,20 +603,6 @@
     <li class="md-nav__item">
       <a href="../image_process/" class="md-nav__link">
         Image Process
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../mlutils/" class="md-nav__link">
-        ML utils
       </a>
     </li>
   
@@ -587,84 +725,9 @@
   
   
     <li class="md-nav__item">
-      <a href="../xgboost.md" class="md-nav__link">
-        Boosting
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../pytorch_basis/" class="md-nav__link">
         pytorch templates
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" data-md-state="indeterminate" type="checkbox" id="__nav_4_4" checked>
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_4_4">
-          Gereative models
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Gereative models" data-md-level="2">
-        <label class="md-nav__title" for="__nav_4_4">
-          <span class="md-nav__icon md-icon"></span>
-          Gereative models
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../gan/" class="md-nav__link">
-        GAN basis
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../dcgan/" class="md-nav__link">
-        other
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
     </li>
   
 
@@ -818,7 +881,7 @@
     
                 
                 
-                  <h1>Util</h1>
+                  <h1>Python util</h1>
                 
                 <h2 id="util-pyfile-templates">util pyfile templates<a class="headerlink" href="#util-pyfile-templates" title="Permanent link">¶</a></h2>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -1376,7 +1439,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../tmux/" class="md-footer__link md-footer__link--prev" aria-label="Previous: None" rel="prev">
+        <a href="../docker/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Docker" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1385,11 +1448,26 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              None
+              Docker
             </div>
           </div>
         </a>
       
+      
+        
+        <a href="../colab/" class="md-footer__link md-footer__link--next" aria-label="Next: Google Colab" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Google Colab
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
       
     </nav>
   
