@@ -12,7 +12,7 @@
         <meta name="author" content="Yu Saito">
       
       
-        <link rel="canonical" href="https://www.yusaito.com/mynote/linux_command/">
+        <link rel="canonical" href="https://www.yusaito.com/note/linux_command/">
       
       <link rel="icon" href="../favicon.ico">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.5">
@@ -587,7 +587,7 @@
         
           <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
-    &lt;, &gt; , &gt;&gt; (リダイレクト)
+    &lt;, ＆&gt; , &gt;&gt; (リダイレクト)
   </a>
   
 </li>
@@ -1271,7 +1271,7 @@
         
           <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
-    &lt;, &gt; , &gt;&gt; (リダイレクト)
+    &lt;, ＆&gt; , &gt;&gt; (リダイレクト)
   </a>
   
 </li>
@@ -1439,8 +1439,12 @@
                 
                 <h1 id="linux">Linux<a class="headerlink" href="#linux" title="Permanent link">¶</a></h1>
 <h2 id="_1">リンク<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
-<p><a href="https://dotinstall.com/lessons/basic_unix_v2">https://dotinstall.com/lessons/basic_unix_v2</a><br />
-<a href="https://prog-8.com/courses/commandline">https://prog-8.com/courses/commandline</a></p>
+<ul>
+<li><a href="https://dotinstall.com/lessons/basic_unix_v2">https://dotinstall.com/lessons/basic_unix_v2</a></li>
+<li><a href="https://prog-8.com/courses/commandline">https://prog-8.com/courses/commandline</a></li>
+<li><a href="https://uguisu.skr.jp/Windows/">https://uguisu.skr.jp/Windows/</a></li>
+<li><a href="https://atmarkit.itmedia.co.jp/ait/series/3016/">“応用力”をつけるためのLinux再入門</a></li>
+</ul>
 <h2 id="linux_1">Linux設定関連<a class="headerlink" href="#linux_1" title="Permanent link">¶</a></h2>
 <h3 id="alias">シェルのAliasの設定<a class="headerlink" href="#alias" title="Permanent link">¶</a></h3>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -1661,10 +1665,10 @@ tail -n <span class="m">3</span> file1.txt
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
 <span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># less file1: file1を見る(read only)</span>
-<span class="c1"># cat file1 | cmd1 | cmd2 | less: file1をいろいろ加工した結果を見る</span>
+cat file1 <span class="p">|</span> cmd1 <span class="p">|</span> cmd2 <span class="p">|</span> less: file1をいろいろ加工した結果を見る
 <span class="c1"># command | less -</span>
 <span class="c1"># grep 080 testData | less -N</span>
-<span class="c1"># less +F output</span>
+less +F output
 <span class="c1">#  * ターミナルに出力せず、何かを見たいときにとりあえず使うコマンド</span>
 <span class="c1">#    gg: 先頭行へ移動</span>
 <span class="c1">#    G: 最終行へ移動</span>
@@ -1679,10 +1683,12 @@ tail -n <span class="m">3</span> file1.txt
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ wc -l error.log  <span class="c1"># 行数カウント(1)</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ wc -l error.log  <span class="c1"># 行数カウント(1)</span>
 <span class="m">7</span> error.log
 <span class="c1"># ファイル数カウント</span>
 ls <span class="p">|</span> wc -w
+ls -U1 <span class="p">|</span> wc -l
 find . -name <span class="s2">&quot;*.jpg&quot;</span> <span class="p">|</span> wc -l
 
 ls -F <span class="p">|</span> grep -v / <span class="p">|</span> wc -l
@@ -1806,7 +1812,9 @@ find . -type f -print0 <span class="p">|</span> xargs -0 mv -t /var/tmp/
 https://uguisu.skr.jp/Windows/find_xargs2.html
 </code></pre></div>
 </td></tr></table>
-<h4 id="_5">&lt;, &gt; , &gt;&gt; (リダイレクト)<a class="headerlink" href="#_5" title="Permanent link">¶</a></h4>
+<h4 id="_5">&lt;, ＆&gt; , &gt;&gt; (リダイレクト)<a class="headerlink" href="#_5" title="Permanent link">¶</a></h4>
+<ul>
+<li><a href="https://hibiki-press.tech/dev-env/redirect_pipline/1571">https://hibiki-press.tech/dev-env/redirect_pipline/1571</a><br />
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1817,7 +1825,10 @@ https://uguisu.skr.jp/Windows/find_xargs2.html
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
 <span class="normal">10</span>
-<span class="normal">11</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ <span class="nb">echo</span> <span class="s2">&quot;4 ddd DDD&quot;</span> &gt;&gt; file1.txt  <span class="c1"># リダイレクト(追記)</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ <span class="nb">echo</span> <span class="s2">&quot;4 ddd DDD&quot;</span> &gt;&gt; file1.txt  <span class="c1"># リダイレクト(追記)</span>
 $ cat file1.txt
 
 $ <span class="nb">echo</span> <span class="s2">&quot;4 ddd DDD&quot;</span> &gt; file1.txt  <span class="c1"># リダイレクト(上書き)</span>
@@ -1826,10 +1837,14 @@ $ <span class="nb">echo</span> <span class="s2">&quot;4 ddd DDD&quot;</span> &gt
 <span class="c1">#実行結果をファイルresult01に出力</span>
 $ python3 sample02.py &lt; input_data &gt; result01
 
+エラー出力も書く
+python test.py <span class="p">&amp;</span>&gt; output
+
 <span class="c1">#sample02.pyの実行結果とエラー出力をファイルresult02に出力</span>
 $ python3 sample02.py &gt; result02 <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
 </code></pre></div>
-</td></tr></table>
+</td></tr></table></li>
+</ul>
 <h3 id="_6">インストール<a class="headerlink" href="#_6" title="Permanent link">¶</a></h3>
 <h4 id="echo">echo<a class="headerlink" href="#echo" title="Permanent link">¶</a></h4>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -1978,6 +1993,8 @@ chmod <span class="m">600</span> ~/.ssh/authorized_keys
 </code></pre></div>
 </td></tr></table>
 <h3 id="tmux">tmux<a class="headerlink" href="#tmux" title="Permanent link">¶</a></h3>
+<p><a href="https://golang.hateblo.jp/entry/2019/10/11/133000">https://golang.hateblo.jp/entry/2019/10/11/133000</a><br />
+<a href="https://qiita.com/nmrmsys/items/03f97f5eabec18a3a18b">https://qiita.com/nmrmsys/items/03f97f5eabec18a3a18b</a><br />
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -2052,7 +2069,7 @@ ctrl-b <span class="s2">&quot; : 上下のペインに移動 : </span>
 
 <span class="s2">ctrl-b d: detach</span>
 </code></pre></div>
-</td></tr></table>
+</td></tr></table></p>
                 
               
     
