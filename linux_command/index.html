@@ -1576,7 +1576,7 @@ ls -ltr
 </code></pre></div>
 </td></tr></table>
 <h4 id="mkdir-make-directory">mkdir (make directory)<a class="headerlink" href="#mkdir-make-directory" title="Permanent link">¶</a></h4>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>mkdir -p aaa/bbb/ccc <span class="c1">#深い階層のディレクトリを一気に作成</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>mkdir -p aaa/bbb/ccc <span class="c1">#親ディレクトリも作成</span>
 </code></pre></div>
 </td></tr></table>
 <h4 id="touch">touch<a class="headerlink" href="#touch" title="Permanent link">¶</a></h4>
@@ -1875,9 +1875,9 @@ $ python3 sample02.py &gt; result02 <span class="m">2</span>&gt;<span class="p">
 <h4 id="chmod">chmod<a class="headerlink" href="#chmod" title="Permanent link">¶</a></h4>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># chmod 755 *.sh: shファイルに実行権限を付与</span>
-<span class="c1"># chmod 644 *.js: jsファイルを普通に読み書きできる設定にする</span>
-<span class="c1">#  * 謎の数字にもちゃんと意味があるんだけど、正直644と755しか使わない</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>chmod <span class="m">755</span> *.sh <span class="c1">#shファイルに実行権限を付与</span>
+chmod <span class="m">644</span> *.js <span class="c1">#jsファイルを普通に読み書きできる設定にする</span>
+chmod ugo+rwx -R /*
 </code></pre></div>
 </td></tr></table>
 <h3 id="os">OS関連<a class="headerlink" href="#os" title="Permanent link">¶</a></h3>
@@ -1900,7 +1900,7 @@ du -h -d <span class="m">1</span> <span class="p">|</span> sort -h
 </code></pre></div>
 </td></tr></table>
 <h4 id="free">free<a class="headerlink" href="#free" title="Permanent link">¶</a></h4>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># free -h: メモリ使用状況を単位付きで表示(由来: human readable)</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>free -h <span class="c1">#メモリ使用状況を単位付きで表示(由来: human readable)</span>
 </code></pre></div>
 </td></tr></table>
 <h4 id="top-ps-kill">top, ps, kill<a class="headerlink" href="#top-ps-kill" title="Permanent link">¶</a></h4>
@@ -1919,11 +1919,11 @@ du -h -d <span class="m">1</span> <span class="p">|</span> sort -h
 <span class="normal">13</span>
 <span class="normal">14</span>
 <span class="normal">15</span>
-<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># top: CPUやメモリの使用状況を確認</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>top <span class="c1">#CPUやメモリの使用状況を確認</span>
 <span class="c1">#  * デフォルトだとCPU使用率の多いプロセスが上に来る</span>
 <span class="c1">#  * %CPUがCPU使用率。どのプロセスが高負荷かを確認できる。</span>
 
-<span class="c1"># ps -ef: 全てのプロセスの詳細な情報を見る(由来: every, full)</span>
+ps -ef <span class="c1">#全てのプロセスの詳細な情報を見る(由来: every, full)</span>
 <span class="c1">#  * 用途1: あるプロセスが生きてるかどうかチェック  (webサーバ起動してる?)</span>
 <span class="c1">#  * 用途2: あるプロセスのPID(プロセスID)をチェック -&gt; kill ${PID}</span>
 ps aux
@@ -1941,8 +1941,16 @@ ps aux
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># cmd1: cmd1をフォアグラウンドで実行</span>
-<span class="c1"># cmd1 &amp;: cmd1をバックグラウンドで実行</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>cmd1 <span class="c1">#cmd1をフォアグラウンドで実行</span>
+cmd1 <span class="p">&amp;</span> <span class="c1">#cmd1をバックグラウンドで実行</span>
+<span class="c1">#フォアグラウンド バックグラウンドに切り替え</span>
+<span class="nb">jobs</span> <span class="c1">#job番号を調べる</span>
+<span class="nb">fg</span> %1
+<span class="nb">bg</span> %1 に切り替え
 <span class="c1">#  * 重たいバッチ処理や、一時的にwebサーバを動かしたいときは、</span>
 <span class="c1">#    コマンドをバックグラウンド実行すると便利</span>
 </code></pre></div>

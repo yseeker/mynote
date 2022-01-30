@@ -1006,7 +1006,7 @@
 <code>git add &lt;file name&gt;</code><br />
 <code>git add .</code></li>
 <li>addの取り消し<br />
-<code>git reset --soft HEAD</code></li>
+<code>git reset HEAD</code></li>
 <li>状況確認<br />
 <code>git status</code></li>
 <li>コミットする（working tree, .git）<br />
@@ -1015,7 +1015,7 @@
 <code>git commit --amend</code> コミットメッセージの修正<br />
 <code>git commit -m "README.md create close #1"</code> issueをクローズする</li>
 <li>commitの取り消し<br />
-<code>git reset –soft HEAD^</code></li>
+<code>git reset --soft HEAD^</code></li>
 <li>commit済みのファイルの取り消し<br />
 <code>git rm --cached &lt;ファイル名&gt;</code><br />
 <code>echo '&lt;ファイル名&gt;' &gt;&gt; .gitignore</code></li>
@@ -1049,7 +1049,7 @@
 <li>origin/masterのpush取り消し<br />
 <code>git push -f origin HEAD^:master</code></li>
 <li>OSSなどの場合では、まずフォークもとのリポをpullする。<br />
-<code>git remote add upstream &lt;repourl&gt;</code><br />
+<code>git remote add upstream &lt;repourl&gt;</code>：本家のリポジトリを登録<br />
 <code>git pull upstream main</code><br />
 <code>git push origin new-branch</code><br />
 <code>git pull --rebase origin master</code> : rebaseしてからpull</li>
@@ -1059,6 +1059,10 @@
 <li>リモートリポのmainの反映をローカルリポのmainに反映（pull）<br />
 <code>git checkout main</code><br />
 <code>git pull origin main</code></li>
+<li>OSSの場合</li>
+<li><code>git fetch upstream</code></li>
+<li><code>git merge upstream/main</code></li>
+<li><code>git push origin main</code></li>
 <li>不要なブランチを削除する。<br />
 <code>git branch -d &lt;branch-name&gt;</code><br />
   Gighubで<code>branches</code>から削除</li>
