@@ -60,10 +60,14 @@ label.md-nav__link {
   font-size: 0.7rem;
   margin-top: 0.2rem;
 }
-.code {
+/* .code {
   font-size: 10px !important;
 }
 
 .linenos {
+  font-size: 10px !important;
+} */
+
+.md-content__inner > .highlighttable {
   font-size: 10px !important;
 }
