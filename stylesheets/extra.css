@@ -79,3 +79,7 @@ label.md-nav__link {
   margin: 1em px2rem(-16px);
   border-radius: 0;
 }
+.hll {
+  margin: 0 px2rem(-16px);
+  padding: 0 px2rem(16px);
+}
