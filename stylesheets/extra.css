@@ -64,10 +64,9 @@ label.md-nav__link {
   font-size: 13.6px !important;
 }
 
-/* .linenos {
-  font-size: 10px !important;
-} */
-
-/* .md-content__inner > .highlighttable {
-  font-size: 10px !important;
-} */
+.linenos {
+  font-size: 13.6px !important;
+}
+*/ .md-content__inner > .highlighttable {
+  font-size: 13.6px !important;
+}
