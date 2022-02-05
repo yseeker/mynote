@@ -60,26 +60,8 @@ label.md-nav__link {
   font-size: 0.7rem;
   margin-top: 0.2rem;
 }
-.code {
-  flex: 1;
-  min-width: 0;
-}
 
-.linenos {
-  padding: px2em(10.5px, 13.6px) px2em(16px, 13.6px);
-  padding-right: 0;
-  font-size: px2em(13.6px);
-  background-color: var(--md-code-bg-color);
-  border-top-left-radius: px2rem(2px);
-  border-bottom-left-radius: px2rem(2px);
-  user-select: none;
-}
-
-.md-content__inner > .highlighttable {
-  margin: 1em px2rem(-16px);
-  border-radius: 0;
-}
-.hll {
-  margin: 0 px2rem(-16px);
-  padding: 0 px2rem(16px);
+.md-typeset {
+  /*font-size: 24pt;*/
+  font-weight: 0.7em;
 }
