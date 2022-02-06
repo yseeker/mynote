@@ -66,6 +66,6 @@ label.md-nav__link {
 }
 .codehilitetable .linenos,
 .highlighttable .linenos {
-  padding: 0.725em 0.9764705882em !important;
+  padding: 1.025em 0.5764705882em !important;
   padding-right: 0 !important;
 }
