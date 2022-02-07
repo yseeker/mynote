@@ -69,3 +69,5 @@ label.md-nav__link {
   padding: 1.025em 0.5764705882em !important;
   padding-right: 0 !important;
 } */
+
+curl -s -L https://nvidia.github.io/nvidia-container-runtime/$distribution/nvidia-container-runtime.list |   sudo tee /etc/apt/sources.list.d/nvidia-container-runtime.list
