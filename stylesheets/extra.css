@@ -64,12 +64,3 @@ label.md-nav__link {
 .md-typeset {
   font-size: 0.75rem;
 }
-/* .codehilitetable .linenos,
-.highlighttable .linenos {
-  padding: 1.025em 0.5764705882em !important;
-  padding-right: 0 !important;
-} */
-
-.code {
-  white-space: pre-wrap !important;
-}
