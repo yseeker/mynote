@@ -69,3 +69,7 @@ label.md-nav__link {
   padding: 1.025em 0.5764705882em !important;
   padding-right: 0 !important;
 } */
+
+.code {
+  white-space: pre-wrap !important;
+}
