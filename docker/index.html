@@ -690,37 +690,37 @@
     
                 
 
-<p>Dockerhubのインストール<br />
-DockerfileからDockerImage, DockerImageからコンテナ</p>
+<p>Dockerhub のインストール<br />
+Dockerfile から DockerImage, DockerImage からコンテナ</p>
 <p><a href="https://scrapbox.io/llminatoll/docker_run%E3%81%AE%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%84%E3%82%8D%E3%81%84%E3%82%8D">https://scrapbox.io/llminatoll/docker_run%E3%81%AE%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%84%E3%82%8D%E3%81%84%E3%82%8D</a></p>
 <p><a href="https://beyondjapan.com/blog/2016/08/docker-command-reverse-resolutions/">https://beyondjapan.com/blog/2016/08/docker-command-reverse-resolutions/</a></p>
 <p><a href="https://smot93516.hatenablog.jp/entry/2018/09/20/001052">https://smot93516.hatenablog.jp/entry/2018/09/20/001052</a></p>
 <p><a href="https://morizyun.github.io/docker/about-docker-command.html">https://morizyun.github.io/docker/about-docker-command.html</a></p>
 <p><a href="https://nykergoto.hatenablog.jp/entry/2020/07/25/%E6%A9%9F%E6%A2%B0%E5%AD%A6%E7%BF%92%E3%81%AAdockerfile%E3%82%92%E6%9B%B8%E3%81%8F%E3%81%A8%E3%81%8D%E3%81%AB%E6%B0%97%E3%82%92%E3%81%A4%E3%81%91%E3%81%A8%E3%81%8F%E3%81%A8%E8%89%AF%E3%81%84%E3%81%93">https://nykergoto.hatenablog.jp/entry/2020/07/25/%E6%A9%9F%E6%A2%B0%E5%AD%A6%E7%BF%92%E3%81%AAdockerfile%E3%82%92%E6%9B%B8%E3%81%8F%E3%81%A8%E3%81%8D%E3%81%AB%E6%B0%97%E3%82%92%E3%81%A4%E3%81%91%E3%81%A8%E3%81%8F%E3%81%A8%E8%89%AF%E3%81%84%E3%81%93</a></p>
-<p><a href="https://qiita.com/namahoge/items/cf39320e9acc5b96d1a6">DL/RL on serverのDocker環境構築【祝500DL！】(21/08/04更新)</a></p>
+<p><a href="https://qiita.com/namahoge/items/cf39320e9acc5b96d1a6">DL/RL on server の Docker 環境構築【祝 500DL！】(21/08/04 更新)</a></p>
 <p><a href="https://towardsdatascience.com/using-jupyter-notebook-running-on-a-remote-docker-container-via-ssh-ea2c3ebb9055">Running Jupyter on a remote Docker container using SSH</a></p>
 <ul>
-<li><code>docker login</code>: dockerhubにログインする</li>
+<li><code>docker login</code>: dockerhub にログインする</li>
 <li><code>docker pull &lt;image&gt;</code>dockerhub からイメージをとってくる</li>
-<li><code>docker images</code> dockerimageの一覧を表示</li>
-<li><code>docker run &lt;image&gt;</code> create + start, dockerイメージからコンテナを作成。デフォルトのコマンドが実行される。</li>
+<li><code>docker images</code> dockerimage の一覧を表示</li>
+<li><code>docker run &lt;image&gt;</code> create + start, docker イメージからコンテナを作成。デフォルトのコマンドが実行される。</li>
 <li><code>docker ps -a</code> コンテナイメージの一覧を表示</li>
-<li><code>docker run -it ubuntu bash</code>:docker でubuntuのbashを起動（bashでデフォルトコマンド上書き）, -it はbashを起動状態（up）に保持する。-itがないとexit状態に変わる。-i:標準入力を開く、-t:出力がきれいになる。</li>
+<li><code>docker run -it ubuntu bash</code>:docker で ubuntu の bash を起動（bash でデフォルトコマンド上書き）, -it は bash を起動状態（up）に保持する。-it がないと exit 状態に変わる。-i:標準入力を開く、-t:出力がきれいになる。</li>
 <li><code>ctri + p + q</code>:detach 終了</li>
-<li><code>docker attach &lt;container&gt;</code> attachでup状態のcontainerに入る。</li>
+<li><code>docker attach &lt;container&gt;</code> attach で up 状態の container に入る。</li>
 <li><code>exit</code>:終了</li>
 <li><code>docker restart &lt;container&gt;</code></li>
 <li>
 <p><code>docker exec -it &lt;container&gt; &lt;command&gt;</code></p>
 </li>
 <li>
-<p><code>docker commit &lt;container&gt; &lt;new image&gt;</code> コンテナからnew imageとして保存</p>
+<p><code>docker commit &lt;container&gt; &lt;new image&gt;</code> コンテナから new image として保存</p>
 </li>
-<li><code>docker commit &lt;container&gt; ubuntu:updated</code> セミコロンでtag名になる<br />
-  image名はrepostitory名＋tag名<br />
+<li><code>docker commit &lt;container&gt; ubuntu:updated</code> セミコロンで tag 名になる<br />
+  image 名は repostitory 名＋ tag 名<br />
 <code>docker tag &lt;source&gt; &lt;target&gt;</code><br />
 <code>docker tag ubuntu:updated &lt;username&gt;/my-repo</code>:名前の変更<br />
-  library/ubuntuは, 正式にはregistry-1.docker.io/library/ubuntu:latest<br />
+  library/ubuntu は, 正式には registry-1.docker.io/library/ubuntu:latest<br />
 <code>docker push &lt;image&gt;</code><br />
 <code>docker pull &lt;image&gt;</code><br />
 <code>docker rmi &lt;image&gt;</code> docker image を削除<br />
@@ -729,14 +729,14 @@ DockerfileからDockerImage, DockerImageからコンテナ</p>
 <code>docker system prune</code>:コンテナ全削除<br />
 <code>sudo docker system prune -all</code> : コンテナイメージ全削除<br />
 <code>docker run --name &lt;name&gt; &lt;image&gt;</code>:コンテナの名前をつける。<br />
-<code>docker run -d &lt;image&gt;</code>:コンテナを起動後にdetachする（hostに戻る）<br />
-<code>docker run -rm &lt;image&gt;</code>:コンテナをexit後に削除する。</li>
+<code>docker run -d &lt;image&gt;</code>:コンテナを起動後に detach する（host に戻る）<br />
+<code>docker run -rm &lt;image&gt;</code>:コンテナを exit 後に削除する。</li>
 </ul>
 <p><code>docker images -aq | xargs docker rmi</code><br />
 <code>docker ps -aq | xargs docker rm</code><br />
   ``</p>
-<h1 id="docker-file">docker fileの作成<a class="headerlink" href="#docker-file" title="Permanent link">¶</a></h1>
-<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<h1 id="docker-file">docker file の作成<a class="headerlink" href="#docker-file" title="Permanent link">¶</a></h1>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -758,21 +758,23 @@ DockerfileからDockerImage, DockerImageからコンテナ</p>
 <span class="k">RUN</span> touch something
 <span class="k">CMD</span> <span class="p">[</span><span class="s2">&quot;executable&quot;</span><span class="p">,</span> <span class="s2">&quot;param1&quot;</span><span class="p">,</span> <span class="s2">&quot;param2&quot;</span><span class="p">]</span>
 </code></pre></div>
-</td></tr></table><br />
-<code>docker build &lt;directory&gt;</code><br />
+</td></tr></table>
+<p><code>docker build &lt;directory&gt;</code><br />
 <code>docker build -t &lt;name&gt; &lt;directory&gt;</code><br />
-<code>docker build -f &lt;dockerfilename&gt; &lt;build context&gt;</code> 名前はドットでつながることが多い。Dockerfileという名のファイルがビルドコンテキストに入っていない場合。</p>
+<code>docker build -f &lt;dockerfilename&gt; &lt;build context&gt;</code> 名前はドットでつながることが多い。Dockerfile という名のファイルがビルドコンテキストに入っていない場合。</p>
 <p><code>FROM</code>:ベースとなるイメージを決定<br />
-<code>RUN</code>:Linuxコマンドを実行。RUN毎にLayerが作られる。Layer数を最小限にする。&amp;&amp;でつなげる。(パッケージ名をアルファベット順で)\バックスラッシュで改行する。<br />
-最初はLayerを細かく分けて通ることを確認する。最後にLayerを最小限にする。<br />
-<code>CMD</code>:コンテナのデフォルトのコマンドを指定。CMD ["command", "param1", "paramn2"] ex. CMD [/bin/bash], CMDはレイヤーを作らない。<br />
-DockerコマンドでDocker Daemonに命令を出す
-* COPY: 単純にファイルやフォルダをコピーする場合
-* ADD: tarの圧縮ファイルを解答する<br />
-<code>ENTRYPOINT</code>は上書きできない（CMDは上書きできる）。ENTRYPOINTがあるときはCMDはparamsのみを書く。<br />
-ENTRYPOINTはコンテナをコマンドのように使いたいとき。<br />
+<code>RUN</code>:Linux コマンドを実行。RUN 毎に Layer が作られる。Layer 数を最小限にする。&amp;&amp;でつなげる。(パッケージ名をアルファベット順で)\バックスラッシュで改行する。<br />
+最初は Layer を細かく分けて通ることを確認する。最後に Layer を最小限にする。<br />
+<code>CMD</code>:コンテナのデフォルトのコマンドを指定。CMD ["command", "param1", "paramn2"] ex. CMD [/bin/bash], CMD はレイヤーを作らない。<br />
+Docker コマンドで Docker Daemon に命令を出す</p>
+<ul>
+<li>COPY: 単純にファイルやフォルダをコピーする場合</li>
+<li>ADD: tar の圧縮ファイルを解答する<br />
+<code>ENTRYPOINT</code>は上書きできない（CMD は上書きできる）。ENTRYPOINT があるときは CMD は params のみを書く。<br />
+  ENTRYPOINT はコンテナをコマンドのように使いたいとき。<br />
 <code>ENV</code>:環境変数を設定する。<br />
-<code>WORKDIR</code>実行環境を変更する。</p>
+<code>WORKDIR</code>実行環境を変更する。</li>
+</ul>
 <h2 id="_1">ホストとコンテナをつなぐ<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
 <p><code>docker run -it -v &lt;host&gt;:&lt;container&gt; &lt;image bash&gt;</code><br />
 <code>docker run -it -u $(id -u):$(id -g) -v ~/mouted_folder:/new_dir &lt;image&gt; bash</code><br />
@@ -782,7 +784,7 @@ ENTRYPOINTはコンテナをコマンドのように使いたいとき。<br />
 <code>docker run -it --rm --cpus 4 --memory 2g ubuntu bash</code><br />
 <code>docker inspect &lt;container&gt; | grep -i cpu</code></p>
 <h1 id="_2">ローカルで環境構築<a class="headerlink" href="#_2" title="Permanent link">¶</a></h1>
-<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -808,9 +810,9 @@ ENTRYPOINTはコンテナをコマンドのように使いたいとき。<br />
 <span class="k">WORKDIR</span><span class="s"> /</span>
 <span class="k">CMD</span> <span class="p">[</span><span class="s2">&quot;jupyter&quot;</span><span class="p">,</span> <span class="s2">&quot;lab&quot;</span><span class="p">,</span> <span class="s2">&quot;--ip=0.0.0.0&quot;</span><span class="p">,</span> <span class="s2">&quot;--allow-root&quot;</span><span class="p">,</span> <span class="s2">&quot;--LabAPP.token=&#39;&#39;&quot;</span><span class="p">]</span>
 </code></pre></div>
-</td></tr></table><br />
-<code>docker run -p 8888:8888 -v ~/Desktop/ds-pyhton:/work --name my-lab &lt;container&gt;</code></p>
-<h2 id="gpu">GPU環境例<a class="headerlink" href="#gpu" title="Permanent link">¶</a></h2>
+</td></tr></table>
+<p><code>docker run -p 8888:8888 -v ~/Desktop/ds-pyhton:/work --name my-lab &lt;container&gt;</code></p>
+<h2 id="gpu">GPU 環境例<a class="headerlink" href="#gpu" title="Permanent link">¶</a></h2>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -986,6 +988,203 @@ ENTRYPOINTはコンテナをコマンドのように使いたいとき。<br />
     pyyaml <span class="se">\</span>
     <span class="o">&amp;&amp;</span> pip install -f http://h2o-release.s3.amazonaws.com/h2o/latest_stable_Py.html h2o <span class="se">\</span>
     <span class="o">&amp;&amp;</span> rm -rf ~/.cache/pip
+</code></pre></div>
+</td></tr></table>
+<h2 id="docker-makefile">docker makefile<a class="headerlink" href="#docker-makefile" title="Permanent link">¶</a></h2>
+<p><a href="https://qiita.com/takara@github/items/a0a295d265ab5ff43ddc">Docker の Makefile</a></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nv">NAME</span><span class="o">=</span>xxx
+<span class="nv">VERSION</span><span class="o">=</span>xxx
+
+<span class="nf">build</span><span class="o">:</span>
+    docker build -t <span class="k">$(</span>NAME<span class="k">)</span>:<span class="k">$(</span>VERSION<span class="k">)</span> .
+
+<span class="nf">restart</span><span class="o">:</span> <span class="n">stop</span> <span class="n">start</span>
+
+<span class="nf">start</span><span class="o">:</span>
+    docker run -itd <span class="se">\</span>
+        -p xxx:xxx <span class="se">\</span>
+        -v xxx:xxx <span class="se">\</span>
+        --name <span class="k">$(</span>NAME<span class="k">)</span> <span class="se">\</span>
+        <span class="k">$(</span>NAME<span class="k">)</span>:<span class="k">$(</span>VERSION<span class="k">)</span> bash
+
+<span class="nv">contener</span><span class="o">=</span><span class="sb">`</span>docker ps -a -q<span class="sb">`</span>
+<span class="nv">image</span><span class="o">=</span><span class="sb">`</span>docker images <span class="p">|</span> awk <span class="s1">&#39;/^&lt;none&gt;/ { print $$3 }&#39;</span><span class="sb">`</span>
+
+<span class="nf">clean</span><span class="o">:</span>
+    @if <span class="o">[</span> <span class="s2">&quot;</span><span class="k">$(</span>image<span class="k">)</span><span class="s2">&quot;</span> !<span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="o">]</span> <span class="p">;</span> <span class="k">then</span> <span class="se">\</span>
+        docker rmi <span class="k">$(</span>image<span class="k">)</span><span class="p">;</span> <span class="se">\</span>
+    <span class="k">fi</span>
+    @if <span class="o">[</span> <span class="s2">&quot;</span><span class="k">$(</span>contener<span class="k">)</span><span class="s2">&quot;</span> !<span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="o">]</span> <span class="p">;</span> <span class="k">then</span> <span class="se">\</span>
+        docker rm <span class="k">$(</span>contener<span class="k">)</span><span class="p">;</span> <span class="se">\</span>
+    <span class="k">fi</span>
+
+<span class="nf">stop</span><span class="o">:</span>
+    docker rm -f <span class="k">$(</span>NAME<span class="k">)</span>
+
+<span class="nf">attach</span><span class="o">:</span>
+    docker <span class="nb">exec</span> -it <span class="k">$(</span>NAME<span class="k">)</span> /bin/bash
+
+<span class="nf">logs</span><span class="o">:</span>
+    docker logs <span class="k">$(</span>NAME<span class="k">)</span>
+</code></pre></div>
+</td></tr></table>
+<p><a href="https://qiita.com/ucan-lab/items/cfe646a34f6d8c9728ed">Laravel 開発時に便利な make(Makefile)コマンド集</a></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nf">up</span><span class="o">:</span>
+    docker-compose up -d
+<span class="nf">build</span><span class="o">:</span>
+    docker-compose build
+<span class="nf">create-project</span><span class="o">:</span>
+    docker-compose up -d --build
+    docker-compose <span class="nb">exec</span> app composer create-project --prefer-dist laravel/laravel .
+    docker-compose <span class="nb">exec</span> app composer require predis/predis
+<span class="nf">install</span><span class="o">:</span>
+    docker-compose up -d --build
+    docker-compose <span class="nb">exec</span> app composer install
+    docker-compose <span class="nb">exec</span> app cp .env.example .env
+    docker-compose <span class="nb">exec</span> app php artisan key:generate
+    docker-compose <span class="nb">exec</span> app php artisan migrate:fresh --seed
+<span class="nf">reinstall</span><span class="o">:</span>
+    @make destroy
+    @make install
+<span class="nf">stop</span><span class="o">:</span>
+    docker-compose stop
+<span class="nf">restart</span><span class="o">:</span>
+    docker-compose down
+    docker-compose up -d
+<span class="nf">down</span><span class="o">:</span>
+    docker-compose down
+<span class="nf">destroy</span><span class="o">:</span>
+    docker-compose down --rmi all --volumes
+<span class="nf">ps</span><span class="o">:</span>
+    docker-compose ps
+<span class="nf">app</span><span class="o">:</span>
+    docker-compose <span class="nb">exec</span> app bash
+<span class="nf">fresh</span><span class="o">:</span>
+    docker-compose <span class="nb">exec</span> app php artisan migrate:fresh --seed
+<span class="nf">seed</span><span class="o">:</span>
+    docker-compose <span class="nb">exec</span> app php artisan db:seed
+<span class="nf">tinker</span><span class="o">:</span>
+    docker-compose <span class="nb">exec</span> app php artisan tinker
+<span class="nf">dump</span><span class="o">:</span>
+    docker-compose <span class="nb">exec</span> app php artisan dump-server
+<span class="nf">test</span><span class="o">:</span>
+    docker-compose <span class="nb">exec</span> app php ./vendor/bin/phpunit
+<span class="nf">cache</span><span class="o">:</span>
+    docker-compose <span class="nb">exec</span> app composer dump-autoload -o
+    docker-compose <span class="nb">exec</span> app php artisan optimize:clear
+    docker-compose <span class="nb">exec</span> app php artisan optimize
+<span class="nf">cache-clear</span><span class="o">:</span>
+    docker-compose <span class="nb">exec</span> app php artisan optimize:clear
+<span class="nf">cs</span><span class="o">:</span>
+    docker-compose <span class="nb">exec</span> app ./vendor/bin/phpcs
+<span class="nf">cbf</span><span class="o">:</span>
+    docker-compose <span class="nb">exec</span> app ./vendor/bin/phpcbf
+<span class="nf">db</span><span class="o">:</span>
+    docker-compose <span class="nb">exec</span> db bash
+<span class="nf">sql</span><span class="o">:</span>
+    docker-compose <span class="nb">exec</span> db bash -c <span class="s1">&#39;mysql -u $$MYSQL_USER -p$$MYSQL_PASSWORD $$MYSQL_DATABASE&#39;</span>
+<span class="nf">node</span><span class="o">:</span>
+    docker-compose <span class="nb">exec</span> node ash
+<span class="nf">npm</span><span class="o">:</span>
+    docker-compose <span class="nb">exec</span> node npm install
+    docker-compose <span class="nb">exec</span> node npm run dev
+<span class="nf">yarn</span><span class="o">:</span>
+    docker-compose <span class="nb">exec</span> node yarn
+    docker-compose <span class="nb">exec</span> node yarn dev
 </code></pre></div>
 </td></tr></table>
 
