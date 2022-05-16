@@ -696,7 +696,13 @@ Dockerfile から DockerImage, DockerImage からコンテナ</p>
 <p><a href="https://beyondjapan.com/blog/2016/08/docker-command-reverse-resolutions/">https://beyondjapan.com/blog/2016/08/docker-command-reverse-resolutions/</a></p>
 <p><a href="https://smot93516.hatenablog.jp/entry/2018/09/20/001052">https://smot93516.hatenablog.jp/entry/2018/09/20/001052</a></p>
 <p><a href="https://morizyun.github.io/docker/about-docker-command.html">https://morizyun.github.io/docker/about-docker-command.html</a></p>
+<p><a href="https://www.forcia.com/blog/002273.html">社内の Dockerfile のベストプラクティスを公開します</a></p>
+<p><a href="https://qiita.com/zembutsu/items/a96b68277d699f79418d">https://qiita.com/zembutsu/items/a96b68277d699f79418d</a></p>
+<p><a href="https://www.slideshare.net/zembutsu/explaining-best-practices-for-writing-dockerfiles">https://www.slideshare.net/zembutsu/explaining-best-practices-for-writing-dockerfiles</a></p>
+<p><a href="https://qiita.com/zembutsu/items/24558f9d0d254e33088f">https://qiita.com/zembutsu/items/24558f9d0d254e33088f</a></p>
+<p><a href="https://www.slideshare.net/zembutsu/what-isdockerdoing">https://www.slideshare.net/zembutsu/what-isdockerdoing</a></p>
 <p><a href="https://nykergoto.hatenablog.jp/entry/2020/07/25/%E6%A9%9F%E6%A2%B0%E5%AD%A6%E7%BF%92%E3%81%AAdockerfile%E3%82%92%E6%9B%B8%E3%81%8F%E3%81%A8%E3%81%8D%E3%81%AB%E6%B0%97%E3%82%92%E3%81%A4%E3%81%91%E3%81%A8%E3%81%8F%E3%81%A8%E8%89%AF%E3%81%84%E3%81%93">https://nykergoto.hatenablog.jp/entry/2020/07/25/%E6%A9%9F%E6%A2%B0%E5%AD%A6%E7%BF%92%E3%81%AAdockerfile%E3%82%92%E6%9B%B8%E3%81%8F%E3%81%A8%E3%81%8D%E3%81%AB%E6%B0%97%E3%82%92%E3%81%A4%E3%81%91%E3%81%A8%E3%81%8F%E3%81%A8%E8%89%AF%E3%81%84%E3%81%93</a></p>
+<p><a href="https://qiita.com/zembutsu/items/a96b68277d699f79418d">https://qiita.com/zembutsu/items/a96b68277d699f79418d</a></p>
 <p><a href="https://qiita.com/namahoge/items/cf39320e9acc5b96d1a6">DL/RL on server の Docker 環境構築【祝 500DL！】(21/08/04 更新)</a></p>
 <p><a href="https://towardsdatascience.com/using-jupyter-notebook-running-on-a-remote-docker-container-via-ssh-ea2c3ebb9055">Running Jupyter on a remote Docker container using SSH</a></p>
 <ul>
@@ -728,12 +734,17 @@ Dockerfile から DockerImage, DockerImage からコンテナ</p>
 <code>docker stop &lt;container&gt;</code>コンテナを止める<br />
 <code>docker system prune</code>:コンテナ全削除<br />
 <code>sudo docker system prune -all</code> : コンテナイメージ全削除<br />
+<code>docker volume prune</code><br />
 <code>docker run --name &lt;name&gt; &lt;image&gt;</code>:コンテナの名前をつける。<br />
 <code>docker run -d &lt;image&gt;</code>:コンテナを起動後に detach する（host に戻る）<br />
 <code>docker run -rm &lt;image&gt;</code>:コンテナを exit 後に削除する。</li>
 </ul>
 <p><code>docker images -aq | xargs docker rmi</code><br />
 <code>docker ps -aq | xargs docker rm</code><br />
+<code>docker stop $(docker ps -q)</code> : すべてのコンテナ停止<br />
+<code>docker rm $(docker ps -q -a)</code> : すべてのコンテナ削除<br />
+<code>docker rmi $(docker images -q)</code>: すべてのイメージ削除<br />
+<code>docker-compose logs --tail=100 -f xxxx-server</code><br />
   ``</p>
 <h1 id="docker-file">docker file の作成<a class="headerlink" href="#docker-file" title="Permanent link">¶</a></h1>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -917,7 +928,13 @@ Docker コマンドで Docker Daemon に命令を出す</p>
 <span class="normal">68</span>
 <span class="normal">69</span>
 <span class="normal">70</span>
-<span class="normal">71</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">FROM</span> <span class="s">nvcr.io/nvidia/pytorch:21.11-py3</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">FROM</span> <span class="s">nvcr.io/nvidia/pytorch:21.11-py3</span>
 
 <span class="k">ENV</span> <span class="nv">DEBIAN_FRONTEND</span><span class="o">=</span>noninteractive
 <span class="k">ENV</span> <span class="nv">TZ</span><span class="o">=</span>Asia/Tokyo
@@ -943,8 +960,6 @@ Docker コマンドで Docker Daemon に命令を出す</p>
     /var/cache/apt/* <span class="se">\</span>
     /usr/local/src/* <span class="se">\</span>
     /tmp/*
-
-<span class="k">COPY</span> .netrc /root/.netrc
 
 <span class="k">RUN</span> conda install -y <span class="se">\</span>
     nodejs <span class="o">&amp;&amp;</span><span class="se">\</span>
@@ -977,7 +992,6 @@ Docker コマンドで Docker Daemon に命令を出す</p>
     tqdm <span class="se">\</span>
     xgboost <span class="se">\</span>
     lightgbm <span class="se">\</span>
-    catboost <span class="se">\</span>
     optuna <span class="se">\</span>
     timm <span class="se">\</span>
     omegaconf <span class="se">\</span>
@@ -986,12 +1000,22 @@ Docker コマンドで Docker Daemon に命令を出す</p>
     wandb <span class="se">\</span>
     mlflow <span class="se">\</span>
     pyyaml <span class="se">\</span>
-    <span class="o">&amp;&amp;</span> pip install -f http://h2o-release.s3.amazonaws.com/h2o/latest_stable_Py.html h2o <span class="se">\</span>
+    mplfinance <span class="se">\</span>
+    statsmodels <span class="se">\</span>
+    shap <span class="se">\</span>
+    numba <span class="se">\</span>
+    ccxt <span class="se">\</span>
+    TA-Lib<span class="o">==</span><span class="m">0</span>.4.21 <span class="se">\</span>
+    ta <span class="se">\</span>
+    pandas_ta <span class="se">\</span>
+    finta <span class="se">\</span>
+    tsfresh <span class="se">\</span>
     <span class="o">&amp;&amp;</span> rm -rf ~/.cache/pip
 </code></pre></div>
 </td></tr></table>
 <h2 id="docker-makefile">docker makefile<a class="headerlink" href="#docker-makefile" title="Permanent link">¶</a></h2>
-<p><a href="https://qiita.com/takara@github/items/a0a295d265ab5ff43ddc">Docker の Makefile</a></p>
+<p><a href="http://www.jsk.t.u-tokyo.ac.jp/~k-okada/makefile/">http://www.jsk.t.u-tokyo.ac.jp/~k-okada/makefile/</a><br />
+<a href="https://qiita.com/takara@github/items/a0a295d265ab5ff43ddc">Docker の Makefile</a></p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1185,6 +1209,91 @@ Docker コマンドで Docker Daemon に命令を出す</p>
 <span class="nf">yarn</span><span class="o">:</span>
     docker-compose <span class="nb">exec</span> node yarn
     docker-compose <span class="nb">exec</span> node yarn dev
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nv">DOCKER_REPOSITORY</span> <span class="o">:=</span> shibui/ml-system-in-actions
+
+<span class="nv">ABSOLUTE_PATH</span> <span class="o">:=</span> <span class="k">$(</span>shell <span class="nb">pwd</span><span class="k">)</span>
+
+<span class="nv">DOCKERFILE</span> <span class="o">:=</span> Dockerfile
+<span class="nv">IMAGE_VERSION</span> <span class="o">:=</span> <span class="m">0</span>.0.1
+
+<span class="nv">WEB_SINGLE_PATTERN</span> <span class="o">:=</span> web_single_pattern
+<span class="nv">WEB_SINGLE_PATTERN_PORT</span> <span class="o">:=</span> <span class="m">8000</span>
+
+
+<span class="nf">.PHONY</span><span class="o">:</span> <span class="n">build</span>
+<span class="nf">build</span><span class="o">:</span>
+    docker build <span class="se">\</span>
+        -t <span class="k">$(</span>DOCKER_REPOSITORY<span class="k">)</span>:<span class="k">$(</span>WEB_SINGLE_PATTERN<span class="k">)</span>_<span class="k">$(</span>IMAGE_VERSION<span class="k">)</span> <span class="se">\</span>
+        -f <span class="k">$(</span>DOCKERFILE<span class="k">)</span> <span class="se">\</span>
+        .
+
+<span class="nf">.PHONY</span><span class="o">:</span> <span class="n">run</span>
+<span class="nf">run</span><span class="o">:</span>
+    docker run <span class="se">\</span>
+        -it <span class="se">\</span>
+        --name <span class="k">$(</span>WEB_SINGLE_PATTERN<span class="k">)</span> <span class="se">\</span>
+        -p <span class="k">$(</span>WEB_SINGLE_PATTERN_PORT<span class="k">)</span>:<span class="k">$(</span>WEB_SINGLE_PATTERN_PORT<span class="k">)</span> <span class="se">\</span>
+        <span class="k">$(</span>DOCKER_REPOSITORY<span class="k">)</span>:<span class="k">$(</span>WEB_SINGLE_PATTERN<span class="k">)</span>_<span class="k">$(</span>IMAGE_VERSION<span class="k">)</span>
+
+<span class="nf">.PHONY</span><span class="o">:</span> <span class="n">stop</span>
+<span class="nf">stop</span><span class="o">:</span>
+    docker rm -f <span class="k">$(</span>WEB_SINGLE_PATTERN<span class="k">)</span>
+
+<span class="nf">.PHONY</span><span class="o">:</span> <span class="n">push</span>
+<span class="nf">push</span><span class="o">:</span>
+    docker push <span class="k">$(</span>DOCKER_REPOSITORY<span class="k">)</span>:<span class="k">$(</span>WEB_SINGLE_PATTERN<span class="k">)</span>_<span class="k">$(</span>IMAGE_VERSION<span class="k">)</span>
+
+<span class="nf">.PHONY</span><span class="o">:</span> <span class="n">build_all</span>
+<span class="nf">build_all</span><span class="o">:</span> <span class="n">build</span>
+
+<span class="nf">.PHONY</span><span class="o">:</span> <span class="n">run_all</span>
+<span class="nf">run_all</span><span class="o">:</span> <span class="n">run</span>
+
+<span class="nf">.PHONY</span><span class="o">:</span> <span class="n">push_all</span>
+<span class="nf">push_all</span><span class="o">:</span> <span class="n">push</span>
 </code></pre></div>
 </td></tr></table>
 

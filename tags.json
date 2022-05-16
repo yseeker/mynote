@@ -105,6 +105,13 @@
     "description": []
   },
   {
+    "title": "Shell arts",
+    "file_name": "linux_shell",
+    "url": "https://www.yusaito.com/note/linux_shell/",
+    "tags": [],
+    "description": []
+  },
+  {
     "title": "Mkdocs",
     "file_name": "mkdocs",
     "url": "https://www.yusaito.com/note/mkdocs/",
@@ -234,6 +241,13 @@
     "title": "Webpage",
     "file_name": "webpage",
     "url": "https://www.yusaito.com/note/webpage/",
+    "tags": [],
+    "description": []
+  },
+  {
+    "title": "Webserver request",
+    "file_name": "webserver_request",
+    "url": "https://www.yusaito.com/note/webserver_request/",
     "tags": [],
     "description": []
   }

@@ -11,7 +11,7 @@
         <meta name="author" content="Yu Saito">
       
       
-        <link rel="canonical" href="https://www.yusaito.com/note/mkdocs/">
+        <link rel="canonical" href="https://www.yusaito.com/note/linux_shell/">
       
       <link rel="icon" href="../favicon.ico">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.10">
@@ -20,7 +20,7 @@
 
     
       
-        <title>Mkdocs - YS's note</title>
+        <title>Shell arts - YS's note</title>
       
     
     
@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#shell-arts" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Mkdocs
+              Shell arts
             
           </span>
         </div>
@@ -615,6 +615,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -623,9 +625,50 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    デプロイ
+  <a href="#basic" class="md-nav__link">
+    Basic
   </a>
+  
+    <nav class="md-nav" aria-label="Basic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sed" class="md-nav__link">
+    sed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#awk" class="md-nav__link">
+    awk
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xargs" class="md-nav__link">
+    xargs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-manipulation" class="md-nav__link">
+    file manipulation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    変数の扱い
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -643,10 +686,145 @@
     
                 
 
-  <h1>Mkdocs</h1>
+<h1 id="shell-arts">Shell arts<a class="headerlink" href="#shell-arts" title="Permanent link">¶</a></h1>
+<h2 id="basic">Basic<a class="headerlink" href="#basic" title="Permanent link">¶</a></h2>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>man <span class="c1"># コマンドを調べる</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="sed">sed<a class="headerlink" href="#sed" title="Permanent link">¶</a></h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">echo</span> abcdefgabc <span class="p">|</span> sed <span class="s1">&#39;s/a/b/&#39;</span> <span class="c1"># 文字1つだけ</span>
+<span class="nb">echo</span> abcdefgabc <span class="p">|</span> sed <span class="s1">&#39;s/a/b/g&#39;</span> <span class="c1">#文字列全部</span>
+<span class="nb">echo</span> abcdefgabc <span class="p">|</span> sed <span class="s1">&#39;s/ab/&amp;&amp;/&#39;</span> <span class="c1">#&amp;は検索対象の文字列を指すのでababと同義</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="awk">awk<a class="headerlink" href="#awk" title="Permanent link">¶</a></h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">## awk, grep, sed などはbashの変数として解釈されるのを防ぐためにシングルクオートで囲む</span>
 
-<h2 id="_1">デプロイ<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>mkdocs gh-deploy
+seq <span class="m">5</span> <span class="p">|</span> awk <span class="s1">&#39;/[24]/&#39;</span>
+<span class="c1"># grep の　grep &#39;正規表現&#39;と同義</span>
+
+seq <span class="m">5</span> <span class="p">|</span> <span class="s1">&#39;$1%2==0&#39;</span>
+<span class="c1"># $1は読み込んだ行の１列目</span>
+<span class="c1"># 文字列はダブルクオートで囲む</span>
+<span class="c1"># {}の意味、https://qiita.com/yohm/items/3527d517768402efbcb6</span>
+
+seq <span class="m">5</span> <span class="p">|</span> awk <span class="s1">&#39;{print $1%2 ? &quot;odd&quot;:&quot;even&quot;}&#39;</span>
+seq <span class="m">5</span> <span class="p">|</span> awk <span class="s1">&#39;{print $1%2 ? &quot;odd&quot;:&quot;even&quot;}&#39;</span> <span class="p">|</span> sort <span class="p">|</span> uniq -c
+<span class="c1"># 三項演算子</span>
+<span class="c1"># -c オプションは同じ行が何個連続しているかを数える</span>
+
+seq <span class="m">4</span> <span class="p">|</span> mkdir
+ls **.sh <span class="p">|</span> xargs less
+<span class="c1"># パイプは標準入力として渡すが、xargsは引数として渡す</span>
+
+<span class="c1"># 1列目にplと書かれている行の2列目を抽出</span>
+cat data.txt <span class="p">|</span> awk <span class="s1">&#39;$1==&quot;pl&quot;&#39;</span> <span class="p">|</span> awk <span class="s1">&#39;{print $2}&#39;</span>
+
+<span class="c1"># 階段型の模様を描く</span>
+seq <span class="m">5</span> <span class="p">|</span> awk <span class="s1">&#39;{for(i=1;i&lt;$1;i++){printf &quot; &quot;};print &quot;x&quot;}&#39;</span> <span class="p">|</span> tac
+seq <span class="m">5</span> <span class="p">|</span> awk <span class="s1">&#39;{a++;for(i=5;i&gt;a;i--){printf &quot; &quot;}&#39;</span><span class="p">;</span>print <span class="s2">&quot;x&quot;</span><span class="o">}</span><span class="s1">&#39;</span>
+
+<span class="s1">#カンマ区切りの2列目を取り出す</span>
+<span class="s1">$ echo &#39;</span>aaa,<span class="s2">&quot;bbb,ccc&quot;</span>,ddd<span class="s1">&#39; |\</span>
+<span class="s1">&gt; gawk -v FPAT=&#39;</span><span class="o">([</span>^,<span class="o">]</span>+<span class="o">)</span><span class="p">|</span><span class="o">(</span><span class="se">\&quot;</span><span class="o">[</span>^<span class="se">\&quot;</span><span class="o">]</span>+<span class="se">\&quot;</span><span class="o">)</span><span class="s1">&#39; &#39;</span><span class="o">{</span>print <span class="nv">$2</span><span class="o">}</span><span class="err">&#39;</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="xargs">xargs<a class="headerlink" href="#xargs" title="Permanent link">¶</a></h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>mkdir <span class="m">1</span> <span class="m">3</span>
+seq <span class="m">4</span> <span class="p">|</span> xargs -n2 mv
+<span class="c1"># -n個数 個数ずつ引数を渡す</span>
+
+seq <span class="m">4</span> <span class="p">|</span> xargs -I@ mkdir dir_@
+<span class="c1"># @の中にxargsが受け取る引数を１つずつ入れる</span>
+
+seq <span class="m">4</span> <span class="p">|</span> awk <span class="s1">&#39;{print &quot;mkdir&quot; ($1%2 ? &quot;odd_&quot; : &quot;even_&quot;)$1}&#39;</span> <span class="p">|</span> bash
+even_2 even_4 odd_1 even_4
+</code></pre></div>
+</td></tr></table>
+<h3 id="file-manipulation">file manipulation<a class="headerlink" href="#file-manipulation" title="Permanent link">¶</a></h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>grep <span class="s1">&#39;\.exe$&#39;</span> files.txt
+cat files.txt <span class="p">|</span>grep <span class="s1">&#39;\.exe$&#39;</span>
+<span class="c1"># \はエスケープ文字.今は拡張子を検索したい。$は終端を表す。</span>
+<span class="c1"># ファイルの中から.exeという名前のものを探す</span>
+
+<span class="c1"># pngをjpgに一括変換</span>
+ls *.png <span class="p">|</span> sed <span class="s1">&#39;s/\.png$//&#39;</span> <span class="p">|</span> xargs -I@ convert @.png @.jpg
+<span class="c1"># 時間計測＋プロセッサ数で並列処理</span>
+<span class="nb">time</span> ls *.png <span class="p">|</span> sed <span class="s1">&#39;s/\.exe$//&#39;</span> <span class="p">|</span> xargs -P<span class="k">$(</span>nproc<span class="k">)</span> -I@ convert @.png
+
+<span class="c1"># -Uでソートを短縮</span>
+<span class="nb">time</span> ls -U <span class="p">|</span> xargs -P2 rename <span class="s1">&#39;s/^/000000/;/0*([0-9]{7}/$1/&#39;</span><span class="o">)</span>
+
+grep -l <span class="s1">&#39;^10$&#39;</span> -R <span class="p">|</span> xargs rm
+</code></pre></div>
+</td></tr></table>
+<h3 id="_1">変数の扱い<a class="headerlink" href="#_1" title="Permanent link">¶</a></h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nv">a</span><span class="o">=</span><span class="m">234</span>
+<span class="nv">b</span><span class="o">=</span><span class="m">678</span>
+<span class="nv">c</span><span class="o">=</span><span class="nv">$a$b</span><span class="p">;</span> <span class="nb">echo</span> <span class="nv">$c</span>
+<span class="c1">#234678</span>
+
+<span class="nv">c</span><span class="o">=</span><span class="si">${</span><span class="nv">a</span><span class="p">:</span><span class="nv">1</span><span class="p">:</span><span class="nv">2</span><span class="si">}</span><span class="p">;</span> <span class="nb">echo</span> <span class="nv">$c</span>
+<span class="c1">#0スタート、1文字目から数えて2つ</span>
+<span class="c1">#34</span>
 </code></pre></div>
 </td></tr></table>
 
@@ -667,7 +845,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../linux_shell/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Shell arts" rel="prev">
+        <a href="../linux_command_old/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Linux command old" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -676,20 +854,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Shell arts
+              Linux command old
             </div>
           </div>
         </a>
       
       
         
-        <a href="../mlutils/" class="md-footer__link md-footer__link--next" aria-label="Next: Mlutils" rel="next">
+        <a href="../mkdocs/" class="md-footer__link md-footer__link--next" aria-label="Next: Mkdocs" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Mlutils
+              Mkdocs
             </div>
           </div>
           <div class="md-footer__button md-icon">

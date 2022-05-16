@@ -724,6 +724,26 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#useful-commands" class="md-nav__link">
+    useful commands
+  </a>
+  
+    <nav class="md-nav" aria-label="useful commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    容量の大きいファイルの特定
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#tmux" class="md-nav__link">
     tmux
   </a>
@@ -1414,6 +1434,26 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#useful-commands" class="md-nav__link">
+    useful commands
+  </a>
+  
+    <nav class="md-nav" aria-label="useful commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    容量の大きいファイルの特定
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#tmux" class="md-nav__link">
     tmux
   </a>
@@ -2007,6 +2047,36 @@ chmod <span class="m">600</span> ~/.ssh/authorized_keys
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># -i : 鍵ファイル</span>
 <span class="c1"># -r : ディレクトリを移動</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="useful-commands">useful commands<a class="headerlink" href="#useful-commands" title="Permanent link">¶</a></h3>
+<h4 id="_10">容量の大きいファイルの特定<a class="headerlink" href="#_10" title="Permanent link">¶</a></h4>
+<p>使用量が多い順に 5 件を取得する</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>du -sm ./* | sort -rn | head -5
+</code></pre></div>
+</td></tr></table>
+<p>容量をくってるベスト 100</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>du -ma | sort -rn | head -100
+</code></pre></div>
+</td></tr></table>
+<p>ディレクトリのみを検索する場合</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>du -m | sort -rn | head -100
+</code></pre></div>
+</td></tr></table>
+<p>30 日間編集がないディレクトリをサイズ順で表示</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>find ./ -mtime +30 -prune -exec du -sh {} \;|sort -hr
+</code></pre></div>
+</td></tr></table>
+<p>カレントディレクトリの容量を表示．深さ 1．</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>du -h -d1 .
+</code></pre></div>
+</td></tr></table>
+<p>100 ファイルをランダムに選んでコピー．</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>find /some/dir -type f -name &quot;*.jpg&quot; | shuf -n 100 | xargs cp -vt /target/dir/
+</code></pre></div>
+</td></tr></table>
+<p>tgt_dir 以下のファイル名を利用して、src_dir から dst_fir へとファイルを移動</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>ls tgt_dir | while read name; do mv src_dir/${name:0:-4}* dst_dir/; done
 </code></pre></div>
 </td></tr></table>
 <h3 id="tmux">tmux<a class="headerlink" href="#tmux" title="Permanent link">¶</a></h3>
