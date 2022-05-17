@@ -644,53 +644,18 @@
     awk
   </a>
   
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#xargs" class="md-nav__link">
-    xargs
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#file-manipulation" class="md-nav__link">
-    file manipulation
-  </a>
-  
-    <nav class="md-nav" aria-label="file manipulation">
+    <nav class="md-nav" aria-label="awk">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#png-jpg" class="md-nav__link">
-    png を jpg に一括変換
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    時間計測＋プロセッサ数で並列処理
+    三項演算子
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-u" class="md-nav__link">
-    名前一括変更+-U でソート短縮
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    変数の扱い
-  </a>
   
 </li>
         
@@ -739,51 +704,43 @@
 <span class="normal">10</span>
 <span class="normal">11</span>
 <span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">## awk, grep, sed などはbashの変数として解釈されるのを防ぐためにシングルクオートで囲む</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">## awk, grep, sed などはbashの変数として解釈されるのを防ぐためにシングルクオートで囲む</span>
 
+<span class="c1"># grep &#39;正規表現&#39;と同義</span>
 seq <span class="m">5</span> <span class="p">|</span> awk <span class="s1">&#39;/[24]/&#39;</span>
-<span class="c1"># grep の　grep &#39;正規表現&#39;と同義</span>
 
-seq <span class="m">5</span> <span class="p">|</span> <span class="s1">&#39;$1%2==0&#39;</span>
 <span class="c1"># $1は読み込んだ行の１列目</span>
 <span class="c1"># 文字列はダブルクオートで囲む</span>
-<span class="c1"># {}の意味、https://qiita.com/yohm/items/3527d517768402efbcb6</span>
 
-seq <span class="m">5</span> <span class="p">|</span> awk <span class="s1">&#39;{print $1%2 ? &quot;odd&quot;:&quot;even&quot;}&#39;</span>
-seq <span class="m">5</span> <span class="p">|</span> awk <span class="s1">&#39;{print $1%2 ? &quot;odd&quot;:&quot;even&quot;}&#39;</span> <span class="p">|</span> sort <span class="p">|</span> uniq -c
-<span class="c1"># 三項演算子</span>
-<span class="c1"># -c オプションは同じ行が何個連続しているかを数える</span>
+seq <span class="m">5</span> <span class="p">|</span> <span class="s1">&#39;$1%2==0&#39;</span>
 
+<span class="c1"># パイプは標準入力として渡すが、xargsは引数として渡す</span>
 seq <span class="m">4</span> <span class="p">|</span> mkdir
 ls **.sh <span class="p">|</span> xargs less
-<span class="c1"># パイプは標準入力として渡すが、xargsは引数として渡す</span>
-
-<span class="c1"># 1列目にplと書かれている行の2列目を抽出</span>
-cat data.txt <span class="p">|</span> awk <span class="s1">&#39;$1==&quot;pl&quot;&#39;</span> <span class="p">|</span> awk <span class="s1">&#39;{print $2}&#39;</span>
-
-<span class="c1"># 階段型の模様を描く</span>
-seq <span class="m">5</span> <span class="p">|</span> awk <span class="s1">&#39;{for(i=1;i&lt;$1;i++){printf &quot; &quot;};print &quot;x&quot;}&#39;</span> <span class="p">|</span> tac
-seq <span class="m">5</span> <span class="p">|</span> awk <span class="s1">&#39;{a++;for(i=5;i&gt;a;i--){printf &quot; &quot;}&#39;</span><span class="p">;</span>print <span class="s2">&quot;x&quot;</span><span class="o">}</span><span class="s1">&#39;</span>
-
-<span class="s1">#カンマ区切りの2列目を取り出す</span>
-<span class="s1">$ echo &#39;</span>aaa,<span class="s2">&quot;bbb,ccc&quot;</span>,ddd<span class="s1">&#39; |\</span>
-<span class="s1">&gt; gawk -v FPAT=&#39;</span><span class="o">([</span>^,<span class="o">]</span>+<span class="o">)</span><span class="p">|</span><span class="o">(</span><span class="se">\&quot;</span><span class="o">[</span>^<span class="se">\&quot;</span><span class="o">]</span>+<span class="se">\&quot;</span><span class="o">)</span><span class="s1">&#39; &#39;</span><span class="o">{</span>print <span class="nv">$2</span><span class="o">}</span><span class="err">&#39;</span>
+</code></pre></div>
+</td></tr></table>
+<h4 id="_1">三項演算子<a class="headerlink" href="#_1" title="Permanent link">¶</a></h4>
+<h1 id="-c">-c オプションは同じ行が何個連続しているかを数える<a class="headerlink" href="#-c" title="Permanent link">¶</a></h1>
+<h1 id="httpsqiitacomyohmitems3527d517768402efbcb6">{}の意味、<a href="https://qiita.com/yohm/items/3527d517768402efbcb6">https://qiita.com/yohm/items/3527d517768402efbcb6</a><a class="headerlink" href="#httpsqiitacomyohmitems3527d517768402efbcb6" title="Permanent link">¶</a></h1>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>seq <span class="m">5</span> <span class="p">|</span> awk <span class="s1">&#39;{print $1%2 ? &quot;odd&quot;:&quot;even&quot;}&#39;</span>
+seq <span class="m">5</span> <span class="p">|</span> awk <span class="s1">&#39;{print $1%2 ? &quot;odd&quot;:&quot;even&quot;}&#39;</span> <span class="p">|</span> sort <span class="p">|</span> uniq -c
+</code></pre></div>
+</td></tr></table>
+<h4 id="1-pl-2">1 列目に pl と書かれている行の 2 列目を抽出<a class="headerlink" href="#1-pl-2" title="Permanent link">¶</a></h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>cat data.txt <span class="p">|</span> awk <span class="s1">&#39;$1==&quot;pl&quot;&#39;</span> <span class="p">|</span> awk <span class="s1">&#39;{print $2}&#39;</span>
+</code></pre></div>
+</td></tr></table>
+<h4 id="_2">階段型の模様を描く<a class="headerlink" href="#_2" title="Permanent link">¶</a></h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>seq <span class="m">5</span> <span class="p">|</span> awk <span class="s1">&#39;{for(i=1;i&lt;$1;i++){printf &quot; &quot;};print &quot;x&quot;}&#39;</span> <span class="p">|</span> tac
+seq <span class="m">5</span> <span class="p">|</span> awk <span class="s1">&#39;{a++;for(i=5;i&gt;a;i--){printf &quot; &quot;}&#39;</span><span class="p">;</span>print <span class="s2">&quot;x&quot;</span><span class="o">}</span><span class="err">&#39;</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="2">カンマ区切りの 2 列目を取り出す<a class="headerlink" href="#2" title="Permanent link">¶</a></h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="s1">&#39;aaa,&quot;bbb,ccc&quot;,ddd&#39;</span> <span class="p">|</span><span class="se">\</span>
+gawk -v <span class="nv">FPAT</span><span class="o">=</span><span class="s1">&#39;([^,]+)|(\&quot;[^\&quot;]+\&quot;)&#39;</span> <span class="s1">&#39;{print $2}&#39;</span>
 </code></pre></div>
 </td></tr></table>
 <h3 id="xargs">xargs<a class="headerlink" href="#xargs" title="Permanent link">¶</a></h3>
@@ -807,48 +764,23 @@ even_2 even_4 odd_1 even_4
 </code></pre></div>
 </td></tr></table>
 <h3 id="file-manipulation">file manipulation<a class="headerlink" href="#file-manipulation" title="Permanent link">¶</a></h3>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>grep <span class="s1">&#39;\.exe$&#39;</span> files.txt
-cat files.txt <span class="p">|</span>grep <span class="s1">&#39;\.exe$&#39;</span>
+<h4 id="png-jpg">png を jpg に一括変換+時間計測＋プロセッサ数で並列処理<a class="headerlink" href="#png-jpg" title="Permanent link">¶</a></h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">time</span> ls *.png <span class="p">|</span> sed <span class="s1">&#39;s/\.exe$//&#39;</span> <span class="p">|</span> xargs -P<span class="k">$(</span>nproc<span class="k">)</span> -I@ convert @.png
 <span class="c1"># \はエスケープ文字.今は拡張子を検索したい。$は終端を表す。</span>
 <span class="c1"># ファイルの中から.exeという名前のものを探す</span>
-
-<span class="c1"># pngをjpgに一括変換</span>
-ls *.png <span class="p">|</span> sed <span class="s1">&#39;s/\.png$//&#39;</span> <span class="p">|</span> xargs -I@ convert @.png @.jpg
-<span class="c1"># 時間計測＋プロセッサ数で並列処理</span>
-<span class="nb">time</span> ls *.png <span class="p">|</span> sed <span class="s1">&#39;s/\.exe$//&#39;</span> <span class="p">|</span> xargs -P<span class="k">$(</span>nproc<span class="k">)</span> -I@ convert @.png
-
-<span class="c1"># 名前一括変更+-Uでソート短縮</span>
-<span class="nb">time</span> ls -U <span class="p">|</span> xargs -P2 rename <span class="s1">&#39;s/^/000000/;/0*([0-9]{7}/$1/&#39;</span><span class="o">)</span>
-
-grep -l <span class="s1">&#39;^10$&#39;</span> -R <span class="p">|</span> xargs rm
-</code></pre></div>
-</td></tr></table>
-<h4 id="png-jpg">png を jpg に一括変換<a class="headerlink" href="#png-jpg" title="Permanent link">¶</a></h4>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>ls <span class="se">\*</span>.png <span class="p">|</span> sed <span class="s1">&#39;s/\.png$//&#39;</span> <span class="p">|</span> xargs -I@ convert @.png @.jpg
-</code></pre></div>
-</td></tr></table>
-<h4 id="_1">時間計測＋プロセッサ数で並列処理<a class="headerlink" href="#_1" title="Permanent link">¶</a></h4>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">time</span> ls *.png <span class="p">|</span> sed <span class="s1">&#39;s/\.exe$//&#39;</span> <span class="p">|</span> xargs -P<span class="k">$(</span>nproc<span class="k">)</span> -I@ convert @.png
 </code></pre></div>
 </td></tr></table>
 <h3 id="-u">名前一括変更+-U でソート短縮<a class="headerlink" href="#-u" title="Permanent link">¶</a></h3>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">time</span> ls -U <span class="p">|</span> xargs -P2 rename <span class="s1">&#39;s/^/000000/;/0\*([0-9]{7}/$1/&#39;</span><span class="o">)</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">time</span> ls -U <span class="p">|</span> xargs -P<span class="k">$(</span>nproc<span class="k">)</span> rename <span class="s1">&#39;s/^/000000/;/0\*([0-9]{7}/$1/&#39;</span><span class="o">)</span>
+<span class="c1"># 削除</span>
+grep -l <span class="s1">&#39;^10$&#39;</span> -R <span class="p">|</span> xargs rm
 </code></pre></div>
 </td></tr></table>
-<h3 id="_2">変数の扱い<a class="headerlink" href="#_2" title="Permanent link">¶</a></h3>
+<h3 id="_3">変数の扱い<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
