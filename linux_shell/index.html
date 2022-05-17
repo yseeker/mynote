@@ -662,6 +662,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#png-jpg" class="md-nav__link">
+    png を jpg に一括変換
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     時間計測＋プロセッサ数で並列処理
   </a>
@@ -670,6 +677,13 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-u" class="md-nav__link">
+    名前一括変更+-U でソート短縮
+  </a>
   
 </li>
         
@@ -816,14 +830,22 @@ ls *.png <span class="p">|</span> sed <span class="s1">&#39;s/\.png$//&#39;</spa
 <span class="c1"># 時間計測＋プロセッサ数で並列処理</span>
 <span class="nb">time</span> ls *.png <span class="p">|</span> sed <span class="s1">&#39;s/\.exe$//&#39;</span> <span class="p">|</span> xargs -P<span class="k">$(</span>nproc<span class="k">)</span> -I@ convert @.png
 
-<span class="c1"># -Uでソートを短縮</span>
+<span class="c1"># 名前一括変更+-Uでソート短縮</span>
 <span class="nb">time</span> ls -U <span class="p">|</span> xargs -P2 rename <span class="s1">&#39;s/^/000000/;/0*([0-9]{7}/$1/&#39;</span><span class="o">)</span>
 
 grep -l <span class="s1">&#39;^10$&#39;</span> -R <span class="p">|</span> xargs rm
 </code></pre></div>
 </td></tr></table>
+<h4 id="png-jpg">png を jpg に一括変換<a class="headerlink" href="#png-jpg" title="Permanent link">¶</a></h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>ls <span class="se">\*</span>.png <span class="p">|</span> sed <span class="s1">&#39;s/\.png$//&#39;</span> <span class="p">|</span> xargs -I@ convert @.png @.jpg
+</code></pre></div>
+</td></tr></table>
 <h4 id="_1">時間計測＋プロセッサ数で並列処理<a class="headerlink" href="#_1" title="Permanent link">¶</a></h4>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">time</span> ls *.png <span class="p">|</span> sed <span class="s1">&#39;s/\.exe$//&#39;</span> <span class="p">|</span> xargs -P<span class="k">$(</span>nproc<span class="k">)</span> -I@ convert @.png
+</code></pre></div>
+</td></tr></table>
+<h3 id="-u">名前一括変更+-U でソート短縮<a class="headerlink" href="#-u" title="Permanent link">¶</a></h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">time</span> ls -U <span class="p">|</span> xargs -P2 rename <span class="s1">&#39;s/^/000000/;/0\*([0-9]{7}/$1/&#39;</span><span class="o">)</span>
 </code></pre></div>
 </td></tr></table>
 <h3 id="_2">変数の扱い<a class="headerlink" href="#_2" title="Permanent link">¶</a></h3>
