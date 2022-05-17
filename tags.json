@@ -1,92 +1,8 @@
 [
   {
-    "title": "Home",
-    "file_name": "index",
-    "url": "https://www.yusaito.com/note/",
-    "tags": [],
-    "description": []
-  },
-  {
-    "title": "albumentations",
-    "file_name": "albumentations",
-    "url": "https://www.yusaito.com/note/albumentations/",
-    "tags": [],
-    "description": []
-  },
-  {
-    "title": "Coding style",
-    "file_name": "coding_style",
-    "url": "https://www.yusaito.com/note/coding_style/",
-    "tags": [],
-    "description": []
-  },
-  {
-    "title": "Google Colab",
-    "file_name": "colab",
-    "url": "https://www.yusaito.com/note/colab/",
-    "tags": [],
-    "description": []
-  },
-  {
-    "title": "Dcgan",
-    "file_name": "dcgan",
-    "url": "https://www.yusaito.com/note/dcgan/",
-    "tags": [],
-    "description": []
-  },
-  {
-    "title": "Deepfake",
-    "file_name": "deepfake",
-    "url": "https://www.yusaito.com/note/deepfake/",
-    "tags": [],
-    "description": []
-  },
-  {
     "title": "Docker",
     "file_name": "docker",
     "url": "https://www.yusaito.com/note/docker/",
-    "tags": [],
-    "description": []
-  },
-  {
-    "title": "Gan",
-    "file_name": "gan",
-    "url": "https://www.yusaito.com/note/gan/",
-    "tags": [],
-    "description": []
-  },
-  {
-    "title": "Gif",
-    "file_name": "gif",
-    "url": "https://www.yusaito.com/note/gif/",
-    "tags": [],
-    "description": []
-  },
-  {
-    "title": "Git",
-    "file_name": "git",
-    "url": "https://www.yusaito.com/note/git/",
-    "tags": [],
-    "description": []
-  },
-  {
-    "title": "Image Process",
-    "file_name": "image_process",
-    "url": "https://www.yusaito.com/note/image_process/",
-    "tags": [],
-    "description": []
-  },
-  {
-    "title": "Jupyter",
-    "file_name": "jupyter",
-    "url": "https://www.yusaito.com/note/jupyter/",
-    "tags": [],
-    "description": []
-  },
-  {
-    "title": "LabRAD",
-    "file_name": "labrad",
-    "url": "https://www.yusaito.com/note/labrad/",
     "tags": [],
     "description": []
   },
@@ -98,13 +14,6 @@
     "description": []
   },
   {
-    "title": "Linux command old",
-    "file_name": "linux_command_old",
-    "url": "https://www.yusaito.com/note/linux_command_old/",
-    "tags": [],
-    "description": []
-  },
-  {
     "title": "Shell arts",
     "file_name": "linux_shell",
     "url": "https://www.yusaito.com/note/linux_shell/",
@@ -112,142 +21,9 @@
     "description": []
   },
   {
-    "title": "Mkdocs",
-    "file_name": "mkdocs",
-    "url": "https://www.yusaito.com/note/mkdocs/",
-    "tags": [],
-    "description": []
-  },
-  {
-    "title": "Mlutils",
-    "file_name": "mlutils",
-    "url": "https://www.yusaito.com/note/mlutils/",
-    "tags": [],
-    "description": []
-  },
-  {
-    "title": "Pandas",
-    "file_name": "pandas",
-    "url": "https://www.yusaito.com/note/pandas/",
-    "tags": [],
-    "description": []
-  },
-  {
-    "title": "Parallel",
-    "file_name": "parallel",
-    "url": "https://www.yusaito.com/note/parallel/",
-    "tags": [],
-    "description": []
-  },
-  {
-    "title": "並列処理と非同期処理",
-    "file_name": "pararell-async",
-    "url": "https://www.yusaito.com/note/pararell-async/",
-    "tags": [],
-    "description": []
-  },
-  {
-    "title": "pillow openCV",
-    "file_name": "pillow_openCV",
-    "url": "https://www.yusaito.com/note/pillow_openCV/",
-    "tags": [],
-    "description": []
-  },
-  {
-    "title": "Basics",
-    "file_name": "python_basis",
-    "url": "https://www.yusaito.com/note/python_basis/",
-    "tags": [],
-    "description": []
-  },
-  {
-    "title": "Python high performance",
-    "file_name": "python_high_performance",
-    "url": "https://www.yusaito.com/note/python_high_performance/",
-    "tags": [],
-    "description": []
-  },
-  {
-    "title": "Python other",
-    "file_name": "python_other",
-    "url": "https://www.yusaito.com/note/python_other/",
-    "tags": [],
-    "description": []
-  },
-  {
-    "title": "pytorch templates",
-    "file_name": "pytorch_basis",
-    "url": "https://www.yusaito.com/note/pytorch_basis/",
-    "tags": [],
-    "description": []
-  },
-  {
-    "title": "PC and server setup",
-    "file_name": "server_setup",
-    "url": "https://www.yusaito.com/note/server_setup/",
-    "tags": [],
-    "description": []
-  },
-  {
-    "title": "Shell",
-    "file_name": "shell",
-    "url": "https://www.yusaito.com/note/shell/",
-    "tags": [],
-    "description": []
-  },
-  {
-    "title": "Shellscript",
-    "file_name": "shellscript",
-    "url": "https://www.yusaito.com/note/shellscript/",
-    "tags": [],
-    "description": []
-  },
-  {
-    "title": "slack API",
-    "file_name": "slack_api",
-    "url": "https://www.yusaito.com/note/slack_api/",
-    "tags": [],
-    "description": []
-  },
-  {
-    "title": "SSH",
-    "file_name": "ssh",
-    "url": "https://www.yusaito.com/note/ssh/",
-    "tags": [],
-    "description": []
-  },
-  {
-    "title": "Templates",
-    "file_name": "templates",
-    "url": "https://www.yusaito.com/note/templates/",
-    "tags": [],
-    "description": []
-  },
-  {
-    "title": "Tmux",
-    "file_name": "tmux",
-    "url": "https://www.yusaito.com/note/tmux/",
-    "tags": [],
-    "description": []
-  },
-  {
     "title": "Python util",
     "file_name": "util",
     "url": "https://www.yusaito.com/note/util/",
-    "tags": [],
-    "description": []
-  },
-  {
-    "title": "Webpage",
-    "file_name": "webpage",
-    "url": "https://www.yusaito.com/note/webpage/",
-    "tags": [],
-    "description": []
-  },
-  {
-    "title": "Webserver request",
-    "file_name": "webserver_request",
-    "url": "https://www.yusaito.com/note/webserver_request/",
     "tags": [],
     "description": []
   }
