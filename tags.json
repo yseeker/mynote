@@ -1,8 +1,29 @@
 [
   {
+    "title": "アルゴリズムとデータ構造",
+    "file_name": "al_ds",
+    "url": "https://www.yusaito.com/note/al_ds/",
+    "tags": [],
+    "description": []
+  },
+  {
+    "title": "Google Colab",
+    "file_name": "colab",
+    "url": "https://www.yusaito.com/note/colab/",
+    "tags": [],
+    "description": []
+  },
+  {
     "title": "Docker",
     "file_name": "docker",
     "url": "https://www.yusaito.com/note/docker/",
+    "tags": [],
+    "description": []
+  },
+  {
+    "title": "Gif",
+    "file_name": "gif",
+    "url": "https://www.yusaito.com/note/gif/",
     "tags": [],
     "description": []
   },
@@ -21,9 +42,65 @@
     "description": []
   },
   {
+    "title": "Ml basic",
+    "file_name": "ml_basic",
+    "url": "https://www.yusaito.com/note/ml_basic/",
+    "tags": [],
+    "description": []
+  },
+  {
+    "title": "Mloops",
+    "file_name": "mloops",
+    "url": "https://www.yusaito.com/note/mloops/",
+    "tags": [],
+    "description": []
+  },
+  {
+    "title": "Mlutils",
+    "file_name": "mlutils",
+    "url": "https://www.yusaito.com/note/mlutils/",
+    "tags": [],
+    "description": []
+  },
+  {
+    "title": "並列処理と非同期処理",
+    "file_name": "pararell-async",
+    "url": "https://www.yusaito.com/note/pararell-async/",
+    "tags": [],
+    "description": []
+  },
+  {
+    "title": "System design",
+    "file_name": "system_design",
+    "url": "https://www.yusaito.com/note/system_design/",
+    "tags": [],
+    "description": []
+  },
+  {
+    "title": "Templates",
+    "file_name": "templates",
+    "url": "https://www.yusaito.com/note/templates/",
+    "tags": [],
+    "description": []
+  },
+  {
     "title": "Python util",
     "file_name": "util",
     "url": "https://www.yusaito.com/note/util/",
+    "tags": [],
+    "description": []
+  },
+  {
+    "title": "Webserver request",
+    "file_name": "webserver_request",
+    "url": "https://www.yusaito.com/note/webserver_request/",
+    "tags": [],
+    "description": []
+  },
+  {
+    "title": "Al",
+    "file_name": "al",
+    "url": "https://www.yusaito.com/note/algo/al/",
     "tags": [],
     "description": []
   }
