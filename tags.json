@@ -21,6 +21,13 @@
     "description": []
   },
   {
+    "title": "Fastapi",
+    "file_name": "fastapi",
+    "url": "https://www.yusaito.com/note/fastapi/",
+    "tags": [],
+    "description": []
+  },
+  {
     "title": "Gif",
     "file_name": "gif",
     "url": "https://www.yusaito.com/note/gif/",
@@ -45,6 +52,13 @@
     "title": "Ml basic",
     "file_name": "ml_basic",
     "url": "https://www.yusaito.com/note/ml_basic/",
+    "tags": [],
+    "description": []
+  },
+  {
+    "title": "Mlflow",
+    "file_name": "mlflow",
+    "url": "https://www.yusaito.com/note/mlflow/",
     "tags": [],
     "description": []
   },
@@ -87,6 +101,13 @@
     "title": "Python util",
     "file_name": "util",
     "url": "https://www.yusaito.com/note/util/",
+    "tags": [],
+    "description": []
+  },
+  {
+    "title": "Util template",
+    "file_name": "util_template",
+    "url": "https://www.yusaito.com/note/util_template/",
     "tags": [],
     "description": []
   },

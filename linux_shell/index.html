@@ -796,6 +796,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    Python ワンライナー
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    バッククオートで囲むと標準出力を変数に入力できる
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1002,7 +1016,7 @@ seq <span class="m">1</span> <span class="m">100</span> <span class="p">|</span>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="o">{</span>a, b<span class="o">}</span>c
 ac bc
-<span class="nb">echo</span> <span class="o">{</span><span class="m">1</span>..5<span class="o">}{</span>.txt,.pdf<span class="o">}</span>
+<span class="nb">echo</span> <span class="o">{</span><span class="m">1</span>..5<span class="o">}</span>.<span class="o">{</span>txt,pdf<span class="o">}</span>
 </code></pre></div>
 </td></tr></table>
 <h3 id="_8">ワイルドカード<a class="headerlink" href="#_8" title="Permanent link">¶</a></h3>
@@ -1011,6 +1025,16 @@ ac bc
 <span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>* <span class="c1">#任意の文字列</span>
 ? <span class="c1">#任意の一文字</span>
 <span class="o">[]</span> <span class="c1">#内側の一文字</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="python">Python ワンライナー<a class="headerlink" href="#python" title="Permanent link">¶</a></h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>seq <span class="m">3</span> <span class="p">|</span> python3 -c <span class="s1">&#39;import sys, math;[print(math.sqrt(int(a))) for a in sys.stdin]&#39;</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="_9">バッククオートで囲むと標準出力を変数に入力できる<a class="headerlink" href="#_9" title="Permanent link">¶</a></h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>A=`git rev-parse --short HEAD`
+echo $A
 </code></pre></div>
 </td></tr></table>
 

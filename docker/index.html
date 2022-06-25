@@ -745,6 +745,7 @@ Dockerfile から DockerImage, DockerImage からコンテナ</p>
 <code>docker rm $(docker ps -q -a)</code> : すべてのコンテナ削除<br />
 <code>docker rmi $(docker images -q)</code>: すべてのイメージ削除<br />
 <code>docker-compose logs --tail=100 -f xxxx-server</code><br />
+<code>docker system prune -a --filter "until=168h"</code><br />
   ``</p>
 <h1 id="docker-file">docker file の作成<a class="headerlink" href="#docker-file" title="Permanent link">¶</a></h1>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -1011,6 +1012,126 @@ Docker コマンドで Docker Daemon に命令を出す</p>
     finta <span class="se">\</span>
     tsfresh <span class="se">\</span>
     <span class="o">&amp;&amp;</span> rm -rf ~/.cache/pip
+</code></pre></div>
+</td></tr></table>
+<h3 id="minimum">minimum<a class="headerlink" href="#minimum" title="Permanent link">¶</a></h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">FROM</span> <span class="n">python</span><span class="p">:</span><span class="mf">3.8</span>
+
+<span class="n">ENV</span> <span class="n">DEBIAN_FRONTEND</span><span class="o">=</span><span class="n">noninteractive</span>
+<span class="n">ENV</span> <span class="n">TZ</span><span class="o">=</span><span class="n">Asia</span><span class="o">/</span><span class="n">Tokyo</span>
+<span class="n">RUN</span> <span class="n">ln</span> <span class="o">-</span><span class="n">snf</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">zoneinfo</span><span class="o">/</span><span class="err">$</span><span class="n">TZ</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">localtime</span> <span class="o">&amp;&amp;</span> <span class="n">echo</span> <span class="err">$</span><span class="n">TZ</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">timezone</span>
+
+<span class="n">RUN</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span> <span class="o">&amp;&amp;</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">upgrade</span> <span class="o">-</span><span class="n">y</span> \
+    <span class="o">&amp;&amp;</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">install</span><span class="o">-</span><span class="n">recommends</span> \
+    <span class="n">sudo</span> \
+    <span class="n">wget</span> \
+    <span class="n">make</span> \
+    <span class="o">&amp;&amp;</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">autoremove</span> <span class="o">-</span><span class="n">y</span> \
+    <span class="o">&amp;&amp;</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">clean</span> \
+    <span class="o">&amp;&amp;</span> <span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> \
+    <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">apt</span><span class="o">/</span><span class="n">lists</span><span class="o">/*</span> \
+    <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">cache</span><span class="o">/</span><span class="n">apt</span><span class="o">/*</span> \
+    <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">src</span><span class="o">/*</span> \
+    <span class="o">/</span><span class="n">tmp</span><span class="o">/*</span>
+
+<span class="n">RUN</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">cache</span><span class="o">-</span><span class="nb">dir</span>\
+    <span class="n">pandas</span>\
+    <span class="n">scipy</span> \
+    <span class="n">scikit</span><span class="o">-</span><span class="n">learn</span> \
+    <span class="n">matplotlib</span> \
+    <span class="n">seaborn</span> \
+    <span class="n">japanize</span><span class="o">-</span><span class="n">matplotlib</span> \
+    <span class="n">tqdm</span> \
+    <span class="n">lightgbm</span> \
+    <span class="n">pyyaml</span> \
+    <span class="n">requests</span> \
+    <span class="n">numba</span> \
+    <span class="n">shap</span> \
+    <span class="n">statsmodels</span> \
+    <span class="n">optuna</span> \
+    <span class="n">mlflow</span> \
+    <span class="n">ccxt</span> \
+    <span class="n">ta</span> \
+    <span class="n">pandas_ta</span> \
+    <span class="n">finta</span> \
+    <span class="n">mplfinance</span> \
+    <span class="n">tsfresh</span> \
+    <span class="s2">&quot;git+https://github.com/richmanbtc/crypto_data_fetcher.git@v0.0.15#egg=crypto_data_fetcher&quot;</span> \
+    <span class="o">&amp;&amp;</span> <span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="o">~/.</span><span class="n">cache</span><span class="o">/</span><span class="n">pip</span>
+
+<span class="n">RUN</span> <span class="n">cd</span> <span class="o">/</span><span class="n">tmp</span> \
+    <span class="o">&amp;&amp;</span> <span class="n">wget</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">prdownloads</span><span class="o">.</span><span class="n">sourceforge</span><span class="o">.</span><span class="n">net</span><span class="o">/</span><span class="n">ta</span><span class="o">-</span><span class="n">lib</span><span class="o">/</span><span class="n">ta</span><span class="o">-</span><span class="n">lib</span><span class="o">-</span><span class="mf">0.4.0</span><span class="o">-</span><span class="n">src</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span> \
+    <span class="o">&amp;&amp;</span> <span class="n">tar</span> <span class="o">-</span><span class="n">zxvf</span> <span class="n">ta</span><span class="o">-</span><span class="n">lib</span><span class="o">-</span><span class="mf">0.4.0</span><span class="o">-</span><span class="n">src</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span> \
+    <span class="o">&amp;&amp;</span> <span class="n">cd</span> <span class="n">ta</span><span class="o">-</span><span class="n">lib</span> \
+    <span class="o">&amp;&amp;</span> <span class="o">./</span><span class="n">configure</span> <span class="o">--</span><span class="n">prefix</span><span class="o">=/</span><span class="n">usr</span> \
+    <span class="o">&amp;&amp;</span> <span class="n">sudo</span> <span class="n">make</span> \
+    <span class="o">&amp;&amp;</span> <span class="n">sudo</span> <span class="n">make</span> <span class="n">install</span> \
+    <span class="o">&amp;&amp;</span> <span class="n">cd</span> <span class="o">../</span> \
+    <span class="o">&amp;&amp;</span> <span class="n">sudo</span> <span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="n">ta</span><span class="o">-</span><span class="n">lib</span><span class="o">-</span><span class="mf">0.4.0</span><span class="o">-</span><span class="n">src</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span> \
+    <span class="o">&amp;&amp;</span> <span class="n">sudo</span> <span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="n">ta</span><span class="o">-</span><span class="n">lib</span> \
+    <span class="o">&amp;&amp;</span> <span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">pip</span> \
+    <span class="o">&amp;&amp;</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">cache</span><span class="o">-</span><span class="nb">dir</span> <span class="n">install</span> <span class="n">TA</span><span class="o">-</span><span class="n">Lib</span> \
+    <span class="o">&amp;&amp;</span> <span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/*</span>
+
+<span class="n">CMD</span> <span class="p">[</span><span class="s2">&quot;/bin/bash&quot;</span><span class="p">]</span>
 </code></pre></div>
 </td></tr></table>
 <h2 id="docker-makefile">docker makefile<a class="headerlink" href="#docker-makefile" title="Permanent link">¶</a></h2>
