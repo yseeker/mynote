@@ -26,6 +26,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://www.yusaito.com/note/git/</loc>
+         <lastmod>2022-06-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://www.yusaito.com/note/linux_command/</loc>
          <lastmod>2022-06-26</lastmod>
          <changefreq>daily</changefreq>

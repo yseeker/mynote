@@ -329,7 +329,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git.md" class="md-nav__link">
+      <a href="../git/" class="md-nav__link">
         Git
       </a>
     </li>
@@ -657,16 +657,7 @@
 <span class="normal">46</span>
 <span class="normal">47</span>
 <span class="normal">48</span>
-<span class="normal">49</span>
-<span class="normal">50</span>
-<span class="normal">51</span>
-<span class="normal">52</span>
-<span class="normal">53</span>
-<span class="normal">54</span>
-<span class="normal">55</span>
-<span class="normal">56</span>
-<span class="normal">57</span>
-<span class="normal">58</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">FROM</span> <span class="s">nvcr.io/nvidia/pytorch:22.05-py3</span>
+<span class="normal">49</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">FROM</span> <span class="s">python:3.9</span>
 
 <span class="k">ENV</span> <span class="nv">DEBIAN_FRONTEND</span><span class="o">=</span>noninteractive
 <span class="k">ENV</span> <span class="nv">TZ</span><span class="o">=</span>Asia/Tokyo
@@ -674,11 +665,10 @@
 
 <span class="k">RUN</span> apt-get update <span class="o">&amp;&amp;</span> apt-get upgrade -y <span class="se">\</span>
     <span class="o">&amp;&amp;</span> apt-get install -y --no-install-recommends <span class="se">\</span>
+    apt-utils <span class="se">\</span>
+    gcc <span class="se">\</span>
     sudo <span class="se">\</span>
     wget <span class="se">\</span>
-    curl <span class="se">\</span>
-    git <span class="se">\</span>
-    vim <span class="se">\</span>
     make <span class="se">\</span>
     cmake <span class="se">\</span>
     libgl1-mesa-dev <span class="se">\</span>
@@ -690,37 +680,29 @@
     /usr/local/src/* <span class="se">\</span>
     /tmp/*
 
-<span class="k">RUN</span> pip install --upgrade pip <span class="se">\</span>
-    <span class="o">&amp;&amp;</span> pip install --no-cache-dir <span class="se">\</span>
+<span class="k">RUN</span> pip install --no-cache-dir<span class="se">\</span>
     numpy <span class="se">\</span>
-    pandas <span class="se">\</span>
+    pandas<span class="se">\</span>
     scipy <span class="se">\</span>
     scikit-learn <span class="se">\</span>
     matplotlib <span class="se">\</span>
-    japanize-matplotlib <span class="se">\</span>
     seaborn <span class="se">\</span>
-    plotly <span class="se">\</span>
-    Pillow <span class="se">\</span>
+    japanize-matplotlib <span class="se">\</span>
+    lightgbm <span class="se">\</span>
     opencv-python <span class="se">\</span>
     opencv-contrib-python <span class="se">\</span>
-    albumentations <span class="se">\</span>
-    requests <span class="se">\</span>
-    tqdm <span class="se">\</span>
-    xgboost <span class="se">\</span>
-    lightgbm <span class="se">\</span>
-    optuna <span class="se">\</span>
-    timm <span class="se">\</span>
-    numba <span class="se">\</span>
     fastapi&gt;<span class="o">=</span><span class="m">0</span>.65.2 <span class="se">\</span>
+    future&gt;<span class="o">=</span><span class="m">0</span>.18.2 <span class="se">\</span>
     gunicorn&gt;<span class="o">=</span><span class="m">20</span>.0.4 <span class="se">\</span>
-    redis&gt;<span class="o">=</span><span class="m">3</span>.5.3 <span class="se">\</span>
-    uvicorn&gt;<span class="o">=</span><span class="m">0</span>.11.7 <span class="se">\</span>
+    importlib-metadata&gt;<span class="o">=</span><span class="m">1</span>.7.0 <span class="se">\</span>
     joblib&gt;<span class="o">=</span><span class="m">0</span>.15.1 <span class="se">\</span>
-    <span class="o">&amp;&amp;</span> rm -rf ~/.cache/pip
-
-<span class="k">RUN</span> pip install --upgrade pip <span class="se">\</span>
-    <span class="o">&amp;&amp;</span> pip install --no-cache-dir --upgrade <span class="se">\</span>
-    <span class="s2">&quot;jax[cuda]&quot;</span> -f https://storage.googleapis.com/jax-releases/jax_releases.html <span class="se">\</span>
+    Pillow&gt;<span class="o">=</span><span class="m">8</span>.3.2 <span class="se">\</span>
+    PyYAML&gt;<span class="o">=</span><span class="m">5</span>.3.1 <span class="se">\</span>
+    redis&gt;<span class="o">=</span><span class="m">3</span>.5.3 <span class="se">\</span>
+    typing&gt;<span class="o">=</span><span class="m">3</span>.7.4.1 <span class="se">\</span>
+    uvicorn&gt;<span class="o">=</span><span class="m">0</span>.11.7 <span class="se">\</span>
+    requests&gt;<span class="o">=</span><span class="m">2</span>.25.1 <span class="se">\</span>
+    tqdm <span class="se">\</span>
     <span class="o">&amp;&amp;</span> rm -rf ~/.cache/pip
 
 <span class="k">CMD</span> <span class="p">[</span><span class="s2">&quot;/bin/bash&quot;</span><span class="p">]</span>
@@ -775,22 +757,24 @@
 <span class="normal">47</span>
 <span class="normal">48</span>
 <span class="normal">49</span>
-<span class="normal">50</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="normal">50</span>
+<span class="normal">51</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 <span class="nb">set</span> -eu
 
 <span class="nv">SCRIPT_DIR</span><span class="o">=</span><span class="k">$(</span><span class="nb">cd</span> <span class="k">$(</span>dirname <span class="nv">$0</span><span class="k">)</span><span class="p">;</span><span class="nb">pwd</span><span class="k">)</span>
-<span class="nb">echo</span> <span class="nv">$SCRIPT_DIR</span>
+<span class="nb">cd</span> <span class="nv">$SCRIPT_DIR</span>
+<span class="nb">cd</span> ..
 
 <span class="nv">DOCKER_WORK_DIR</span><span class="o">=</span><span class="s2">&quot;/work&quot;</span>
-<span class="nv">WORK_DIR</span><span class="o">=</span><span class="si">${</span><span class="nv">SCRIPT_DIR</span><span class="si">}</span>
-<span class="nv">SCRIPT_NAME</span><span class="o">=</span><span class="s2">&quot;util_template.py&quot;</span>
+<span class="nv">WORK_DIR</span><span class="o">=</span><span class="si">${</span><span class="nv">PWD</span><span class="si">}</span>
+<span class="nv">SCRIPT_NAME</span><span class="o">=</span><span class="s2">&quot;script.py&quot;</span>
 
-<span class="nv">SCRIPT_DIR_DOCKER</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">DOCKER_WORK_DIR</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">SCRIPT_NAME</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="nv">INPUT_DIR</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">DOCKER_WORK_DIR</span><span class="si">}</span><span class="s2">/data/input&quot;</span>
+<span class="nv">SCRIPT_DIR_DOCKER</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">DOCKER_WORK_DIR</span><span class="si">}</span><span class="s2">/src/</span><span class="si">${</span><span class="nv">SCRIPT_NAME</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="nv">INPUT_DIR</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">DOCKER_WORK_DIR</span><span class="si">}</span><span class="s2">/data/figures&quot;</span>
 <span class="nv">OUTPUT_DIR</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">DOCKER_WORK_DIR</span><span class="si">}</span><span class="s2">/data/output&quot;</span>
 
-<span class="nv">LOG_DIR</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">SCRIPT_DIR</span><span class="si">}</span><span class="s2">/log&quot;</span>
-<span class="nv">DOCKER_FILE_DIR</span><span class="o">=</span><span class="s2">&quot;./docker&quot;</span>
+<span class="nv">LOG_DIR</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">WORK_DIR</span><span class="si">}</span><span class="s2">/log&quot;</span>
+<span class="nv">DOCKER_FILE_DIR</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">WORK_DIR</span><span class="si">}</span><span class="s2">/docker&quot;</span>
 <span class="nv">SHM_SIZE</span><span class="o">=</span><span class="s2">&quot;4g&quot;</span>
 
 <span class="nv">DOCKER_IMAGE_NAME</span><span class="o">=</span><span class="s2">&quot;pytorch&quot;</span>
@@ -937,51 +921,7 @@ docker run --name <span class="si">${</span><span class="nv">DOCKER_CONTAINER_NA
 <span class="normal">108</span>
 <span class="normal">109</span>
 <span class="normal">110</span>
-<span class="normal">111</span>
-<span class="normal">112</span>
-<span class="normal">113</span>
-<span class="normal">114</span>
-<span class="normal">115</span>
-<span class="normal">116</span>
-<span class="normal">117</span>
-<span class="normal">118</span>
-<span class="normal">119</span>
-<span class="normal">120</span>
-<span class="normal">121</span>
-<span class="normal">122</span>
-<span class="normal">123</span>
-<span class="normal">124</span>
-<span class="normal">125</span>
-<span class="normal">126</span>
-<span class="normal">127</span>
-<span class="normal">128</span>
-<span class="normal">129</span>
-<span class="normal">130</span>
-<span class="normal">131</span>
-<span class="normal">132</span>
-<span class="normal">133</span>
-<span class="normal">134</span>
-<span class="normal">135</span>
-<span class="normal">136</span>
-<span class="normal">137</span>
-<span class="normal">138</span>
-<span class="normal">139</span>
-<span class="normal">140</span>
-<span class="normal">141</span>
-<span class="normal">142</span>
-<span class="normal">143</span>
-<span class="normal">144</span>
-<span class="normal">145</span>
-<span class="normal">146</span>
-<span class="normal">147</span>
-<span class="normal">148</span>
-<span class="normal">149</span>
-<span class="normal">150</span>
-<span class="normal">151</span>
-<span class="normal">152</span>
-<span class="normal">153</span>
-<span class="normal">154</span>
-<span class="normal">155</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">argparse</span>
+<span class="normal">111</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">argparse</span>
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">from</span> <span class="nn">concurrent.futures</span> <span class="kn">import</span> <span class="n">ProcessPoolExecutor</span>
 <span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">partial</span><span class="p">,</span> <span class="n">wraps</span>
@@ -989,8 +929,11 @@ docker run --name <span class="si">${</span><span class="nv">DOCKER_CONTAINER_NA
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Iterator</span><span class="p">,</span> <span class="n">List</span>
 
 <span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">fastapi</span> <span class="kn">import</span> <span class="n">FastAPI</span>
 <span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
 <span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">FastAPI</span><span class="p">()</span>
 
 
 <span class="k">def</span> <span class="nf">get_script_dir</span><span class="p">():</span>
@@ -1064,7 +1007,6 @@ docker run --name <span class="si">${</span><span class="nv">DOCKER_CONTAINER_NA
 
 <span class="k">def</span> <span class="nf">task</span><span class="p">(</span><span class="n">input_path</span><span class="p">,</span> <span class="n">output_path</span><span class="p">):</span>
     <span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">input_path</span><span class="p">))</span><span class="o">.</span><span class="n">resize</span><span class="p">((</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">output_path</span><span class="p">)</span>
     <span class="n">img</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">output_path</span><span class="p">))</span>
     <span class="k">return</span> <span class="kc">None</span>
 
@@ -1090,7 +1032,70 @@ docker run --name <span class="si">${</span><span class="nv">DOCKER_CONTAINER_NA
         <span class="k">with</span> <span class="n">ProcessPoolExecutor</span><span class="p">()</span> <span class="k">as</span> <span class="n">executor</span><span class="p">:</span>
             <span class="n">task_partial</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="n">task_only_input</span><span class="p">,</span> <span class="n">output_dir</span><span class="o">=</span><span class="n">output_dir</span><span class="p">)</span>
             <span class="nb">list</span><span class="p">(</span><span class="n">executor</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">task_partial</span><span class="p">,</span> <span class="n">file_batch</span><span class="p">))</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">argparse</span>
 
+<span class="kn">from</span> <span class="nn">general_utils</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">create_dir</span><span class="p">,</span>
+    <span class="n">get_file_paths</span><span class="p">,</span>
+    <span class="n">task_all</span><span class="p">,</span>
+    <span class="n">task_all_multiprocess</span><span class="p">,</span>
+    <span class="n">task_only_input_stopwatch</span><span class="p">,</span>
+<span class="p">)</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
     <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
@@ -1136,6 +1141,218 @@ docker run --name <span class="si">${</span><span class="nv">DOCKER_CONTAINER_NA
             <span class="n">task_all_multiprocess</span><span class="p">(</span><span class="n">file_list</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">task_all</span><span class="p">(</span><span class="n">file_list</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">from</span> <span class="nn">logging</span> <span class="kn">import</span> <span class="n">DEBUG</span><span class="p">,</span> <span class="n">StreamHandler</span><span class="p">,</span> <span class="n">getLogger</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+
+<span class="kn">from</span> <span class="nn">fastapi</span> <span class="kn">import</span> <span class="n">FastAPI</span>
+
+<span class="kn">from</span> <span class="nn">general_utils</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">create_dir</span><span class="p">,</span>
+    <span class="n">get_file_paths</span><span class="p">,</span>
+    <span class="n">task_all</span><span class="p">,</span>
+    <span class="n">task_all_multiprocess</span><span class="p">,</span>
+    <span class="n">task_only_input</span><span class="p">,</span>
+    <span class="n">task_only_input_stopwatch</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="n">handler</span> <span class="o">=</span> <span class="n">StreamHandler</span><span class="p">()</span>
+<span class="n">handler</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">DEBUG</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">DEBUG</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">handler</span><span class="p">)</span>
+
+<span class="n">formatter</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">Formatter</span><span class="p">(</span>
+    <span class="s2">&quot;[</span><span class="si">%(asctime)s</span><span class="s2">][</span><span class="si">%(name)s</span><span class="s2">][</span><span class="si">%(funcName)s</span><span class="s2">,</span><span class="si">%(lineno)d</span><span class="s2">] </span><span class="si">%(message)s</span><span class="s2">&quot;</span>
+<span class="p">)</span>
+
+<span class="n">handler</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">formatter</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">propagate</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">FastAPI</span><span class="p">()</span>
+
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;/do_task&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">do_task</span><span class="p">(</span><span class="n">input_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="n">_input_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">input_path</span><span class="p">)</span>
+    <span class="n">task_only_input</span><span class="p">(</span><span class="n">_input_path</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;task is done&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;do_task&quot;</span><span class="p">:</span> <span class="s2">&quot;task_done&quot;</span><span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">argparse</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="kn">from</span> <span class="nn">general_utils</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">create_dir</span><span class="p">,</span>
+    <span class="n">get_file_paths</span><span class="p">,</span>
+    <span class="n">task_all</span><span class="p">,</span>
+    <span class="n">task_all_multiprocess</span><span class="p">,</span>
+    <span class="n">task_only_input</span><span class="p">,</span>
+    <span class="n">task_only_input_stopwatch</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s2">&quot;--input_dir&quot;</span><span class="p">,</span>
+        <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span>
+        <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;path for input dir&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s2">&quot;--output_dir&quot;</span><span class="p">,</span>
+        <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span>
+        <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;path for output dir&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s2">&quot;--debug&quot;</span><span class="p">,</span>
+        <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store_true&quot;</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;just check one file&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s2">&quot;--multiprocess&quot;</span><span class="p">,</span>
+        <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store_true&quot;</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;use multiprocess&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s2">&quot;--batch_size&quot;</span><span class="p">,</span>
+        <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span>
+        <span class="n">default</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;This value should depend on the available max memory in using multiprocess option&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s2">&quot;--api_server_url&quot;</span><span class="p">,</span>
+        <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span>
+        <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;api_server_url&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+    <span class="n">file_list</span> <span class="o">=</span> <span class="n">get_file_paths</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">input_dir</span><span class="p">)</span>
+    <span class="n">output_dir</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">output_dir</span>
+    <span class="n">batch_size</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">batch_size</span>
+    <span class="n">create_dir</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">output_dir</span><span class="p">)</span>
+
+    <span class="n">api_server_url</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">api_server_url</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;input_path&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">file_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
+        <span class="s2">&quot;output_dir&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">output_dir</span><span class="p">),</span>
+    <span class="p">}</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">api_server_url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+        <span class="n">api_response</span> <span class="o">=</span> <span class="n">api_response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+        <span class="k">pass</span>
 </code></pre></div>
 </td></tr></table>
 
