@@ -810,6 +810,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#uid-gid" class="md-nav__link">
+    ファイルの UID, GID の変更
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1035,6 +1042,12 @@ ac bc
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>A=`git rev-parse --short HEAD`
 echo $A
+</code></pre></div>
+</td></tr></table>
+<h3 id="uid-gid">ファイルの UID, GID の変更<a class="headerlink" href="#uid-gid" title="Permanent link">¶</a></h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>find / -uid {旧ID} -print0 | xargs -0 chown {対象ユーザ名}
+find / -gid {旧ID} -print0 | xargs -0 chgrp {対象グループ名}
 </code></pre></div>
 </td></tr></table>
 
