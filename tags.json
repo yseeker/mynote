@@ -7,6 +7,13 @@
     "description": []
   },
   {
+    "title": "読書メモ",
+    "file_name": "books_note",
+    "url": "https://www.yusaito.com/note/books_note/",
+    "tags": [],
+    "description": []
+  },
+  {
     "title": "Google Colab",
     "file_name": "colab",
     "url": "https://www.yusaito.com/note/colab/",
@@ -87,6 +94,13 @@
     "title": "並列処理と非同期処理",
     "file_name": "pararell-async",
     "url": "https://www.yusaito.com/note/pararell-async/",
+    "tags": [],
+    "description": []
+  },
+  {
+    "title": "Python books",
+    "file_name": "python_books_note",
+    "url": "https://www.yusaito.com/note/python_books_note/",
     "tags": [],
     "description": []
   },
