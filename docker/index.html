@@ -746,6 +746,8 @@ Dockerfile から DockerImage, DockerImage からコンテナ</p>
 <code>docker rmi $(docker images -q)</code>: すべてのイメージ削除<br />
 <code>docker-compose logs --tail=100 -f xxxx-server</code><br />
 <code>docker system prune -a --filter "until=168h"</code><br />
+<code>docker save sample-image &gt; sample-image.tar</code><br />
+<code>docker load &lt; sample-image.tar</code><br />
   ``</p>
 <h1 id="docker-file">docker file の作成<a class="headerlink" href="#docker-file" title="Permanent link">¶</a></h1>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>

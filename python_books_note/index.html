@@ -634,6 +634,115 @@
         
           <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
+    基礎
+  </a>
+  
+    <nav class="md-nav" aria-label="基礎">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dir-help" class="md-nav__link">
+    dir と help
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dictionary-get" class="md-nav__link">
+    dictionary の get
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dictionary" class="md-nav__link">
+    dictionary のマージ
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    コンテキストマネージャー
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    関数
+  </a>
+  
+    <nav class="md-nav" aria-label="関数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    デコレータ
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generator-chanin" class="md-nav__link">
+    generator の chanin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    メモリ使用量 速度 python
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    クラス
+  </a>
+  
+    <nav class="md-nav" aria-label="クラス">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dataclass" class="md-nav__link">
+    Dataclass
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#property" class="md-nav__link">
+    Property
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classmethodstatic-method-abstract-method" class="md-nav__link">
+    classmethod,static method, abstract method
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
     システム設計
   </a>
   
@@ -662,7 +771,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     環境変数の有効活用
   </a>
   
@@ -694,7 +803,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     デバッグ
   </a>
   
@@ -723,7 +832,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     画像用デバッグ
   </a>
   
@@ -737,7 +846,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     カスタム例外クラスを作成
   </a>
   
@@ -763,8 +872,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    ユニットテスト
+  <a href="#pytest" class="md-nav__link">
+    ユニットテスト, pytest を使う
   </a>
   
 </li>
@@ -790,7 +899,235 @@
 
 <h1 id="python-books">Python books<a class="headerlink" href="#python-books" title="Permanent link">¶</a></h1>
 <h2 id="efficient-pythonpython-python">自走プログラマー/Efficient Python/Python トリック/Python ハッカーガイドブック<a class="headerlink" href="#efficient-pythonpython-python" title="Permanent link">¶</a></h2>
-<h3 id="_1">システム設計<a class="headerlink" href="#_1" title="Permanent link">¶</a></h3>
+<h3 id="_1">基礎<a class="headerlink" href="#_1" title="Permanent link">¶</a></h3>
+<h4 id="dir-help">dir と help<a class="headerlink" href="#dir-help" title="Permanent link">¶</a></h4>
+<p>dir(method), help(methid)</p>
+<h4 id="dictionary-get">dictionary の get<a class="headerlink" href="#dictionary-get" title="Permanent link">¶</a></h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;key&quot;</span><span class="p">,</span> <span class="n">deafult</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<h4 id="dictionary">dictionary のマージ<a class="headerlink" href="#dictionary" title="Permanent link">¶</a></h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">dictA</span><span class="p">,</span> <span class="o">**</span><span class="n">dictB</span><span class="p">}</span>
+<span class="nb">dict</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">dictA</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<h4 id="_2">コンテキストマネージャー<a class="headerlink" href="#_2" title="Permanent link">¶</a></h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;hello.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;hello, world!&quot;</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">contextlib</span> <span class="kn">import</span> <span class="n">contextmanager</span>
+
+<span class="nd">@contextmanager</span>
+<span class="k">def</span> <span class="nf">managed_file</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
+        <span class="k">yield</span> <span class="n">f</span>
+    <span class="k">finally</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="_3">関数<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
+<h4 id="_4">デコレータ<a class="headerlink" href="#_4" title="Permanent link">¶</a></h4>
+<p>デバッグのベストプラクティスとし functools.wraps を使う</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">proxy</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="nd">@proxy</span>
+<span class="k">def</span> <span class="nf">something</span><span class="p">():</span>
+    <span class="n">do_something</span>
+</code></pre></div>
+</td></tr></table>
+<h4 id="generator-chanin">generator の chanin<a class="headerlink" href="#generator-chanin" title="Permanent link">¶</a></h4>
+<ul>
+<li>pandas の pipe に近いユースケース</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># integers : generator</span>
+<span class="c1"># squared : generator</span>
+<span class="c1"># negated : generator</span>
+
+<span class="n">chain</span> <span class="o">=</span> <span class="n">negated</span><span class="p">(</span><span class="n">squred</span><span class="p">(</span><span class="n">integers</span><span class="p">))</span>
+</code></pre></div>
+</td></tr></table>
+<h4 id="python">メモリ使用量 速度 python<a class="headerlink" href="#python" title="Permanent link">¶</a></h4>
+<p><a href="https://qiita.com/aratana_tamutomo/items/aa3b723a3dd7a44e45d6">https://qiita.com/aratana_tamutomo/items/aa3b723a3dd7a44e45d6</a></p>
+<h3 id="_5">クラス<a class="headerlink" href="#_5" title="Permanent link">¶</a></h3>
+<h4 id="dataclass">Dataclass<a class="headerlink" href="#dataclass" title="Permanent link">¶</a></h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">dataclasses</span>
+
+<span class="nd">@dataclasses</span><span class="o">.</span><span class="n">dataclass</span>
+<span class="k">class</span> <span class="nc">User</span><span class="p">:</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">age</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+</code></pre></div>
+</td></tr></table>
+<h4 id="property">Property<a class="headerlink" href="#property" title="Permanent link">¶</a></h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="c1"># https://rinatz.github.io/python-book/ch03-04-properties/</span>
+<span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_y</span> <span class="o">=</span> <span class="n">y</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">x</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_x</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">y</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_y</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">distance</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># https://qiita.com/cardene/items/8a59d576d360b7568c3a</span>
+<span class="k">class</span> <span class="nc">PropertyClass</span><span class="p">:</span>
+      <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">message</span> <span class="o">=</span> <span class="n">msg</span>
+
+      <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">message</span>
+
+      <span class="nd">@property</span>
+      <span class="k">def</span> <span class="nf">message</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__message</span>
+
+      <span class="nd">@message</span><span class="o">.</span><span class="n">setter</span>
+      <span class="k">def</span> <span class="nf">message</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">__message</span> <span class="o">=</span> <span class="n">value</span>
+</code></pre></div>
+</td></tr></table>
+<h4 id="classmethodstatic-method-abstract-method">classmethod,static method, abstract method<a class="headerlink" href="#classmethodstatic-method-abstract-method" title="Permanent link">¶</a></h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">#https://it-for-pharma.com/python-classmethod%E3%81%A8staticmethod%E3%82%92%E4%BD%BF%E3%81%86%E6%84%8F%E5%91%B3%E3%82%92%E8%80%83%E3%81%88%E3%82%8B</span>
+<span class="k">class</span> <span class="nc">PreData</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="n">a</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="n">b</span>
+
+
+<span class="k">class</span> <span class="nc">Product</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">d</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">e</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">d</span> <span class="o">=</span> <span class="n">d</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">e</span> <span class="o">=</span> <span class="n">e</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_pre_data</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">pre_data</span><span class="p">:</span> <span class="n">PreData</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
+            <span class="n">d</span><span class="o">=</span><span class="n">pre_data</span><span class="o">.</span><span class="n">a</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="n">e</span><span class="o">=</span><span class="n">pre_data</span><span class="o">.</span><span class="n">b</span> <span class="o">*</span> <span class="mi">10</span>
+        <span class="p">)</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">from_pre_data_static</span><span class="p">(</span><span class="n">pre_data</span><span class="p">:</span> <span class="n">PreData</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Product</span><span class="p">(</span>
+            <span class="n">d</span><span class="o">=</span><span class="n">pre_data</span><span class="o">.</span><span class="n">a</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="n">e</span><span class="o">=</span><span class="n">pre_data</span><span class="o">.</span><span class="n">b</span> <span class="o">*</span> <span class="mi">10</span>
+        <span class="p">)</span>
+
+
+<span class="n">pre_data</span> <span class="o">=</span> <span class="n">PreData</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">product1</span> <span class="o">=</span> <span class="n">Product</span><span class="o">.</span><span class="n">from_pre_data</span><span class="p">(</span><span class="n">pre_data</span><span class="p">)</span>
+<span class="n">product2</span> <span class="o">=</span> <span class="n">Product</span><span class="o">.</span><span class="n">from_pre_data_static</span><span class="p">(</span><span class="n">pre_data</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="_6">システム設計<a class="headerlink" href="#_6" title="Permanent link">¶</a></h3>
 <h4 id="pathlib">相対パスでの組み立て/Pathlib<a class="headerlink" href="#pathlib" title="Permanent link">¶</a></h4>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -839,7 +1176,7 @@
 <span class="n">path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/root/</span><span class="si">{</span><span class="nb">hash</span><span class="si">}</span><span class="s2">/somefile.dat&quot;</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
-<h4 id="_2">環境変数の有効活用<a class="headerlink" href="#_2" title="Permanent link">¶</a></h4>
+<h4 id="_7">環境変数の有効活用<a class="headerlink" href="#_7" title="Permanent link">¶</a></h4>
 <h5 id="osenvision">os.envision<a class="headerlink" href="#osenvision" title="Permanent link">¶</a></h5>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
@@ -876,7 +1213,7 @@ DEBUG=True
 <span class="nb">print</span><span class="p">(</span><span class="n">DATABASE_NAME</span><span class="p">)</span>    <span class="c1"># 「sample.db」が表示される</span>
 </code></pre></div>
 </td></tr></table>
-<h3 id="_3">デバッグ<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
+<h3 id="_8">デバッグ<a class="headerlink" href="#_8" title="Permanent link">¶</a></h3>
 <h4 id="loggerdebug">logger.debug を使う<a class="headerlink" href="#loggerdebug" title="Permanent link">¶</a></h4>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -910,7 +1247,8 @@ DEBUG=True
 <span class="normal">30</span>
 <span class="normal">31</span>
 <span class="normal">32</span>
-<span class="normal">33</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">logging</span>
+<span class="normal">33</span>
+<span class="normal">34</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">logging</span>
 <span class="kn">from</span> <span class="nn">logging</span> <span class="kn">import</span> <span class="n">DEBUG</span><span class="p">,</span> <span class="n">StreamHandler</span><span class="p">,</span> <span class="n">getLogger</span>
 <span class="kn">from</span> <span class="nn">logging.handlers</span> <span class="kn">import</span> <span class="n">RotatingFileHandler</span>
 <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
@@ -919,8 +1257,8 @@ DEBUG=True
 <span class="k">def</span> <span class="nf">setup_logger</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
     <span class="n">file_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span>
     <span class="n">root_path</span> <span class="o">=</span> <span class="n">file_path</span><span class="o">.</span><span class="n">parent</span>
-    <span class="n">log_path</span> <span class="o">=</span> <span class="n">root_path</span> <span class="o">/</span> <span class="s2">&quot;log&quot;</span>
-    <span class="n">log_path</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">log_path_dir</span> <span class="o">=</span> <span class="n">root_path</span> <span class="o">/</span> <span class="s2">&quot;log&quot;</span>
+    <span class="n">log_path_dir</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
     <span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">DEBUG</span><span class="p">)</span>
     <span class="n">logger</span><span class="o">.</span><span class="n">propagate</span> <span class="o">=</span> <span class="kc">False</span>
@@ -928,7 +1266,7 @@ DEBUG=True
         <span class="s2">&quot;[</span><span class="si">%(asctime)s</span><span class="s2">][</span><span class="si">%(name)s</span><span class="s2">][</span><span class="si">%(funcName)s</span><span class="s2">,</span><span class="si">%(lineno)d</span><span class="s2">] </span><span class="si">%(message)s</span><span class="s2">&quot;</span>
     <span class="p">)</span>
     <span class="n">fh</span> <span class="o">=</span> <span class="n">RotatingFileHandler</span><span class="p">(</span>
-        <span class="n">log_path</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">file_path</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">.log&quot;</span><span class="p">,</span> <span class="n">maxBytes</span><span class="o">=</span><span class="mi">100000</span><span class="p">,</span> <span class="n">backupCount</span><span class="o">=</span><span class="mi">10</span>
+        <span class="n">log_path_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">file_path</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">.log&quot;</span><span class="p">,</span> <span class="n">maxBytes</span><span class="o">=</span><span class="mi">100000</span><span class="p">,</span> <span class="n">backupCount</span><span class="o">=</span><span class="mi">10</span>
     <span class="p">)</span>
     <span class="n">fh</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">DEBUG</span><span class="p">)</span>
     <span class="n">fh</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">formatter</span><span class="p">)</span>
@@ -940,6 +1278,7 @@ DEBUG=True
     <span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">fh</span><span class="p">)</span>
     <span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">ch</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">logger</span>
+
 
 
 <span class="n">logger</span> <span class="o">=</span> <span class="n">setup_logger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
@@ -1038,7 +1377,7 @@ DEBUG=True
 <span class="p">}</span>
 </code></pre></div>
 </td></tr></table>
-<h4 id="_4">画像用デバッグ<a class="headerlink" href="#_4" title="Permanent link">¶</a></h4>
+<h4 id="_9">画像用デバッグ<a class="headerlink" href="#_9" title="Permanent link">¶</a></h4>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">dchaplinsky</span><span class="o">/</span><span class="n">visual</span><span class="o">-</span><span class="n">logging</span>
 </code></pre></div>
 </td></tr></table>
@@ -1080,24 +1419,56 @@ DEBUG=True
         <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span> <span class="o">**</span> <span class="mi">2</span>
 </code></pre></div>
 </td></tr></table>
-<h4 id="_5">カスタム例外クラスを作成<a class="headerlink" href="#_5" title="Permanent link">¶</a></h4>
+<h4 id="_10">カスタム例外クラスを作成<a class="headerlink" href="#_10" title="Permanent link">¶</a></h4>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">CustomError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;自作プログラムのエラーを知らせる例外クラスです。&quot;&quot;&quot;</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">CustomError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
     <span class="k">pass</span>
 
-<span class="c1"># 例外クラスを使います。</span>
 <span class="k">raise</span> <span class="n">CustomError</span><span class="p">(</span><span class="s1">&#39;error message&#39;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">BaseValidationError</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
+    <span class="k">pass</span>
 </code></pre></div>
 </td></tr></table>
 <h4 id="sentry">Sentry の利用<a class="headerlink" href="#sentry" title="Permanent link">¶</a></h4>
 <h4 id="pdb-breakpoint">pdb, breakpoint の利用<a class="headerlink" href="#pdb-breakpoint" title="Permanent link">¶</a></h4>
 <p>VSCode と pytest で Python コードをテスト&amp;デバッグする</p>
-<h3 id="_6">ユニットテスト<a class="headerlink" href="#_6" title="Permanent link">¶</a></h3>
+<h3 id="pytest">ユニットテスト, pytest を使う<a class="headerlink" href="#pytest" title="Permanent link">¶</a></h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pytest</span>
+<span class="kn">from</span> <span class="nn">model</span> <span class="kn">import</span> <span class="n">Example</span><span class="p">,</span> <span class="n">XxxError</span>
+
+<span class="k">class</span> <span class="nc">TestClass</span><span class="p">:</span>
+  <span class="k">def</span> <span class="nf">test__can_print_aaa</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">xxx</span> <span class="o">=</span> <span class="n">Example</span><span class="p">()</span>
+    <span class="k">assert</span> <span class="n">xxx</span><span class="o">.</span><span class="n">print_aaa</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;aaa&#39;</span>
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">=</span> <span class="mi">10</span>
+
+  <span class="k">def</span> <span class="nf">test__can_raise_error</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">xxx</span> <span class="o">=</span> <span class="n">Example</span><span class="p">()</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="n">XxxError</span><span class="p">):</span>
+      <span class="n">xxx</span><span class="o">.</span><span class="n">print_aaa</span><span class="p">(</span><span class="mi">222</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>pytest tests/test_create_xxx.py
+</code></pre></div>
+</td></tr></table>
 
               
     

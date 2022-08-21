@@ -817,6 +817,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    ディレクトリのマージ
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csv" class="md-nav__link">
+    csv マージ
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1048,6 +1062,18 @@ echo $A
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>find / -uid {旧ID} -print0 | xargs -0 chown {対象ユーザ名}
 find / -gid {旧ID} -print0 | xargs -0 chgrp {対象グループ名}
+</code></pre></div>
+</td></tr></table>
+<h3 id="_10">ディレクトリのマージ<a class="headerlink" href="#_10" title="Permanent link">¶</a></h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>rsync -a /マージするディレクトリ/ /マージされるディレクトリ
+</code></pre></div>
+</td></tr></table>
+<h3 id="csv">csv マージ<a class="headerlink" href="#csv" title="Permanent link">¶</a></h3>
+<p><a href="https://qiita.com/ssint1120/items/009f441486169020c4c8">https://qiita.com/ssint1120/items/009f441486169020c4c8</a></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>cat *.csv <span class="p">|</span> head -n <span class="m">1</span> &gt; result <span class="o">&amp;&amp;</span> find -name <span class="s2">&quot;*.csv&quot;</span> -exec sed -e <span class="s1">&#39;1d&#39;</span> <span class="o">{}</span> <span class="se">\;</span> &gt;&gt; result
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>cat *.csv <span class="p">|</span> head -n <span class="m">1</span> &gt; result <span class="o">&amp;&amp;</span> find -name <span class="s2">&quot;*.csv&quot;</span> -exec tail -n +2 <span class="o">{}</span> <span class="se">\;</span> &gt;&gt; result
 </code></pre></div>
 </td></tr></table>
 
