@@ -14,14 +14,14 @@
     "description": []
   },
   {
-    "title": "Google Colab",
+    "title": "Google colab",
     "file_name": "colab",
     "url": "https://www.yusaito.com/note/colab/",
     "tags": [],
     "description": []
   },
   {
-    "title": "Docker",
+    "title": "docker",
     "file_name": "docker",
     "url": "https://www.yusaito.com/note/docker/",
     "tags": [],
@@ -42,14 +42,14 @@
     "description": []
   },
   {
-    "title": "Git",
+    "title": "git",
     "file_name": "git",
     "url": "https://www.yusaito.com/note/git/",
     "tags": [],
     "description": []
   },
   {
-    "title": "Linux",
+    "title": "command",
     "file_name": "linux_command",
     "url": "https://www.yusaito.com/note/linux_command/",
     "tags": [],
@@ -98,7 +98,7 @@
     "description": []
   },
   {
-    "title": "Python books",
+    "title": "notes",
     "file_name": "python_books_note",
     "url": "https://www.yusaito.com/note/python_books_note/",
     "tags": [],
@@ -119,7 +119,7 @@
     "description": []
   },
   {
-    "title": "Python util",
+    "title": "util",
     "file_name": "util",
     "url": "https://www.yusaito.com/note/util/",
     "tags": [],
@@ -133,7 +133,7 @@
     "description": []
   },
   {
-    "title": "Webserver request",
+    "title": "webserver",
     "file_name": "webserver_request",
     "url": "https://www.yusaito.com/note/webserver_request/",
     "tags": [],
